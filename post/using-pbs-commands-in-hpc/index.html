@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using PBS commands in HPC - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" /><meta name="description" content=" Some useful commands to manage jobs on HPC" />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/using-pbs-commands-in-hpc/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Using PBS commands in HPC" />
+<meta property="og:description" content=" Some useful commands to manage jobs on HPC" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/using-pbs-commands-in-hpc/" />
+
+
+
+<meta property="article:published_time" content="2016-05-13T13:32:24-05:00"/>
+
+<meta property="article:modified_time" content="2016-05-13T13:32:24-05:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Using PBS commands in HPC">
+<meta itemprop="description" content=" Some useful commands to manage jobs on HPC">
+
+
+<meta itemprop="datePublished" content="2016-05-13T13:32:24-05:00" />
+<meta itemprop="dateModified" content="2016-05-13T13:32:24-05:00" />
+<meta itemprop="wordCount" content="1094">
+
+
+
+<meta itemprop="keywords" content="Linux,HPC," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using PBS commands in HPC"/>
+<meta name="twitter:description" content=" Some useful commands to manage jobs on HPC"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/using-pbs-commands-in-hpc/">
+        <li class="mobile-menu-item">Using PBS commands in HPC</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Using PBS commands in HPC</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-13 </span>
+        <div class="post-category">
+            
+              <a href="/categories/linux/"> Linux </a>
+            
+              <a href="/categories/server/"> Server </a>
+            
+          </div>
+        <span class="more-meta"> 1094 words </span>
+        <span class="more-meta"> 6 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#qsub">qsub</a>
+<ul>
+<li>
+<ul>
+<li><a href="#qsub-script">qsub script</a>
+<ul>
+<li>
+<ul>
+<li><a href="#some-variables-in-script">Some variables in script</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#qsub-script-1">qsub script</a></li>
+<li><a href="#useful-qsub-script-snipplet">useful qsub script snipplet</a>
+<ul>
+<li><a href="#pbs-w-job-dependency">PBS -W: job dependency</a></li>
+<li><a href="#pbs-t-job-arrays">PBS -t : job arrays</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#showq">showq</a>
+<ul>
+<li>
+<ul>
+<li><a href="#showq-u-username">showq -u Username</a>
+<ul>
+<li>
+<ul>
+<li><a href="#some-explainations">Some explainations:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#qstat">qstat</a>
+<ul>
+<li>
+<ul>
+<li><a href="#qstat-q">qstat -q</a></li>
+<li><a href="#qstat-u-username">qstat -u Username</a>
+<ul>
+<li>
+<ul>
+<li><a href="#some-explainations-1">Some explainations:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#qstat-f-jobname">qstat -f Jobname</a>
+<ul>
+<li>
+<ul>
+<li><a href="#some-explainations-2">Some explainations:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#qdel">qdel</a>
+<ul>
+<li>
+<ul>
+<li><a href="#qdel-jobname">qdel Jobname</a>
+<ul>
+<li>
+<ul>
+<li><a href="#some-explainations-3">Some explainations:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#qpeek">qpeek</a>
+<ul>
+<li>
+<ul>
+<li><a href="#qpeek-jobname">qpeek jobname</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#pbsnodes">pbsnodes</a>
+<ul>
+<li>
+<ul>
+<li><a href="#pbsnodes-a">pbsnodes [-a]</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#qalter">qalter</a>
+<ul>
+<li>
+<ul>
+<li><a href="#qalter-options-jobname">qalter [options] Jobname</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>PBS, or Portable Batch System is one of the popular job scheduler used in HPC (High Performance Computer) cluster system. It provides useful commands to help with job management. Here I just list some of them for note.</p>
+
+<p>Some useful PBS commands:</p>
+
+<ul>
+<li>qsub</li>
+<li>showq</li>
+<li>qstat</li>
+<li>qdel</li>
+<li>qpeek</li>
+<li>pbsnode</li>
+<li>qalter</li>
+</ul>
+
+<p></p>
+
+<p>Those commands with some most used parameters:</p>
+
+<h2 id="qsub">qsub</h2>
+
+<h4 id="qsub-script">qsub script</h4>
+
+<p>The script is used to put in some control in HPC jobs when submitted them. Like how much time/processors/memory you would like to assign to your job.</p>
+
+<p>A basic script template looks like this</p>
+
+<pre><code>#! /bin/bash
+
+#  The compute node will inherited the enviromental variables defined in user's account.
+#PBS -V
+
+
+#  Each node on cowboy cluster has 12 processors and 32GB RAM.  If your job will
+#  need all 32 GB RAM, request ppn=12. if you need more than 1 node, then set 
+#  nodes=n and still use ppn=12
+#PBS -l nodes=1:ppn=12
+
+#  Specify the queue type of your jobs; batch/express/bigmem; batch is the
+#  regular type; express is for testing purpos which will have high priority but
+#  will be confined to use 1 node and 1h walltime
+#PBS -q batch
+
+
+#  To join output and error log so can be viewed together.
+#PBS -j oe
+
+#  Your job will be killed if it goes over its walltime.  
+#  However, requesting a shorter walltime will get your job running sooner.
+#PBS -l walltime=48:00:00
+
+#  Sending email when dones
+#  PBS -m bae email sent when
+#  e when end, a when aborted, b when begin
+#PBS -m a email 
+
+
+# Job start
+date
+module load gaussian/g09
+cd $PBS_O_WORKDIR
+echo &quot;Output from the application begin&quot;
+
+
+
+
+</code></pre>
+
+<h6 id="some-variables-in-script">Some variables in script</h6>
+
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">$PBS_HOME</td>
+<td align="left">The home dirrectory Where you ran qsub command</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_O_LOGNAME</td>
+<td align="left">Your UID</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_O_HOST</td>
+<td align="left">Your host or node name from where you ran qsub</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_O_QUEUE</td>
+<td align="left">The queue name from which you submitted your job</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_QUEUE</td>
+<td align="left">The queue name where your job is running</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_JOBID</td>
+<td align="left">The job ID</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_JOBNAME</td>
+<td align="left">The job name</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_ENVIRONMENT</td>
+<td align="left">The PBS enviromental variables</td>
+</tr>
+
+<tr>
+<td align="left">$PBS_O_WORKDIR</td>
+<td align="left">The working directory from where you ran qsub</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="qsub-script-1">qsub script</h4>
+
+<p>Also we could use qsub in interactive jobs:
+qsub -I</p>
+
+<h4 id="useful-qsub-script-snipplet">useful qsub script snipplet</h4>
+
+<h5 id="pbs-w-job-dependency">PBS -W: job dependency</h5>
+
+<p><code>#PBS -W depend = Logic:JobID</code></p>
+
+<p>This is used when a later job depends on succussful run of a previous one or similiar situations given by the following logic:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="left">Logic</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">after</td>
+<td align="left">this job is scheduled after JobID have started</td>
+</tr>
+
+<tr>
+<td align="left">afterok</td>
+<td align="left">this job is scheduled after JobID have completed without errors</td>
+</tr>
+
+<tr>
+<td align="left">afternotok</td>
+<td align="left">this job is scheduled after JobID have completed with errors</td>
+</tr>
+
+<tr>
+<td align="left">afterany</td>
+<td align="left">this job is scheduled after JobID have completed (ignore error if any)</td>
+</tr>
+
+<tr>
+<td align="left">before</td>
+<td align="left">After this job begins, JobID will schduled</td>
+</tr>
+
+<tr>
+<td align="left">beforeok</td>
+<td align="left">After this job completed without errors, JobID will be scheduled</td>
+</tr>
+
+<tr>
+<td align="left">beforenotok</td>
+<td align="left">After this job completed with errors, JobID will be scheduled</td>
+</tr>
+
+<tr>
+<td align="left">beforeany</td>
+<td align="left">After this job completed (ignore error if any), JobID will be scheduled</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example:</p>
+
+<pre><code>#!/bin/bash
+JOBONE=`qsub program1.pbs`
+JOBTWO=`qsub -W depend=afterok:$JOBONE program2.pbs`
+JOBTHREE=`qsub -W depend=afterok:$JOBTWO program3.pbs`
+
+exit 0
+</code></pre>
+
+<h5 id="pbs-t-job-arrays">PBS -t : job arrays</h5>
+
+<p>This is useful when you try to run the same program but different input data. You can name the input file in such a way that the data file names are paired with the ID of jobs in the job array. So it would be controllable in a shell script loop.</p>
+
+<p><code>#PBS -t numberID</code></p>
+
+<p>Example:</p>
+
+<pre><code>#!/bin/sh
+#PBS -V
+#PBS -l nodes=1:ppn=12
+#PBS -q batch
+#PBS -t 1-10
+#PBS -j oe
+#PBS -l walltime=00:05:00
+
+cd ~/program
+./myprogram -input=file-${PBS_ARRAYID}
+
+</code></pre>
+
+<p>So myprogram will use file-1 as the input file at its first time running. Then it will use file-2 as the input file at its second time running and so on.</p>
+
+<h2 id="showq">showq</h2>
+
+<h4 id="showq-u-username">showq -u Username</h4>
+
+<p>Tell you information of jobs submited by username in commond fields.</p>
+
+<p><code>showq -u Prometheus</code></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Job Name</th>
+<th align="center">Username</th>
+<th align="center">Status</th>
+<th align="center">Processors</th>
+<th align="center">Remaining</th>
+<th>Start Time</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">575279</td>
+<td align="center">Prometheus</td>
+<td align="center">Running</td>
+<td align="center">12</td>
+<td align="center">4:23:28:09</td>
+<td>Fri May 13 12:29:17</td>
+</tr>
+
+<tr>
+<td align="center">575280</td>
+<td align="center">Prometheus</td>
+<td align="center">Running</td>
+<td align="center">12</td>
+<td align="center">4:23:32:16</td>
+<td>Fri May 13 12:33:24</td>
+</tr>
+</tbody>
+</table>
+
+<h6 id="some-explainations">Some explainations:</h6>
+
+<ul>
+<li>The Job Name is also the Job ID that could be used later with &ldquo;qdel&rdquo; command to terminate unwanted job.</li>
+<li>The Remaining time is how much time left for your job. when time is up the job will be terminated.</li>
+</ul>
+
+<h2 id="qstat">qstat</h2>
+
+<h4 id="qstat-q">qstat -q</h4>
+
+<p>Tell you  the information of queue system in this HPC facility, like how much is the walltime for each type of queue, how many jobs of each types are runding/avaliable/queueing.</p>
+
+<h4 id="qstat-u-username">qstat -u Username</h4>
+
+<p>Tell you information of jobs submited by username in commond fields.</p>
+
+<p><code>qstat -u Prometheus</code></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Job ID</th>
+<th align="center">Username</th>
+<th align="center">Queue</th>
+<th align="center">Jobname</th>
+<th align="center">SessID</th>
+<th align="center">NDS</th>
+<th align="center">TSK</th>
+<th align="center">Req Memory</th>
+<th align="center">Req Time</th>
+<th align="center">Status</th>
+<th align="center">Elap Time</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">575279.mgmt1</td>
+<td align="center">Prometheus</td>
+<td align="center">batch</td>
+<td align="center">submit_146275036</td>
+<td align="center">26450</td>
+<td align="center">1</td>
+<td align="center">12</td>
+<td align="center">&ndash;</td>
+<td align="center">120:0</td>
+<td align="center">R</td>
+<td align="center">00:42</td>
+</tr>
+
+<tr>
+<td align="center">575280.mgmt1</td>
+<td align="center">Prometheus</td>
+<td align="center">batch</td>
+<td align="center">submit_146275036</td>
+<td align="center">26450</td>
+<td align="center">1</td>
+<td align="center">12</td>
+<td align="center">&ndash;</td>
+<td align="center">120:0</td>
+<td align="center">R</td>
+<td align="center">00:38</td>
+</tr>
+</tbody>
+</table>
+
+<h6 id="some-explainations-1">Some explainations:</h6>
+
+<ul>
+<li>Some different fields than &ldquo;showq&rdquo; and sometime are convinient if you want those information.</li>
+<li>Elapse Time is just opposite to remaining time that is given with showq.</li>
+</ul>
+
+<h4 id="qstat-f-jobname">qstat -f Jobname</h4>
+
+<p>Tell you the detailed information of the JobID.</p>
+
+<p><code>qstat -f 575269</code></p>
+
+<h6 id="some-explainations-2">Some explainations:</h6>
+
+<ul>
+<li><p>The Job Name could be accquired from showq or qstat command.</p></li>
+
+<li><p>There will be lots of information on this job, just mention a few useful ones: the starting directory, the bash environment variables, the path of &ldquo;INCLUDE&rdquo;, login host, etc</p></li>
+</ul>
+
+<h2 id="qdel">qdel</h2>
+
+<h4 id="qdel-jobname">qdel Jobname</h4>
+
+<p>To kill an unwanted job.</p>
+
+<p><code>qdel 575279</code></p>
+
+<h6 id="some-explainations-3">Some explainations:</h6>
+
+<ul>
+<li>Don&rsquo;t worry if you accidentally give a wrong jobname (maybe happened to be other username&rsquo;s jobname). It simply will not work, because you don&rsquo;t have the privillage to kill other user&rsquo;s job.</li>
+</ul>
+
+<h2 id="qpeek">qpeek</h2>
+
+<h4 id="qpeek-jobname">qpeek jobname</h4>
+
+<p><code>qpeek 575279</code></p>
+
+<p>To check the log file for the job. if you chose to combine the output and error log, this will show both or you could specify which one you want to see:</p>
+
+<pre><code>#  This will show the error logfile only
+qpeek -e 575279
+
+#  This will show the end of logfile, keep listening until Ctrl+C is pressed
+qpeek -f 575279
+</code></pre>
+
+<h2 id="pbsnodes">pbsnodes</h2>
+
+<h4 id="pbsnodes-a">pbsnodes [-a]</h4>
+
+<p>To show the information of all nodes in the HPC.</p>
+
+<p><code>pbsnodes -a</code></p>
+
+<p>After get the nodes information (e.g. nodename), you could then use command from linux to check out the information.</p>
+
+<pre><code>ssh n232  # switch to &quot;n232&quot; node
+free -mo  # checkout the memory usage
+top -b -n 1 -u Promotheus
+</code></pre>
+
+<h2 id="qalter">qalter</h2>
+
+<h4 id="qalter-options-jobname">qalter [options] Jobname</h4>
+
+<p>To change the property of a job (like the job type is batch or express) without retract it so you will still maintain the position in the queue</p>
+
+<p><code>qalter -l walltime=4:00:00:00</code>
+Change walltime to 4 days. Depending on your privillage, as a user you actually could only decrease you walltime but couldn&rsquo;t set it to longer.</p>
+
+<h2 id="reference">Reference</h2>
+
+<ol>
+<li><a href="https://sites.google.com/a/umich.edu/engin-cac/resources/systems/nyx/pbs">https://sites.google.com/a/umich.edu/engin-cac/resources/systems/nyx/pbs</a></li>
+<li><a href="http://linuxinfo.physik.hu-berlin.de/pbs.html">http://linuxinfo.physik.hu-berlin.de/pbs.html</a></li>
+<li><a href="https://albertsk.files.wordpress.com/2011/12/pbs.pdf">https://albertsk.files.wordpress.com/2011/12/pbs.pdf</a></li>
+</ol>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-05-13</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/using-pbs-commands-in-hpc/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/linux/">Linux</a>
+          
+          <a href="/tags/hpc/">HPC</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/tdd-django-pycharm-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Notes to test driven development with Django using pycharm (chp 1)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/linear-regression-with-python-lib/">
+            <span class="next-text nav-default">Linear Regression with different Python libs: numpy, scipy</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

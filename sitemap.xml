@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="http://shuod.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://shuod.github.io/about/</loc>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/scandir-in-python35/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/checking_files_in_subfolders_using_power_shell/</loc>
+    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/a-good-way-to-improve-writing/</loc>
+    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/install-octopus-5/</loc>
+    <lastmod>2017-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/upgrade-python3-centos6-deploy-flask/</loc>
+    <lastmod>2016-09-13T10:33:28-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/first/</loc>
+    <lastmod>2016-08-12T10:33:28-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/setup-a-vps-server/</loc>
+    <lastmod>2016-08-12T10:33:28-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/tdd-django-pycharm-4-database-intro/</loc>
+    <lastmod>2016-07-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/tdd-django-pycharm-3/</loc>
+    <lastmod>2016-07-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/tdd-django-pycharm-2/</loc>
+    <lastmod>2016-07-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/tdd-django-pycharm-0/</loc>
+    <lastmod>2016-07-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/tdd-django-pycharm-1/</loc>
+    <lastmod>2016-07-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/using-pbs-commands-in-hpc/</loc>
+    <lastmod>2016-05-13T13:32:24-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/linear-regression-with-python-lib/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/second/</loc>
+    <lastmod>2016-01-21T22:59:16-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/data/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/data_science/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/development/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/development/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/django/</loc>
+    <lastmod>2016-07-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/english/</loc>
+    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/english/</loc>
+    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/golang/</loc>
+    <lastmod>2016-01-21T22:59:16-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/hpc/</loc>
+    <lastmod>2016-05-13T13:32:24-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/hugo/</loc>
+    <lastmod>2016-01-21T22:59:16-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/linux/</loc>
+    <lastmod>2017-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/linux/</loc>
+    <lastmod>2017-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/modeling/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/</loc>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/my_note/</loc>
+    <lastmod>2016-07-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/my_script/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/my_script/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/my_thoughts/</loc>
+    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/post/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/pycharm/</loc>
+    <lastmod>2016-07-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/python/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/science/</loc>
+    <lastmod>2017-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/science/</loc>
+    <lastmod>2017-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/server/</loc>
+    <lastmod>2016-08-12T10:33:28-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/shell_powershell/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/vpn/</loc>
+    <lastmod>2016-08-12T10:33:28-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/vps/</loc>
+    <lastmod>2017-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/windows/</loc>
+    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/writing/</loc>
+    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

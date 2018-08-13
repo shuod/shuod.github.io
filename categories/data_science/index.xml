@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data_science on Modeling of Everything</title>
+    <link>http://shuod.github.io/categories/data_science/</link>
+    <description>Recent content in Data_science on Modeling of Everything</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuod.github.io/categories/data_science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linear Regression with different Python libs: numpy, scipy</title>
+      <link>http://shuod.github.io/post/linear-regression-with-python-lib/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/linear-regression-with-python-lib/</guid>
+      <description>&lt;p&gt;Linearing regression is one of the fundamental techqiques to use when analyze the data. If you were using Python, you would have several options to do this, including numpy, scipy and sklearn.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

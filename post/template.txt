@@ -1,0 +1,74 @@
++++
+title = "Getting Started with Hugo"
+description = ""
+tags = [
+    "go",
+    "golang",
+    "hugo",
+    "development",
+]
+date = "2014-04-02"
+categories = [
+    "Development",
+    "golang",
+]
+
+image = "image.jpg" # optional
+toc = true # optional, When set to TRUE this parameter, table of contents appears in only this article.
++++
+
+First letter capitalized, even with a "_", but the letter after "_", will not. No space, use "_".
+
+
+Tags:
+   "English",
+    "Writing",
+    "My_thoughts",
+    "Shell_powershell",
+
+    "My_script",
+
+    "Windows",
+
+
+tags = ["VPS", "Linux","VPN"]
+tags = ["VPS", "Linux","Science"]
+Tags = ["Python", "Modeling", "Data"]
+
+
+
+
+
+Categories:
+First letter capitalized, even with a "_", but the letter after "_", will not. No space, use "_".
+
+Python
+My_script
+Development
+Shell_powershell
+English
+Writing
+
+
+Categories = ["", "Linux"]
+
+    "My_script",
+
+    "Development",
+
+    "Shell_powershell",
+
+
+
+Categories = ["Science", "Linux"]
+
+
+Categories = ["Python", "Data Science"]
+
+
+
+
+
+
+
+

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Setup a Virtual Private Server(VPS) from Ramnode and benchmark it - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.
+VPS from commercial providers is a perfect source to setup a personal server. This article will include:
+ Bought a VPS
+ Benchmarking the performance of the VPS
+  ​
+
+" />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/setup-a-vps-server/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Setup a Virtual Private Server(VPS) from Ramnode and benchmark it" />
+<meta property="og:description" content="Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.
+
+VPS from commercial providers is a perfect source to setup a personal server. This article will include:
+
+
+Bought a VPS
+
+Benchmarking the performance of the VPS
+
+
+​
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/setup-a-vps-server/" />
+
+
+
+<meta property="article:published_time" content="2016-08-12T10:33:28-06:00"/>
+
+<meta property="article:modified_time" content="2016-08-12T10:33:28-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Setup a Virtual Private Server(VPS) from Ramnode and benchmark it">
+<meta itemprop="description" content="Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.
+
+VPS from commercial providers is a perfect source to setup a personal server. This article will include:
+
+
+Bought a VPS
+
+Benchmarking the performance of the VPS
+
+
+​
+
+">
+
+
+<meta itemprop="datePublished" content="2016-08-12T10:33:28-06:00" />
+<meta itemprop="dateModified" content="2016-08-12T10:33:28-06:00" />
+<meta itemprop="wordCount" content="913">
+
+
+
+<meta itemprop="keywords" content="VPS,Linux,VPN," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup a Virtual Private Server(VPS) from Ramnode and benchmark it"/>
+<meta name="twitter:description" content="Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.
+
+VPS from commercial providers is a perfect source to setup a personal server. This article will include:
+
+
+Bought a VPS
+
+Benchmarking the performance of the VPS
+
+
+​
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/using-pbs-commands-in-hpc/">
+        <li class="mobile-menu-item">Using PBS commands in HPC</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Setup a Virtual Private Server(VPS) from Ramnode and benchmark it</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-08-12 </span>
+        <div class="post-category">
+            
+              <a href="/categories/server/"> Server </a>
+            
+              <a href="/categories/linux/"> Linux </a>
+            
+          </div>
+        <span class="more-meta"> 913 words </span>
+        <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#bought-a-vps">Bought a VPS</a></li>
+<li><a href="#benchmarking-the-performance-of-the-vps">Benchmarking the performance of  the VPS</a>
+<ul>
+<li><a href="#ramnode-www-ramnode-com">Ramnode (www.ramnode.com)</a></li>
+<li><a href="#vultr-www-vultr-com-http-www-vultr-com-ref-6954160-3b">VULTR (<a href="http://www.vultr.com/?ref=6954160-3B">www.vultr.com</a> )</a></li>
+<li><a href="#reference">Reference:</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.</p>
+
+<p>VPS from commercial providers is a perfect source to setup a personal server. This article will include:</p>
+
+<ul>
+<li><p>Bought a VPS</p></li>
+
+<li><p>Benchmarking the performance of the VPS</p></li>
+</ul>
+
+<p>​</p>
+
+<p></p>
+
+<h2 id="bought-a-vps">Bought a VPS</h2>
+
+<p>There are many commercial providers who sell VPS for a fair price and some time with a good discount too. They are mainly fall into two categories: performance oriented and long-time budget oriented. The leading solution providers of the first kind:</p>
+
+<ul>
+<li><p>Amazon EC2 : various plan with computation or GPU but more expensive compared to others. But new user could have m1.micro instance for free for a year!</p></li>
+
+<li><p>Linode : The basic plan costs $10 monthly with 1CPU core, 2GB RAM,24GB SSD and 40GB/123MB traffic in/out</p></li>
+
+<li><p>Dreamhost : The basic plan costs $15 monthly for 1 CPU core, 1 GB RAM, 30GB SSD and unlimited traffic</p></li>
+
+<li><p>Digital Ocean (DO) : The basic plan costs $5 monthly for 1 CPU core, 512 Mem and 20GB SSD with a bandwidth of 1TB (<a href="https://www.digitalocean.com/pricing/">https://www.digitalocean.com/pricing/</a>)</p></li>
+
+<li><p>VULTR: The basic plan costs $5 monthly for 1 CPU core, 768 Mem and 15GB SSD with a bandwidth of 1000GB</p></li>
+</ul>
+
+<p>(<a href="https://www.vultr.com/pricing/">https://www.vultr.com/pricing/</a>)</p>
+
+<p>There are currently some promotions for these two providers. For the VULTR, new users could have a $20 coupon valid for one year, while for DO, there is a coupon in a student discount pack from &ldquo;github.com&rdquo; too.(<a href="https://education.github.com/pack/">https://education.github.com/pack/</a>)</p>
+
+<p>The commercial providers of the second kinds:</p>
+
+<ul>
+<li><p>RAMNODE: The basic plan is $15 per year with 1CPU core, 128MB RAM, 12GB storage and 500GB traffic. This is good if you just want to host a personal blog.</p></li>
+
+<li><p>Host1plus: The basic plan is $2 per month with 0.5 CPU core, 256MB RAM, 20GB storage and 500GB traffic.</p></li>
+
+<li><p>Bandwagonhost: The basic plan is $2.99 per month with 256MB RAM and 10GB SSD.</p></li>
+</ul>
+
+<p>They usually have a discount for a very cheap price in black friday or other holiday sale.</p>
+
+<h2 id="benchmarking-the-performance-of-the-vps">Benchmarking the performance of  the VPS</h2>
+
+<h3 id="ramnode-www-ramnode-com">Ramnode (www.ramnode.com)</h3>
+
+<p>I first tried the basic plan in ramnode and used several linux command to check the ystem:</p>
+
+<pre><code class="language-html"># CPU information : Intel E3-1240 V2 @3.40GHz
+cat /proc/cpuinfo
+# Memory inforation : 
+free
+# Disk I/O using &quot;dd&quot; : 235MB/s and 547MB/s
+dd if=/dev/zero of=test bs=64k count=4k oflag=dsync &amp;&amp; rm -f test
+dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync &amp;&amp; rm -f test
+</code></pre>
+
+<p><img src="/images/setup-a-VPS-server-1.png" alt="Results from above bash" />]</p>
+
+<p>Another important factor is the network I/O and we will utilize a script to test it, which is available at: <a href="https://github.com/teddysun/across/blob/master/bench.sh">https://github.com/teddysun/across/blob/master/bench.sh</a>
+(ref: <a href="https://github.com/teddysun/across">https://github.com/teddysun/across</a> )</p>
+
+<p>After downloading, run</p>
+
+<pre><code>curl -Lso- bench.sh | bash
+</code></pre>
+
+<p>The script will automated the test process and generate :
+<img src="/images/setup-a-VPS-server-5.png" alt="Results from above script" />]</p>
+
+<p>To use a test suit called &ldquo;Unixbench&rdquo;, we first need to install some missing package. Mainly, some VPS just has the basic linux package installed, so we need to  (ref: www.copahost.com/blogbenchmark-linux-unixbench)</p>
+
+<pre><code># for Centos/fedora
+yum -y install gcc gcc-c++ make libXext-devel perl-Time-HiRes
+yum -y groupinstall &quot;Development Tools&quot;
+yum -y install libX11-devel mesa-libGL-devel perl-Time-HiRes
+
+# for Debian
+apt-get install libx11-dev libgl1-mesa-dev libxext-dev perl perl-modules make
+</code></pre>
+
+<p>Then we go ahead to download it from github and run it:</p>
+
+<pre><code>git clone https://github.com/kdlucas/byte-unixbench.git
+cd byte-unixbench/unixbench
+./Run
+</code></pre>
+
+<p>After waiting for ~30 min, depending on the machine, you will get the score. Basically, the baseline of this test suit is accquired from a work station called SPACR station 20-61 in 1995 with 128 RAM and Solaris 2.3 system. The score of this computer was set to 10, which means a system having a score of 1400 will be 140 times as fast as that system. The detail meanings of each test are explained in the software &ldquo;Readme.md&rdquo; or this page: github.com/kdlucas/byte-unixbench</p>
+
+<p><img src="/images/setup-a-VPS-server-2.png" alt="unixbench results for ramnode" /></p>
+
+<h3 id="vultr-www-vultr-com-http-www-vultr-com-ref-6954160-3b">VULTR (<a href="http://www.vultr.com/?ref=6954160-3B">www.vultr.com</a> )</h3>
+
+<p>3After registering an account in VULTR, we need to link a payment method to the account. You don&rsquo;t need to pay but use the promotion code &ldquo;NGINX20&rdquo; or my referral link <a href="http://www.vultr.com/?ref=6954160-3B">http://www.vultr.com/?ref=6954160-3B</a>  to get a $20 coupon which is enough for the basic plan to survive for a while.</p>
+
+<p>After linking your payment method with your account you then could deploy a new VPS instance by choosing the location, plan etc&hellip;</p>
+
+<p>Then we are going to benchmark the similiar stuff in VULTR machine.</p>
+
+<pre><code class="language-html"># Disk I/O using &quot;dd&quot; : 29.5MB/s and 478MB/s
+dd if=/dev/zero of=test bs=64k count=4k oflag=dsync &amp;&amp; rm -f test
+dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync &amp;&amp; rm -f test
+
+# Network I/O using the script
+curl -Lso- bench.sh | bash
+
+</code></pre>
+
+<p>The script will automated the test process and generate :
+<img src="/images/setup-a-VPS-server-4.png" alt="Results from above script" /></p>
+
+<p>and the results from unixbench:
+<img src="/images/setup-a-VPS-server-3.png" alt="unixbench results for vultr" /></p>
+
+<p>There are websites that list all of the scores form unixbench, so you could compare with them. Just pay attention to the version of unibench, which in our case is 5.1.x. One of the such websites:</p>
+
+<p><a href="https://www.demoniak.ch/vps-comparatif-des-performances/">https://www.demoniak.ch/vps-comparatif-des-performances/</a></p>
+
+<p>There are also other tests that specify in CPU or disk I/O or database performance. Just mention a few:</p>
+
+<ol>
+<li><a href="https://wiki.mikejung.biz/Benchmarking">https://wiki.mikejung.biz/Benchmarking</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/benchmarking">https://wiki.archlinux.org/index.php/benchmarking</a></li>
+</ol>
+
+<h3 id="reference">Reference:</h3>
+
+<p><a href="https://www.copahost.com/blog/benchmark-linux-unixbench/">https://www.copahost.com/blog/benchmark-linux-unixbench/</a></p>
+
+<p><a href="https://teddysun.com/444.html">https://teddysun.com/444.html</a></p>
+
+<p><a href="http://www.copahost.com/blogbenchmark-linux-unixbench">http://www.copahost.com/blogbenchmark-linux-unixbench</a></p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-08-12</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/setup-a-vps-server/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/vps/">VPS</a>
+          
+          <a href="/tags/linux/">Linux</a>
+          
+          <a href="/tags/vpn/">VPN</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/first/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">How to setup a static blog site using Hugo (hosted on github)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/tdd-django-pycharm-4-database-intro/">
+            <span class="next-text nav-default">Notes to Test driven development with Django using pycharm (chp 5 database!)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

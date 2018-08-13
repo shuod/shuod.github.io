@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Notes to test driven development with Django using pycharm (chp 0) - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &amp;ldquo;Shift&#43;F6&amp;rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &amp;ldquo;test driven web development using python&amp;rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &amp;ldquo;test driven development (TDD)&amp;rdquo;." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/tdd-django-pycharm-0/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Notes to test driven development with Django using pycharm (chp 0)" />
+<meta property="og:description" content="0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &ldquo;Shift&#43;F6&rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &ldquo;test driven web development using python&rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &ldquo;test driven development (TDD)&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/tdd-django-pycharm-0/" />
+
+
+
+<meta property="article:published_time" content="2016-07-07T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-07-07T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Notes to test driven development with Django using pycharm (chp 0)">
+<meta itemprop="description" content="0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &ldquo;Shift&#43;F6&rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &ldquo;test driven web development using python&rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &ldquo;test driven development (TDD)&rdquo;.">
+
+
+<meta itemprop="datePublished" content="2016-07-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-07-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="300">
+
+
+
+<meta itemprop="keywords" content="Python,Pycharm,Django," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notes to test driven development with Django using pycharm (chp 0)"/>
+<meta name="twitter:description" content="0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &ldquo;Shift&#43;F6&rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &ldquo;test driven web development using python&rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &ldquo;test driven development (TDD)&rdquo;."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/using-pbs-commands-in-hpc/">
+        <li class="mobile-menu-item">Using PBS commands in HPC</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Notes to test driven development with Django using pycharm (chp 0)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-07-07 </span>
+        <div class="post-category">
+            
+              <a href="/categories/my_note/"> My_note </a>
+            
+              <a href="/categories/development/"> Development </a>
+            
+          </div>
+        <span class="more-meta"> 300 words </span>
+        <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#0-checkpoints">0 Checkpoints</a></li>
+<li><a href="#1-book-choice">1 Book choice</a></li>
+<li><a href="#2-ide-choice">2 IDE choice</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="0-checkpoints">0 Checkpoints</h2>
+
+<ul>
+<li>Tips for pycharm IDE (from Tip of the Day)
+
+<ul>
+<li>Rename the variable name / identifier : rename the variable at any place by pressing &ldquo;Shift+F6&rdquo; afterward then variable names at every place will be changed to the new name.</li>
+</ul></li>
+</ul>
+
+<h2 id="1-book-choice">1 Book choice</h2>
+
+<ul>
+<li>Most of the content is my note to the &ldquo;test driven web development using python&rdquo; that is available at: <a href="http://www.obeythetestinggoat.com">http://www.obeythetestinggoat.com</a></li>
+</ul>
+
+<p>The reason choosing this book is to learn what is called &ldquo;test driven development (TDD)&rdquo;. Although I didn&rsquo;t particularly enjoy doing so, it reminds me of its advantages when I faced with a bunch of code not doing what it supposed to do and I got no clue on why is that. There are, obviously, different opinion on the methodology, just like what people did to everything.  However, you could issue your own opinions here:</p>
+
+<ul>
+<li><p><a href="https://www.reddit.com/r/programming/comments/kq001/testdriven_development_youve_gotta_be_kidding_me/">https://www.reddit.com/r/programming/comments/kq001/testdriven_development_youve_gotta_be_kidding_me/</a></p></li>
+
+<li><p><a href="https://news.ycombinator.com/item?id=3033129">https://news.ycombinator.com/item?id=3033129</a></p></li>
+</ul>
+
+<h2 id="2-ide-choice">2 IDE choice</h2>
+
+<ul>
+<li>My addional content here is to implement the book using pycharm, a python IDE that is available at: <a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></li>
+</ul>
+
+<p>The reason choosing Pycharm is its integrity to django and other python framework and easy management of python packages. Pycharm uses the prize awarded core as its IDE core, which is called &ldquo;intelliJ&rdquo;&ldquo;, combined with a simple package management system. You could easily create different environments (python interpreter version, package version etc) for different projects and use different version control system (VCS) and deployment tools to help you to develop and distribute your product.</p>
+
+<p>Of course, there are also other excellent IDEs out there, like spider, or using python extentions to Vistual Stuido.Net and other integrate solutions like Anaconda,  python(x,y) and Winpython. You could pick up any one of them to get started.</p>
+
+<p>Starting from the next passage, I basically follow the book&rsquo;s chapters and take my note on tips and traps. Hopefully it will be useful!</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-07-07</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/tdd-django-pycharm-0/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/python/">Python</a>
+          
+          <a href="/tags/pycharm/">Pycharm</a>
+          
+          <a href="/tags/django/">Django</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/tdd-django-pycharm-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Notes to Test driven development with Django using pycharm (chp 2-3)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/tdd-django-pycharm-1/">
+            <span class="next-text nav-default">Notes to test driven development with Django using pycharm (chp 1)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

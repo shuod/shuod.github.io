@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Notes to Test driven development with Django using pycharm (chp 5 database!) - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="0 Checkpoints  ORM model in Django  1 The first unit test First, let&amp;rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:
+ We input a value as the first row in the webpage. Does the database receives the same value as the input?" />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/tdd-django-pycharm-4-database-intro/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Notes to Test driven development with Django using pycharm (chp 5 database!)" />
+<meta property="og:description" content="0 Checkpoints  ORM model in Django  1 The first unit test First, let&rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:
+ We input a value as the first row in the webpage. Does the database receives the same value as the input?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/tdd-django-pycharm-4-database-intro/" />
+
+
+
+<meta property="article:published_time" content="2016-07-19T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2016-07-19T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Notes to Test driven development with Django using pycharm (chp 5 database!)">
+<meta itemprop="description" content="0 Checkpoints  ORM model in Django  1 The first unit test First, let&rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:
+ We input a value as the first row in the webpage. Does the database receives the same value as the input?">
+
+
+<meta itemprop="datePublished" content="2016-07-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-07-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="629">
+
+
+
+<meta itemprop="keywords" content="Python,Pycharm,Django," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notes to Test driven development with Django using pycharm (chp 5 database!)"/>
+<meta name="twitter:description" content="0 Checkpoints  ORM model in Django  1 The first unit test First, let&rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:
+ We input a value as the first row in the webpage. Does the database receives the same value as the input?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/using-pbs-commands-in-hpc/">
+        <li class="mobile-menu-item">Using PBS commands in HPC</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Notes to Test driven development with Django using pycharm (chp 5 database!)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-07-19 </span>
+        <div class="post-category">
+            
+              <a href="/categories/my_note/"> My_note </a>
+            
+              <a href="/categories/development/"> Development </a>
+            
+          </div>
+        <span class="more-meta"> 629 words </span>
+        <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#0-checkpoints">0 Checkpoints</a></li>
+<li><a href="#1-the-first-unit-test">1 The first unit test</a></li>
+<li><a href="#2-test-driven-or-error-driven-by-the-first-unit-test">2 Test-driven (or Error-driven) by the first unit test</a></li>
+<li><a href="#2-the-second-unit-test">2 The second unit test</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="0-checkpoints">0 Checkpoints</h2>
+
+<ul>
+<li>ORM model in Django</li>
+</ul>
+
+<h2 id="1-the-first-unit-test">1 The first unit test</h2>
+
+<p>First, let&rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:</p>
+
+<ul>
+<li>We input a value as the first row in the webpage. Does the database receives the same value as the input?Assuming the input value from web already in a variable, we try to put the value this variable into the database. (We will test whether the value from web is stored into that variable later.)</li>
+<li>We input, say 2 records, does the database properly saved 2 records? Again, we just assume the values from web interface already properly saved into two variables. We just verify whether the values in two variables are the same as they are in the database.</li>
+</ul>
+
+<p>Having the two above ideas in mind, we design the unit test as the following:</p>
+
+<pre><code class="language-python">class ItemModelTest(TestCase):
+
+    def test_saving_and_retrieving_items(self):
+        # Creating the test
+        first_item = Item()
+        first_item.text = 'The first (ever) list item'
+        first_item.save()
+
+        second_item = Item()
+        second_item.text = 'Item the second'
+        second_item.save()
+
+        # Call the function under the unit test, provided by Django
+        saved_items = Item.objects.all()
+        self.assertEqual(saved_items.count(),2)
+
+        # Assertions
+        first_saved_item = saved_items[0]
+        second_saved_item = saved_items[1]
+        self.assertEqual(first_saved_item.text, 'The first (ever) list item')
+        self.assertEqual(second_saved_item.text, 'Item the second')
+</code></pre>
+
+<p>We still follow the steps for writing the code for a unit test:</p>
+
+<ul>
+<li>First part: create the test</li>
+<li>Second part: call the function under the unit test(usually provide by Python standard lib or the framework)</li>
+<li>Third part:Assertions</li>
+</ul>
+
+<h2 id="2-test-driven-or-error-driven-by-the-first-unit-test">2 Test-driven (or Error-driven) by the first unit test</h2>
+
+<p>Remember, one of the ways to run a unit test in Pycharm is &ldquo;Tools-&gt;Run manage.py task&rdquo; then on the bottom window input test as the parameter:</p>
+
+<p><img src="/images/tdd-django-pycharm-4-0.png" alt="tdd-django-pycharm-4-0.png" /></p>
+
+<ul>
+<li>If you could follow the unit test code, you will find we haven&rsquo;t written some of the class/functions yet. So we expect some error will be popped up, no surprise:</li>
+</ul>
+
+<p><img src="/images/tdd-django-pycharm-4-1.png" alt="tdd-django-pycharm-4-1.png" /></p>
+
+<p>The way to fix it is simply add the functions the unit test needs(coding modes.py) as well as their method:</p>
+
+<pre><code class="language-python">(lists/models.py)
+from django.db import models
+class Item(models.Model):
+    pass
+</code></pre>
+
+<ul>
+<li>Then, you will faced with another error, which tells you that the database hasn&rsquo;t been created yet:</li>
+</ul>
+
+<p><img src="/images/tdd-django-pycharm-4-2.png" alt="tdd-django-pycharm-4-2.png" /></p>
+
+<p>So we just create one for it by using manage.py with &ldquo;makemigrations&rdquo; parameter:</p>
+
+<p><img src="/images/tdd-django-pycharm-4-3.png" alt="tdd-django-pycharm-4-3.png" /></p>
+
+<p>Then you should have a new folder under the lists with the name &ldquo;migrations&rdquo;:</p>
+
+<p><img src="/images/tdd-django-pycharm-4-4.png" alt="tdd-django-pycharm-4-4.png" /></p>
+
+<ul>
+<li>Then, you will go to next error:
+<img src="/images/tdd-django-pycharm-4-5.png" alt="tdd-django-pycharm-4-5.png" /></li>
+</ul>
+
+<p>This is due to the fact, you probably have a guess already, we haven&rsquo;t setup the column other than the default &ldquo;ID&rdquo; column. So we need to create a column called &ldquo;text&rdquo; to hold the values passed from the web interface:</p>
+
+<pre><code class="language-python">(lists/models.py)
+class Item(models.Model):
+    text = models.TextField(default='')
+</code></pre>
+
+<p>Other type of field, since a database should have the ability to store many types of data, will include: IntegerField, CharField, DateField, TestField, etc.</p>
+
+<p>But this is not done yet. After changing the models.py, we should update the table with this new model and this can be done by another &ldquo;makemigration&rdquo; command. And now the unit test should have no problem to pass.</p>
+
+<p><img src="/images/tdd-django-pycharm-4-6.png" alt="tdd-django-pycharm-4-6.png" /></p>
+
+<h2 id="2-the-second-unit-test">2 The second unit test</h2>
+
+<p>Now, we go one step further. We will test whether the input from the web page has been properly stored into the variable. (The exact variable we test in the first unit test.)</p>
+
+<pre><code class="language-python"> def test_home_page_can_save_a_POST_request(self):
+        request = HttpRequest()
+        request.method = 'POST'
+        request.POST['item_text'] = 'A new list item'
+
+        response = home_page(request)
+
+        self.assertEqual(Item.objects.count(), 1)
+        new_item = Item.Objects.first()
+        self.assertEqual(new_item.text, 'A new list item')
+
+        self.assertIn('A new list item', response.content.decode())
+        expected_html = render_to_string(
+            'home.html',
+            {'new_item_text': 'A new list item'}
+        )
+        self.assertEqual(response.content.decode(),expected_html)
+</code></pre>
+
+<ul>
+<li>the error would be &ldquo;assertion error 0!=1 &ldquo;. So we follow this to modify view.html to let it match to what the assertion expected to be.</li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-07-19</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/tdd-django-pycharm-4-database-intro/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/python/">Python</a>
+          
+          <a href="/tags/pycharm/">Pycharm</a>
+          
+          <a href="/tags/django/">Django</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/setup-a-vps-server/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Setup a Virtual Private Server(VPS) from Ramnode and benchmark it</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/tdd-django-pycharm-3/">
+            <span class="next-text nav-default">Notes to Test driven development with Django using pycharm (chp 4-5)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Modeling of Everything</title>
+    <link>http://shuod.github.io/tags/</link>
+    <description>Recent content in Tags on Modeling of Everything</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuod.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data</title>
+      <link>http://shuod.github.io/tags/data/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>http://shuod.github.io/tags/development/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://shuod.github.io/tags/django/</link>
+      <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>http://shuod.github.io/tags/english/</link>
+      <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>http://shuod.github.io/tags/golang/</link>
+      <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HPC</title>
+      <link>http://shuod.github.io/tags/hpc/</link>
+      <pubDate>Fri, 13 May 2016 13:32:24 -0500</pubDate>
+      
+      <guid>http://shuod.github.io/tags/hpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://shuod.github.io/tags/hugo/</link>
+      <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://shuod.github.io/tags/linux/</link>
+      <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling</title>
+      <link>http://shuod.github.io/tags/modeling/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/modeling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My_script</title>
+      <link>http://shuod.github.io/tags/my_script/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/my_script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My_thoughts</title>
+      <link>http://shuod.github.io/tags/my_thoughts/</link>
+      <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/my_thoughts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pycharm</title>
+      <link>http://shuod.github.io/tags/pycharm/</link>
+      <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/pycharm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://shuod.github.io/tags/python/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Science</title>
+      <link>http://shuod.github.io/tags/science/</link>
+      <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell_powershell</title>
+      <link>http://shuod.github.io/tags/shell_powershell/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/shell_powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VPN</title>
+      <link>http://shuod.github.io/tags/vpn/</link>
+      <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/tags/vpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VPS</title>
+      <link>http://shuod.github.io/tags/vps/</link>
+      <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://shuod.github.io/tags/windows/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Writing</title>
+      <link>http://shuod.github.io/tags/writing/</link>
+      <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

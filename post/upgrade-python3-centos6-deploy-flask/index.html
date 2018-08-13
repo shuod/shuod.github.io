@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Upgrade python to version 3.5 in Centos 6.8 and deploy flask web app framework  (updated on 20170604) - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
+I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/upgrade-python3-centos6-deploy-flask/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Upgrade python to version 3.5 in Centos 6.8 and deploy flask web app framework  (updated on 20170604)" />
+<meta property="og:description" content="Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
+I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/upgrade-python3-centos6-deploy-flask/" />
+
+
+
+<meta property="article:published_time" content="2016-09-13T10:33:28-06:00"/>
+
+<meta property="article:modified_time" content="2016-09-13T10:33:28-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Upgrade python to version 3.5 in Centos 6.8 and deploy flask web app framework  (updated on 20170604)">
+<meta itemprop="description" content="Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
+I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6.">
+
+
+<meta itemprop="datePublished" content="2016-09-13T10:33:28-06:00" />
+<meta itemprop="dateModified" content="2016-09-13T10:33:28-06:00" />
+<meta itemprop="wordCount" content="1766">
+
+
+
+<meta itemprop="keywords" content="VPS,Linux,Python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Upgrade python to version 3.5 in Centos 6.8 and deploy flask web app framework  (updated on 20170604)"/>
+<meta name="twitter:description" content="Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
+I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a><a href="/post/using-pbs-commands-in-hpc/">
+        <li class="mobile-menu-item">Using PBS commands in HPC</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Upgrade python to version 3.5 in Centos 6.8 and deploy flask web app framework  (updated on 20170604)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-09-13 </span>
+        <div class="post-category">
+            
+              <a href="/categories/linux/"> Linux </a>
+            
+          </div>
+        <span class="more-meta"> 1766 words </span>
+        <span class="more-meta"> 9 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#upgrade-to-python-3-in-centos-6-8-and-install-some-basic-packages">Upgrade to python 3 in Centos 6.8 and install some basic packages</a>
+<ul>
+<li><a href="#first-many-servers-chose-the-minial-installation-of-centos-6-8-we-have-to-install-update-the-tools-chain-in-centos-to-make-sure-the-tools-we-need-are-installed-and-updated-this-can-be-done-by">First, many servers chose the minial installation of Centos 6.8, we have to install/update the tools chain in Centos to make sure the tools we need are installed and updated. This can be done by</a></li>
+<li><a href="#second-install-the-python-3">Second,  install the python 3.</a></li>
+<li><a href="#third-install-some-basic-packages-for-python">Third, install some basic packages for python</a></li>
+</ul></li>
+<li><a href="#deploy-the-flask-application-framework">Deploy the flask application framework</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p><u>Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.</u></p>
+
+<p>I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6.8 to python3. And then I try to deploy a web framework from python called flask. It is simple but very pythonic. To read its code is a good way to learn python too. This blog will include:</p>
+
+<ul>
+<li>Upgrade python in Centos 6.8 to python 3.4 and install some basic packages;</li>
+<li>Install tools chain (setup tools, line_profiler) for python 3.4;</li>
+<li>Deploy flask web application framework and host a static html file as an example;</li>
+</ul>
+
+<h2 id="upgrade-to-python-3-in-centos-6-8-and-install-some-basic-packages">Upgrade to python 3 in Centos 6.8 and install some basic packages</h2>
+
+<h3 id="first-many-servers-chose-the-minial-installation-of-centos-6-8-we-have-to-install-update-the-tools-chain-in-centos-to-make-sure-the-tools-we-need-are-installed-and-updated-this-can-be-done-by">First, many servers chose the minial installation of Centos 6.8, we have to install/update the tools chain in Centos to make sure the tools we need are installed and updated. This can be done by</h3>
+
+<pre><code class="language-ruby">yum update
+yum groupinstall -y 'development tools'
+yum install -y zlib-devel openssl-devel sqlite-devel bzip2-devel
+</code></pre>
+
+<h3 id="second-install-the-python-3">Second,  install the python 3.</h3>
+
+<p>This can be done in two ways, from Centos&rsquo;s package manage system (yum) or from source code.</p>
+
+<ul>
+<li>Using the source code:</li>
+</ul>
+
+<p>Follow the regular linux workflow:</p>
+
+<p>1 download the source code</p>
+
+<p>2 configure the installation directory and necessary lib</p>
+
+<p>3 make</p>
+
+<p>4 make install</p>
+
+<p>5 ln to link to a convenient folder (/usr/bin?)</p>
+
+<pre><code>curl -O https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tgz
+tar zvxf Python-3.5.0.tgz
+cd Python-3.5.0
+./configure --prefix=/opt/python3
+make
+# This is to avoid overwrite the python 2.6 in the system. Overwrite of this python may  # have unforseen problem
+sudo make altinstall
+ln -s /opt/python3/bin/python3 /usr/bin/python3
+or
+alias python3='usr/local/bin/python3.5'
+</code></pre>
+
+<p>So, by using &ldquo;altinstall&rdquo;, we still keep a copy of python 2.6 that comes with Centos. In the future, python3 would run python v3.5 and python would evoke python 2.6. The pip and setup tools for python are installed as well. (run by &ldquo;pip3.5&rdquo;)</p>
+
+<p>This is convienent, since all of the python setup tools are installed as well,i chose this for my server. But there are other ways to do:</p>
+
+<ul>
+<li>Using YUM:</li>
+</ul>
+
+<p>Unfortunately, the default yum repository does not contain python 3 version. However, there is a repository from EPEL 7 (Extra Packages for Enterprise Linux) which offers python 3.4. To add this repository to the system, we need to run: ( Method Two in <a href="http://ask.xmodulo.com/install-python3-centos.html">http://ask.xmodulo.com/install-python3-centos.html</a>)</p>
+
+<pre><code># add source repo
+yum install epel-release
+# install python 3.4
+yum install python34
+</code></pre>
+
+<p>However, in this way, you didn&rsquo;t install the python installation package or pip, which is the package manage for python. We could do</p>
+
+<pre><code class="language-bash">yum install python34-setuptools
+easy_install-3.4 pip
+</code></pre>
+
+<p><em><u>Be careful, now there are two different python systems installed. The reason for this, is we want to keep python 2.6 for system to use (There are some system tools depend on python 2.6, e.g. yum). So when you want to install packages for python 3.4 or run python 3.4, you should use:</u></em></p>
+
+<pre><code>pip3 install &lt;pakage name&gt;
+python3 &lt;python code&gt;
+</code></pre>
+
+<p>Now, we are installing performance tuning package, line_profiler. &ldquo;&ndash;pre&rdquo; is used because of  the new rule from pip that it will only install stable version while line_profiler is still development version (<a href="https://stackoverflow.com/questions/24215492/pip-install-line-profiler-fails">https://stackoverflow.com/questions/24215492/pip-install-line-profiler-fails</a>).</p>
+
+<pre><code>pip3 install --pre line_profiler
+</code></pre>
+
+<p><em>Or there is another repo source, SCL (Software Collections), which also contains the python 3. To enable this repo in Centos, please check out:<a href="http://xmodulo.com/enable-software-collections-centos.html">http://xmodulo.com/enable-software-collections-centos.html</a></em></p>
+
+<p><em>After installation of SCL, one could do</em></p>
+
+<pre><code># for SCL
+yum install python33
+scl enable python33
+scl enable python33 bash
+</code></pre>
+
+<p><em>And there is still another repo ( short for repository) called RHSCL (Red Hat Software Collections) but you need to be a customer of RedHat to access to this. (check out <a href="https://access.redhat.com/solutions/472793">https://access.redhat.com/solutions/472793</a>)</em></p>
+
+<h3 id="third-install-some-basic-packages-for-python">Third, install some basic packages for python</h3>
+
+<ul>
+<li>virtualenv</li>
+</ul>
+
+<pre><code class="language-python">  yum install python-devel
+  pip install virtualenv
+</code></pre>
+
+<p>This app is to create a separate python virtual environment, so python apps will not disturb each other.</p>
+
+<pre><code class="language-python">  # create a new env1 and the global packages are accessable to it by &quot;--system-site-packages&quot;
+  virtualenv --system-site-packages env1
+</code></pre>
+
+<p>Then a folder with the same name would be created and in the folder will have copies of lib and executable files installed. So you could enter the virtual environment by changing to that folder and activate it (source bin/activate). We will install flask in that environment to avoid contamination to the system.</p>
+
+<pre><code class="language-python">  cd env1
+  source bin/activate
+  which python3.4
+  # This will show the python3.4 is from the virtual environment folder
+</code></pre>
+
+<p>As shown below:</p>
+
+<p><img src="/images/upgrade-python-flask-1.png" alt="Before and after switching into the virtual environment" /></p>
+
+<p>What does this picture tell you is before switching into env1, the compiler is from the global system, but after switching into env1, the compiler is from the env1. So this shows the effect of switching into a virtual environment, everything will be separated from others.</p>
+
+<h2 id="deploy-the-flask-application-framework">Deploy the flask application framework</h2>
+
+<ul>
+<li><p>1 Setting up and switching into the virtual environment called &ldquo;flask_env&rdquo;, where we will deploy flask into and activate it.</p></li>
+
+<li><p>2 run setup tools to install flask</p></li>
+</ul>
+
+<pre><code class="language-python">  # i chose the compile source code, so pip3.5 is the setup tools
+  pip3.4 install flask
+</code></pre>
+
+<ul>
+<li>3 create project folders for files to reside in.</li>
+</ul>
+
+<pre><code class="language-python">  # where to put the python script
+  mkdir hello_app
+
+  # where to put html/css
+  mkdir hello_app/static
+
+  # where to put the html templates
+  mkdir hello_app/templates
+</code></pre>
+
+<ul>
+<li><p>4 As a demonstration, we will do two ways to show &ldquo;Hello, world!&rdquo; to an outside browser.</p></li>
+
+<li><p>4.1 Directly show a &ldquo;Hello, world!&rdquo; , which from a python code. Save the following codes as a file called &ldquo;views.py&rdquo;</p></li>
+</ul>
+
+<pre><code class="language-python">    from flask import Flask
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return 'Hello, world!'
+
+    if __name__ == '__main__':
+        app.run(debug=False, host='0.0.0.0')
+</code></pre>
+
+<p>So, this piece of code will return a python string &ldquo;Hello, world!&rdquo; to a browser response. &ldquo;@app.route(&lsquo;/&rsquo;)&rdquo; takes care of  what is called &ldquo;route control&rdquo;. This is basically about the URL you entered into the web address. &ldquo;/&rdquo; would mean requesting the root directory in the URL. And to response to this request, the code uses &ldquo;def index()&rdquo;, which is &ldquo;Hello, world!&rdquo;</p>
+
+<p>And the code in &lsquo;if <strong>name</strong> ==_main__&rsquo; told the program if this file (&ldquo;views.py&rdquo;) is run from the command line(not being imported to another python file), then it will do the &ldquo;app.run &ldquo;. (with &ldquo;debug=True&rdquo; meaning the website is not reachable by external agencies but only local compute could see it and debug=False would do just the opposite. And &ldquo;host=&lsquo;0.0.0.0&rdquo; meanse, any IP could see this page.)</p>
+
+<p>After building up the code, we could run it.</p>
+
+<pre><code>python3.4 views.py
+</code></pre>
+
+<p>And check out by type <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a> in your browser.</p>
+
+<ul>
+<li>4.2 Another way is to use a template to build a HTML file and render this file to show &ldquo;Hello, world!&rdquo;</li>
+</ul>
+
+<p>The first step, we will go to build the &ldquo;index.html&rdquo; used as a &ldquo;template&rdquo;, which will be put inside the current environment.</p>
+
+<pre><code># make several folders to hold the files for this project
+mkdir webapp
+mkdir webapp/templates
+mkdir webapp/static
+
+# now we will work in the webapp folder
+cd webapp
+</code></pre>
+
+<p>After changing the directory into &ldquo;webapp&rdquo;</p>
+
+<pre><code class="language-html"># Template file, to be put into ./webapp/templates
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello from a template!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Then, we will redirect the request to &ldquo;/&rdquo; folder to this file. In order to achieve this, we need to modify the views.py:</p>
+
+<pre><code class="language-python"># views.py, to be put into ./webapp
+# import another library
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    # instead of return a string, now return the file.But the html file must be put into ./templates folder
+    return render_template('index.html')
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+
+
+</code></pre>
+
+<p>Still, we could run:</p>
+
+<pre><code class="language-python">python3.4 views.py
+</code></pre>
+
+<p>And now you should see the line below after input <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a> into your browser</p>
+
+<p><img src="/images/upgrade-python-flask-2.png" alt="Results from a browser" /></p>
+
+<ul>
+<li>5 Not finished!</li>
+</ul>
+
+<p>​ In modern program, we inclined to separate the data part and the logic part in one program and save them seperately into different folders. And for html specifically, we also want to separate the style part (mainly CSS files) to another folder, so it would be easier to change to another style while keeping the content the same. Doing so will make it easier for later maintenance/upgrade. And since the system grows bigger, we also need a separate script to start the system.</p>
+
+<p>​ Now we are going to do this!</p>
+
+<p>./webapp<br />
+  is the project root</p>
+
+<p>./webapp/static<br />
+  where CSS files are stored</p>
+
+<p>./webapp/templates<br />
+  where templates html files are stored</p>
+
+<p>./webapp/app<br />
+  where python scripts are stored</p>
+
+<p>A starting script will be in the root folder.</p>
+
+<pre><code class="language-css">#CSS file to be put into ./webapp/static
+body {
+  background: red;
+  color: yellow;
+}
+</code></pre>
+
+<pre><code class="language-html"># template html file, to be put into ./webapp/templates
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; href='/static/style.css' /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello from a template!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>​   We would use a seperate python script to initiate all of the parameters for the system. For example, where is the template folder? By default, the flask will look for a folder named &ldquo;templates&rdquo; in the subfolder of where &ldquo;render_template() &ldquo; has been called. In our code, it is called in ./webapp/app, so it will look for &ldquo;templates&rdquo; subfolder in ./webapp/app. But it won&rsquo;t find it because our template folder is actually &ldquo;./webapp/templates&rdquo;. So we need to point this out to python.</p>
+
+<pre><code class="language-python"># __init__.py to be put into ./webapp/app/__init__.py
+from flask import Flask
+
+app = Flask(__name__, template_folder='../templates')
+from app import views
+</code></pre>
+
+<p>​   views.py to put into the subfolder &ldquo;./app&rdquo;</p>
+
+<pre><code class="language-python"># views.py to be put into ./webapp/app
+from app import app
+
+@app.route('/')
+def index():
+    # instead of return a string, now return the file. But the html file must be put into ./webapp/templates folder
+    return render_template('index.html')
+</code></pre>
+
+<p>​   To start the flask, we still need a script to initiate python compiler:</p>
+
+<pre><code># please change to your python compiler accordingly. it can be located by typing &quot;which python&quot; in command line
+#! ../bin/python3.5
+from app import app
+app.run(debug=True,host='0.0.0.0')
+</code></pre>
+
+<p>​   To start web service, simple run</p>
+
+<pre><code class="language-py">chmod a+x run.py
+./run.py
+</code></pre>
+
+<p>​   And then check out the browser at port 5000 by</p>
+
+<pre><code class="language-http">http://Your_ip_address:5000
+</code></pre>
+
+<p>if for some reason, you could see any pages from your browser, you should check your firewall settings for your sever, which can be done by &ldquo;iptables -L -v&rdquo; (for centos 7, use &ldquo;firewall&rdquo;).</p>
+
+<p>Reference:</p>
+
+<p>1 <a href="http://ask.xmodulo.com/install-python3-centos.html">How to install Python3 on CentOS</a></p>
+
+<p>2 <a href="http://xmodulo.com/enable-software-collections-centos.html">How to enable Software Collections (SCL) on CentOS</a></p>
+
+<p>3 <a href="http://stackoverflow.com/questions/8087184/problems-installing-python3-on-rhel">Problems installing python3 on RHEL</a></p>
+
+<p>4 <a href="http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">The Flask Mega-Tutorial</a> : The beginning is not quite friendly, but could use &ldquo;5&rdquo; instead. The later chapters are good</p>
+
+<p>5 <a href="https://www.raspberrypi.org/learning/python-web-server-with-flask/worksheet/">BUILD A PYTHON-POWERED WEB SERVER WITH FLASK </a> : Very good guide, simple and step by step</p>
+
+<p>6 <a href="http://stackoverflow.com/questions/33396064/flask-template-not-found">Flask Template Not found</a>: Solving the problem of how to personalize the location of templates folder.</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2016-09-13</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/upgrade-python3-centos6-deploy-flask/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/vps/">VPS</a>
+          
+          <a href="/tags/linux/">Linux</a>
+          
+          <a href="/tags/python/">Python</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/install-octopus-5/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Installing octopus 6.0 (Serial) in Centos 6.8 </span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/first/">
+            <span class="next-text nav-default">How to setup a static blog site using Hugo (hosted on github)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
