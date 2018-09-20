@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.46" />
+<meta name="generator" content="Hugo 0.48" />
 
 
 <link rel="canonical" href="http://shuod.github.io/" />
@@ -54,20 +54,7 @@
 <meta property="og:description" content="Inspirations and records for knowledge." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://shuod.github.io/" />
-
-
-
 <meta property="og:updated_time" content="2017-08-20T21:38:52&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
 <meta itemprop="name" content="Modeling of Everything">
 <meta itemprop="description" content="Inspirations and records for knowledge.">
 
@@ -108,8 +95,6 @@
         <li class="mobile-menu-item">Categories</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
-      </a><a href="/post/using-pbs-commands-in-hpc/">
-        <li class="mobile-menu-item">Using PBS commands in HPC</li>
       </a>
   </ul>
 </nav>
@@ -131,8 +116,6 @@
         <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a>
       </li>
   </ul>
 </nav>
@@ -148,6 +131,34 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/tmux-and-tmuxomatic/">Tmux</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-09-20 </span>
+      <div class="post-category">
+          
+            <a href="/categories/shell_powershell/"> Shell_powershell </a>
+          
+            <a href="/categories/linux/"> Linux </a>
+          
+        </div>
+      <span class="more-meta"> 567 words </span>
+      <span class="more-meta"> 3 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Tmux I sometimes need to compile software package in the High Performance Computer(HPC). The compiling process often takes very long because C++ never pays any attention to this (Thank google, we now have golang that has a significantly shorter compiling time). It will become a serious trouble for remote compiling, because network could go wrong at any moment therefore, the compiling process in the HPC will be interrupted. Unfortunately, remote access comprises majority of the working senario: we used a ssh client (say, putty or iTerm) to connect to the HPC and excute command remotely.
+    </div>
+    <div class="read-more">
+      <a href="/post/tmux-and-tmuxomatic/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/scandir-in-python35/">Scandir in python35</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-08-13 </span>
@@ -158,7 +169,7 @@
             <a href="/categories/my_script/"> My_script </a>
           
         </div>
-      <span class="more-meta"> 553 words </span>
+      <span class="more-meta"> 556 words </span>
       <span class="more-meta"> 3 mins read </span>
     </div>
   </header>
@@ -284,40 +295,6 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
     </div>
     <div class="read-more">
       <a href="/post/upgrade-python3-centos6-deploy-flask/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/first/">How to setup a static blog site using Hugo (hosted on github)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-08-12 </span>
-      <div class="post-category">
-          
-            <a href="/categories/linux/"> Linux </a>
-          
-        </div>
-      <span class="more-meta"> 1510 words </span>
-      <span class="more-meta"> 8 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:</p>
-
-<ul>
-<li>Generate a blog site using hugo</li>
-<li>Host the webpage source code on github.com</li>
-<li>Host the hugo output(webpage to show) on github.com</li>
-</ul>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/first/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>

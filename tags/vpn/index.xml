@@ -12,23 +12,6 @@
     
     
     <item>
-      <title>How to setup a static blog site using Hugo (hosted on github)</title>
-      <link>http://shuod.github.io/post/first/</link>
-      <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
-      
-      <guid>http://shuod.github.io/post/first/</guid>
-      <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
-&lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
-&lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Setup a Virtual Private Server(VPS) from Ramnode and benchmark it</title>
       <link>http://shuod.github.io/post/setup-a-vps-server/</link>
       <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
@@ -45,6 +28,23 @@
 &lt;/ul&gt;
 
 &lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to setup a static blog site using Hugo (hosted on github)</title>
+      <link>http://shuod.github.io/post/first/</link>
+      <pubDate>Sat, 02 Apr 2016 10:40:00 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/post/first/</guid>
+      <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
+&lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
+&lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

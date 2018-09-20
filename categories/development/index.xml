@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>scandir in python35</title>
+      <link>http://shuod.github.io/test-of-scandir-in-python35/</link>
+      <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/test-of-scandir-in-python35/</guid>
+      <description>Test of scandir in python35 As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.</description>
+    </item>
+    
+    <item>
       <title>Checking files in subfolders using power shell</title>
       <link>http://shuod.github.io/post/checking_files_in_subfolders_using_power_shell/</link>
       <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>

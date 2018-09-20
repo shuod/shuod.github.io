@@ -6,10 +6,19 @@
     <description>Recent content in Linux on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tmux</title>
+      <link>http://shuod.github.io/post/tmux-and-tmuxomatic/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/tmux-and-tmuxomatic/</guid>
+      <description>Tmux I sometimes need to compile software package in the High Performance Computer(HPC). The compiling process often takes very long because C++ never pays any attention to this (Thank google, we now have golang that has a significantly shorter compiling time). It will become a serious trouble for remote compiling, because network could go wrong at any moment therefore, the compiling process in the HPC will be interrupted. Unfortunately, remote access comprises majority of the working senario: we used a ssh client (say, putty or iTerm) to connect to the HPC and excute command remotely.</description>
+    </item>
     
     <item>
       <title>Installing octopus 6.0 (Serial) in Centos 6.8 </title>
@@ -31,23 +40,6 @@ First, install Centos 6.8 with minimal installation choice. Installation of octo
       <guid>http://shuod.github.io/post/upgrade-python3-centos6-deploy-flask/</guid>
       <description>Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
 I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6.</description>
-    </item>
-    
-    <item>
-      <title>How to setup a static blog site using Hugo (hosted on github)</title>
-      <link>http://shuod.github.io/post/first/</link>
-      <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
-      
-      <guid>http://shuod.github.io/post/first/</guid>
-      <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
-&lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
-&lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,6 +81,23 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
 &lt;li&gt;qpeek&lt;/li&gt;
 &lt;li&gt;pbsnode&lt;/li&gt;
 &lt;li&gt;qalter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to setup a static blog site using Hugo (hosted on github)</title>
+      <link>http://shuod.github.io/post/first/</link>
+      <pubDate>Sat, 02 Apr 2016 10:40:00 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/post/first/</guid>
+      <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
+&lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
+&lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

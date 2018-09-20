@@ -35,9 +35,10 @@ tags = ["VPS", "Linux","VPN"]
 tags = ["VPS", "Linux","Science"]
 Tags = ["Python", "Modeling", "Data"]
 
+Tags = ["Hugo", "golang"]
 
-
-
+#add menu=".." will pin this blog to the main menu bar, just put the following into +++...+++
+menu = "main"
 
 Categories:
 First letter capitalized, even with a "_", but the letter after "_", will not. No space, use "_".
@@ -48,6 +49,10 @@ Development
 Shell_powershell
 English
 Writing
+
+My_script
+Linux
+
 
 
 Categories = ["", "Linux"]
@@ -66,6 +71,7 @@ Categories = ["Science", "Linux"]
 Categories = ["Python", "Data Science"]
 
 
+Categories = ["", "GoLang"]
 
 
 

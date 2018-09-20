@@ -17,7 +17,16 @@
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
       <guid>http://shuod.github.io/about/</guid>
-      <description>Here is an idealist from earth. He trust in that everything is scheduled in laws that could be understood, described, replicated, but not created, at least for now. So we could model it.</description>
+      <description>Here is an idealist.</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>http://shuod.github.io/post/tmux-and-tmuxomatic/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/tmux-and-tmuxomatic/</guid>
+      <description>Tmux I sometimes need to compile software package in the High Performance Computer(HPC). The compiling process often takes very long because C++ never pays any attention to this (Thank google, we now have golang that has a significantly shorter compiling time). It will become a serious trouble for remote compiling, because network could go wrong at any moment therefore, the compiling process in the HPC will be interrupted. Unfortunately, remote access comprises majority of the working senario: we used a ssh client (say, putty or iTerm) to connect to the HPC and excute command remotely.</description>
     </item>
     
     <item>
@@ -28,6 +37,15 @@
       <guid>http://shuod.github.io/post/scandir-in-python35/</guid>
       <description>As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.
 1 find This is a Linux command and it is actually my first way to iterate folders to find files, since the operation system I work with in Supercomputer is Linux.</description>
+    </item>
+    
+    <item>
+      <title>scandir in python35</title>
+      <link>http://shuod.github.io/test-of-scandir-in-python35/</link>
+      <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/test-of-scandir-in-python35/</guid>
+      <description>Test of scandir in python35 As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.</description>
     </item>
     
     <item>
@@ -70,23 +88,6 @@ First, install Centos 6.8 with minimal installation choice. Installation of octo
       <guid>http://shuod.github.io/post/upgrade-python3-centos6-deploy-flask/</guid>
       <description>Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
 I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6.</description>
-    </item>
-    
-    <item>
-      <title>How to setup a static blog site using Hugo (hosted on github)</title>
-      <link>http://shuod.github.io/post/first/</link>
-      <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
-      
-      <guid>http://shuod.github.io/post/first/</guid>
-      <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
-&lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
-&lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -189,6 +190,23 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
       
       <guid>http://shuod.github.io/post/linear-regression-with-python-lib/</guid>
       <description>&lt;p&gt;Linearing regression is one of the fundamental techqiques to use when analyze the data. If you were using Python, you would have several options to do this, including numpy, scipy and sklearn.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to setup a static blog site using Hugo (hosted on github)</title>
+      <link>http://shuod.github.io/post/first/</link>
+      <pubDate>Sat, 02 Apr 2016 10:40:00 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/post/first/</guid>
+      <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
+&lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
+&lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

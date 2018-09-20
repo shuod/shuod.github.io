@@ -1,3 +1,4 @@
++++
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
@@ -36,4 +37,4 @@ flowchartDiagrams:
 sequenceDiagrams: 
   enable: false
   options: ""
-
++++
