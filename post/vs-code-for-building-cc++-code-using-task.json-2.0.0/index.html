@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>VS code for building CC&#43;&#43; code using task.json 2.0.0 - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C&#43;&#43;, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder)." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="VS code for building CC&#43;&#43; code using task.json 2.0.0" />
+<meta property="og:description" content="Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C&#43;&#43;, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/" />
+
+
+
+<meta property="article:published_time" content="2018-10-21T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-10-21T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="VS code for building CC&#43;&#43; code using task.json 2.0.0">
+<meta itemprop="description" content="Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C&#43;&#43;, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder).">
+
+
+<meta itemprop="datePublished" content="2018-10-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-10-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="706">
+
+
+
+<meta itemprop="keywords" content="CC&#43;&#43;,VScode," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VS code for building CC&#43;&#43; code using task.json 2.0.0"/>
+<meta name="twitter:description" content="Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C&#43;&#43;, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder)."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">VS code for building CC&#43;&#43; code using task.json 2.0.0</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-10-21 </span>
+        <div class="post-category">
+            
+              <a href="/categories/development/"> Development </a>
+            
+              <a href="/categories/cc&#43;&#43;/"> CC&#43;&#43; </a>
+            
+          </div>
+        <span class="more-meta"> 706 words </span>
+        <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#task">Task</a></li>
+<li><a href="#task-json-2-0-0">Task.json 2.0.0</a></li>
+<li><a href="#steps">Steps</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C++, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder).</p>
+
+<p>The idea behind making a general UI instead of developing a specified IDE for C/C++ (like early version of VS studio), is like the recent software architecture idea that frontend and backend of a website should be decoupled for a better maintainence/refactoring  in the future, However, this also brings some confusions in how to configurate VS code for C/C++ compling using task.json. Things become worse when they recently upgrade the format of task.json to 2.0.0 while most examples you found on the web were still task.json 0.1.0.</p>
+
+<h2 id="task">Task</h2>
+
+<p>VS code is not designed just as a complier IDE. Therefore, it has to generalize the concept of &ldquo;build&rdquo;, &ldquo;run&rdquo;, etc. VS code chose the name &ldquo;task&rdquo;. Every function, like &ldquo;build&rdquo;, which before is a button-click, now is a &ldquo;task&rdquo;. It is lucid to understand, using the name task can represent more action for other applications. However, to define a task, VS code uses &ldquo;*.json&rdquo; file.</p>
+
+<p>As to our purpose speaking, there are two json files involved: &ldquo;task.json&rdquo; and &ldquo;launch.json&rdquo;. The first one is to build and run a code and the latter is for debugging purpose (Yes,launch is not for exacuating the code.).</p>
+
+<p>I was first exposed to such an idea in using UltraEdit. You can program some macro and then put a new &ldquo;button&rdquo; in its menu. What we are going to do is actually the same, except we won&rsquo;t put a button in the menu explicitly.</p>
+
+<h2 id="task-json-2-0-0">Task.json 2.0.0</h2>
+
+<p>Json, or Javascript Object Notation is a file format that is very popular among frontend programing, as you can guess out by its name. Since it is written in ASCII code, it is easy to read and maintain as well. Now, many software, especially those using javascript framework (like electron) to achieve cross-plateform, uses JSON a lot. So you can put some parameters for your program in a JSON file for program to use, or a macro to deliver certain function. Recently, VS code team upgrade their parameters set in JSON to 2.0.0. There are some big changes.</p>
+
+<h2 id="steps">Steps</h2>
+
+<p>Here is we need to do.
+- Of course, first step is to install a compiler, I used TDM-GCC 5.1 since I run it in windows. Then install the VS code extention: Press Ctrl+Ship+P to open command palate, and input&rdquo;ext install&rdquo; to filter out other commands and choose &ldquo;ext install extention&rdquo;. then a side panel on the left part will show up. Search for &ldquo;C/C++&rdquo; extention from Microsoft and install it. You will need to reload after that.</p>
+
+<ul>
+<li><p>In the VS code, you use &ldquo;open folder&rdquo; to open the folder that has the C/C++ source code. This will setup a folder &ldquo;.vscode&rdquo; that contains two files: &ldquo;task.json&rdquo; and &ldquo;launch.json&rdquo;.</p></li>
+
+<li><p>open &ldquo;task.json&rdquo; and edit:</p>
+
+<pre><code>{   //
+&quot;version&quot;: &quot;2.0.0&quot;,
+&quot;tasks&quot;: [
+    {   //the name showed in the command palate
+        &quot;label&quot;: &quot;g++ build&quot;,
+        &quot;command&quot;: &quot;g++&quot;,
+            
+        //for more environment parameters, see &quot;https://code.visualstudio.com/docs/editor/variables-reference&quot;
+        &quot;args&quot;: [
+            &quot;-g&quot;,
+            &quot;-std=c++11&quot;,
+            &quot;${file}&quot;,
+            &quot;-o&quot;,
+            &quot;${workspaceRoot}\\${fileBasenameNoExtension}.exe&quot;
+        ],
+        &quot;type&quot;: &quot;shell&quot;,
+        &quot;problemMatcher&quot;: [
+            &quot;$gcc&quot;
+        ]
+    },
+    {
+        &quot;label&quot;: &quot;g++ build and then run&quot;,
+        &quot;presentation&quot;: {
+            &quot;reveal&quot;: &quot;always&quot;
+        },
+        &quot;command&quot;: &quot;./${fileBasenameNoExtension}.exe&quot;,
+        &quot;type&quot;: &quot;shell&quot;,
+        &quot;problemMatcher&quot;: [
+            &quot;$gcc&quot;
+        ],
+        &quot;group&quot;: {
+            &quot;kind&quot;: &quot;build&quot;,
+            &quot;isDefault&quot;: true
+        }
+    }
+]
+}
+</code></pre></li>
+</ul>
+
+<p>There are some differents from version task.json 0.1.0: task name change to label, fileBasename no long works (it will still give the entire filename), to show the output window, you now use &ldquo;prsentation, reveal&rdquo; not &ldquo;showOuput&rdquo;, and &ldquo;group&rdquo; to replace many &ldquo;isDefault&rdquo;. So if you follow the example on the internet, which are mostly task.json 0.1.0, they won&rsquo;t function properly.</p>
+
+<ul>
+<li>Press &ldquo;Ctrl&rdquo; + &ldquo;Shift&rdquo;+ &ldquo;P&rdquo; to call command palate menu. You will see a lot of commands there. Input &ldquo;build&rdquo; to filer out others. Then you will the two names that we just edit above. You can set a short-cut key by using the &ldquo;keyboard shortcut&rdquo; command in the command palate menu.</li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-10-21</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/cc&#43;&#43;/">CC&#43;&#43;</a>
+          
+          <a href="/tags/vscode/">VScode</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/tmux-and-tmuxomatic/">
+            <span class="next-text nav-default">Tmux</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

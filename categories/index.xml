@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 21 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CC&#43;&#43;</title>
+      <link>http://shuod.github.io/categories/cc&#43;&#43;/</link>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/categories/cc&#43;&#43;/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data_science</title>
@@ -22,7 +32,7 @@
     <item>
       <title>Development</title>
       <link>http://shuod.github.io/categories/development/</link>
-      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>http://shuod.github.io/categories/development/</guid>
       <description></description>

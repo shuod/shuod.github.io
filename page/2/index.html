@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.48" />
+<meta name="generator" content="Hugo 0.46" />
 
 
 <link rel="canonical" href="http://shuod.github.io/" />
@@ -54,7 +54,20 @@
 <meta property="og:description" content="Inspirations and records for knowledge." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://shuod.github.io/" />
-<meta property="og:updated_time" content="2016-07-19T00:00:00&#43;00:00"/>
+
+
+
+<meta property="og:updated_time" content="2016-09-13T10:33:28-06:00"/>
+
+
+
+
+
+
+
+
+
+
 <meta itemprop="name" content="Modeling of Everything">
 <meta itemprop="description" content="Inspirations and records for knowledge.">
 
@@ -128,6 +141,73 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/upgrade-python3-centos6-deploy-flask/">Upgrade python to version 3.5 in Centos 6.8 and deploy flask web app framework  (updated on 20170604)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-13 </span>
+      <div class="post-category">
+          
+            <a href="/categories/linux/"> Linux </a>
+          
+        </div>
+      <span class="more-meta"> 1766 words </span>
+      <span class="more-meta"> 9 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Updated on 20170604: I put in more content to setup on tools chain for python development environment. Extra options were deleted.
+I bought a VPS from ramnode last time (last blog), so I guess it is a good time to deploy some web application on it. Since the python came with Centos 6.8 is kind of old (python 2.6), the first step I take is to upgrade the python compiler in Centos 6.
+    </div>
+    <div class="read-more">
+      <a href="/post/upgrade-python3-centos6-deploy-flask/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/setup-a-vps-server/">Setup a Virtual Private Server(VPS) from Ramnode and benchmark it</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-12 </span>
+      <div class="post-category">
+          
+            <a href="/categories/server/"> Server </a>
+          
+            <a href="/categories/linux/"> Linux </a>
+          
+        </div>
+      <span class="more-meta"> 913 words </span>
+      <span class="more-meta"> 5 mins read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.</p>
+
+<p>VPS from commercial providers is a perfect source to setup a personal server. This article will include:</p>
+
+<ul>
+<li><p>Bought a VPS</p></li>
+
+<li><p>Benchmarking the performance of the VPS</p></li>
+</ul>
+
+<p>​</p>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/setup-a-vps-server/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -268,78 +348,6 @@
     </div>
     <div class="read-more">
       <a href="/post/tdd-django-pycharm-1/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/using-pbs-commands-in-hpc/">Using PBS commands in HPC</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-05-13 </span>
-      <div class="post-category">
-          
-            <a href="/categories/linux/"> Linux </a>
-          
-            <a href="/categories/server/"> Server </a>
-          
-        </div>
-      <span class="more-meta"> 1094 words </span>
-      <span class="more-meta"> 6 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>PBS, or Portable Batch System is one of the popular job scheduler used in HPC (High Performance Computer) cluster system. It provides useful commands to help with job management. Here I just list some of them for note.</p>
-
-<p>Some useful PBS commands:</p>
-
-<ul>
-<li>qsub</li>
-<li>showq</li>
-<li>qstat</li>
-<li>qdel</li>
-<li>qpeek</li>
-<li>pbsnode</li>
-<li>qalter</li>
-</ul>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/using-pbs-commands-in-hpc/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/linear-regression-with-python-lib/">Linear Regression with different Python libs: numpy, scipy</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-04-29 </span>
-      <div class="post-category">
-          
-            <a href="/categories/development/"> Development </a>
-          
-            <a href="/categories/data_science/"> Data_science </a>
-          
-        </div>
-      <span class="more-meta"> 398 words </span>
-      <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Linearing regression is one of the fundamental techqiques to use when analyze the data. If you were using Python, you would have several options to do this, including numpy, scipy and sklearn.</p>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/linear-regression-with-python-lib/" class="read-more-link">Read more..</a>
     </div>
   </div>
 </article>
