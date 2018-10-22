@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/post/tmux-and-tmuxomatic/</loc>
     <lastmod>2018-09-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,7 +31,7 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/test-of-scandir-in-python35/</loc>
+    <loc>http://shuod.github.io/post/test-of-scandir-in-python35/</loc>
     <lastmod>2018-08-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -129,7 +136,22 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/tags/cc&#43;&#43;/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/cc&#43;&#43;/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/categories/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -157,7 +179,7 @@
   
   <url>
     <loc>http://shuod.github.io/categories/development/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -269,7 +291,7 @@
   
   <url>
     <loc>http://shuod.github.io/post/</loc>
-    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -339,7 +361,7 @@
   
   <url>
     <loc>http://shuod.github.io/tags/</loc>
-    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -361,6 +383,13 @@
   <url>
     <loc>http://shuod.github.io/tags/vps/</loc>
     <lastmod>2018-09-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/vscode/</loc>
+    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

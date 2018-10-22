@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>VS code for building CC&#43;&#43; code using task.json 2.0.0</title>
+      <link>http://shuod.github.io/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/</link>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/</guid>
+      <description>Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C++, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder).</description>
+    </item>
+    
+    <item>
       <title>Tmux</title>
       <link>http://shuod.github.io/post/tmux-and-tmuxomatic/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
@@ -41,10 +50,10 @@
     
     <item>
       <title>scandir in python35</title>
-      <link>http://shuod.github.io/test-of-scandir-in-python35/</link>
+      <link>http://shuod.github.io/post/test-of-scandir-in-python35/</link>
       <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://shuod.github.io/test-of-scandir-in-python35/</guid>
+      <guid>http://shuod.github.io/post/test-of-scandir-in-python35/</guid>
       <description>Test of scandir in python35 As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.</description>
     </item>
     
