@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2018-10-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-10-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="706">
+<meta itemprop="wordCount" content="682">
 
 
 
@@ -161,7 +161,7 @@
               <a href="/categories/cc&#43;&#43;/"> CC&#43;&#43; </a>
             
           </div>
-        <span class="more-meta"> 706 words </span>
+        <span class="more-meta"> 682 words </span>
         <span class="more-meta"> 4 mins read </span>
         
       </div>
@@ -219,11 +219,11 @@
 
 <li><p>open &ldquo;task.json&rdquo; and edit:</p>
 
-<pre><code>{   //
+<pre><code class="language-json">{   //
 &quot;version&quot;: &quot;2.0.0&quot;,
 &quot;tasks&quot;: [
     {   //the name showed in the command palate
-        &quot;label&quot;: &quot;g++ build&quot;,
+        &quot;label&quot;: &quot;g++ build only&quot;,
         &quot;command&quot;: &quot;g++&quot;,
             
         //for more environment parameters, see &quot;https://code.visualstudio.com/docs/editor/variables-reference&quot;
@@ -235,34 +235,28 @@
             &quot;${workspaceRoot}\\${fileBasenameNoExtension}.exe&quot;
         ],
         &quot;type&quot;: &quot;shell&quot;,
-        &quot;problemMatcher&quot;: [
-            &quot;$gcc&quot;
-        ]
+        &quot;group&quot;: {
+            &quot;kind&quot;: &quot;build&quot;,
+            &quot;isDefault&quot;: true
+        }
     },
     {
-        &quot;label&quot;: &quot;g++ build and then run&quot;,
+        &quot;label&quot;: &quot;run code after building&quot;,
         &quot;presentation&quot;: {
             &quot;reveal&quot;: &quot;always&quot;
         },
         &quot;command&quot;: &quot;./${fileBasenameNoExtension}.exe&quot;,
         &quot;type&quot;: &quot;shell&quot;,
-        &quot;problemMatcher&quot;: [
-            &quot;$gcc&quot;
-        ],
-        &quot;group&quot;: {
-            &quot;kind&quot;: &quot;build&quot;,
-            &quot;isDefault&quot;: true
-        }
     }
 ]
 }
 </code></pre></li>
 </ul>
 
-<p>There are some differents from version task.json 0.1.0: task name change to label, fileBasename no long works (it will still give the entire filename), to show the output window, you now use &ldquo;prsentation, reveal&rdquo; not &ldquo;showOuput&rdquo;, and &ldquo;group&rdquo; to replace many &ldquo;isDefault&rdquo;. So if you follow the example on the internet, which are mostly task.json 0.1.0, they won&rsquo;t function properly.</p>
+<p>There are some differences from version task.json 0.1.0: task name change to label, fileBasename no long works (it will still give the entire filename), to show the output window, you now use &ldquo;prsentation, reveal&rdquo; not &ldquo;showOuput&rdquo;, and &ldquo;group&rdquo; to replace many &ldquo;isDefault&rdquo;. So if you follow the example on the internet, which are mostly task.json 0.1.0, they won&rsquo;t function properly.</p>
 
 <ul>
-<li>Press &ldquo;Ctrl&rdquo; + &ldquo;Shift&rdquo;+ &ldquo;P&rdquo; to call command palate menu. You will see a lot of commands there. Input &ldquo;build&rdquo; to filer out others. Then you will the two names that we just edit above. You can set a short-cut key by using the &ldquo;keyboard shortcut&rdquo; command in the command palate menu.</li>
+<li>After &ldquo;tasks.json&rdquo; is done, you should be able to find the names of two labels in the menu &ldquo;Terminal&rdquo; ==&gt;&ldquo;Run task&hellip;&rdquo;.  Then switch to the C/C++ source file and choose corresponding tasks you want to perform.</li>
 </ul>
 
     </div>
