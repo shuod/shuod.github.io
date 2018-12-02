@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My_script on Modeling of Everything</title>
-    <link>http://shuod.github.io/categories/my_script/</link>
-    <description>Recent content in My_script on Modeling of Everything</description>
+    <title>My_script on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/categories/my_script/</link>
+    <description>Recent content in My_script on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 13 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://shuod.github.io/categories/my_script/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/my_script/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scandir in python35</title>
-      <link>http://shuod.github.io/post/scandir-in-python35/</link>
+      <link>http://localhost:1313/post/scandir-in-python35/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://shuod.github.io/post/scandir-in-python35/</guid>
+      <guid>http://localhost:1313/post/scandir-in-python35/</guid>
       <description>As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.
 1 find This is a Linux command and it is actually my first way to iterate folders to find files, since the operation system I work with in Supercomputer is Linux.</description>
     </item>
     
     <item>
       <title>Checking files in subfolders using power shell</title>
-      <link>http://shuod.github.io/post/checking_files_in_subfolders_using_power_shell/</link>
+      <link>http://localhost:1313/post/checking_files_in_subfolders_using_power_shell/</link>
       <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://shuod.github.io/post/checking_files_in_subfolders_using_power_shell/</guid>
+      <guid>http://localhost:1313/post/checking_files_in_subfolders_using_power_shell/</guid>
       <description>As daily work, sometime I need to check some log files from certain calculations &amp;ndash; a large number of calculations. Usually they contain some keyword or sentence, like &amp;ldquo;Normal termination&amp;rdquo; or &amp;ldquo;Calculation ended&amp;rdquo; or &amp;ldquo;succussefully conveged&amp;rdquo; for me to search.
 This is a typical job that can be done rountinely in linux using commands like &amp;ldquo;grep&amp;rdquo;, &amp;ldquo;awk&amp;rdquo;. However, after download those file to a windows PC, it would be more convinient to use windows shell to do, although there exists some &amp;ldquo;tranplanted&amp;rdquo; version of some of the linux shell commands that are complied with native win32 toolchains.</description>
     </item>

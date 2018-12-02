@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VPN on Modeling of Everything</title>
-    <link>http://shuod.github.io/tags/vpn/</link>
-    <description>Recent content in VPN on Modeling of Everything</description>
+    <title>VPN on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/tags/vpn/</link>
+    <description>Recent content in VPN on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 12 Aug 2016 10:33:28 -0600</lastBuildDate>
     
-	<atom:link href="http://shuod.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup a Virtual Private Server(VPS) from Ramnode and benchmark it</title>
-      <link>http://shuod.github.io/post/setup-a-vps-server/</link>
+      <link>http://localhost:1313/post/setup-a-vps-server/</link>
       <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
       
-      <guid>http://shuod.github.io/post/setup-a-vps-server/</guid>
+      <guid>http://localhost:1313/post/setup-a-vps-server/</guid>
       <description>&lt;p&gt;Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.&lt;/p&gt;
 
 &lt;p&gt;VPS from commercial providers is a perfect source to setup a personal server. This article will include:&lt;/p&gt;
@@ -27,26 +27,22 @@
 &lt;li&gt;&lt;p&gt;Benchmarking the performance of the VPS&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;​&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;​&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to setup a static blog site using Hugo (hosted on github)</title>
-      <link>http://shuod.github.io/post/first/</link>
+      <link>http://localhost:1313/post/first/</link>
       <pubDate>Sat, 02 Apr 2016 10:40:00 -0600</pubDate>
       
-      <guid>http://shuod.github.io/post/first/</guid>
+      <guid>http://localhost:1313/post/first/</guid>
       <description>&lt;p&gt;Huog is a blog generating system written in go. You could give the article in Markdown format and it will then render the article into html files. Github.com is the place where it uses git to do the version control and they now provide each account a static blog system. So combine the two together, we then have an ideal personal blog with version control. This will include the following topic:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Generate a blog site using hugo&lt;/li&gt;
 &lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
 &lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
   </channel>
