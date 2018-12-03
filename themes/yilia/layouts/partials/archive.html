@@ -1,0 +1,11 @@
+{{ range .Paginator.Pages  }}
+    {{ partial "article.html" (dict "param" . "isIndex" true) }}
+{{ end }}
+<nav id="page-nav">
+    {{if .Paginator.HasPrev }}
+        <a class="extend prev" rel="prev" href="{{ .Paginator.Prev.URL}}">« Prev</a>
+    {{ end}}
+    {{if .Paginator.HasNext}}
+    <a class="extend next" rel="next" href="{{ .Paginator.Next.URL}}">Next »</a>
+    {{end}}
+</nav>

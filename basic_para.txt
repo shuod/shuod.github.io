@@ -1,0 +1,9 @@
+baseURL = "http://shuod.github.io"
+languageCode = "en"
+defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
+title = "Modeling of Everything"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "even"
+
+disqusShortname = "modeling-of-everything"
