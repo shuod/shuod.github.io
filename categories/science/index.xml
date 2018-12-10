@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Science on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/categories/science/</link>
-    <description>Recent content in Science on Even - A super concise theme for Hugo</description>
+    <title>Science on Modeling of Everything</title>
+    <link>http://shuod.github.io/categories/science/</link>
+    <description>Recent content in Science on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 14 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/science/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/categories/science/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Installing octopus 6.0 (Serial) in Centos 6.8 </title>
-      <link>http://localhost:1313/post/install-octopus-5/</link>
+      <link>http://shuod.github.io/post/install-octopus-5/</link>
       <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/install-octopus-5/</guid>
+      <guid>http://shuod.github.io/post/install-octopus-5/</guid>
       <description>Octopus is a scientific simulation software for solving quantum problem. (http://www.tddft.org/programs/octopus/wiki/index.php/Main_Page)
 Recently, there is a new version 6.0 released (2016-09-05), which has a major improvement. Here we try to install it on the Centos 6.8 (with minimal installation)
 First, install Centos 6.8 with minimal installation choice. Installation of octopus 6 mainly follow their manual here : http://www.tddft.org/programs/octopus/wiki/index.php/Manual:Building_from_scratch

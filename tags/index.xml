@@ -1,238 +1,238 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on Even - A super concise theme for Hugo</description>
+    <title>Tags on Modeling of Everything</title>
+    <link>http://shuod.github.io/tags/</link>
+    <description>Recent content in Tags on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CC&#43;&#43;</title>
-      <link>http://localhost:1313/tags/cc&#43;&#43;/</link>
+      <link>http://shuod.github.io/tags/cc&#43;&#43;/</link>
       <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/cc&#43;&#43;/</guid>
+      <guid>http://shuod.github.io/tags/cc&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data</title>
-      <link>http://localhost:1313/tags/data/</link>
+      <link>http://shuod.github.io/tags/data/</link>
       <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/data/</guid>
+      <guid>http://shuod.github.io/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>http://localhost:1313/tags/development/</link>
+      <link>http://shuod.github.io/tags/development/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/development/</guid>
+      <guid>http://shuod.github.io/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Django</title>
-      <link>http://localhost:1313/tags/django/</link>
+      <link>http://shuod.github.io/tags/django/</link>
       <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/django/</guid>
+      <guid>http://shuod.github.io/tags/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>English</title>
-      <link>http://localhost:1313/tags/english/</link>
+      <link>http://shuod.github.io/tags/english/</link>
       <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/english/</guid>
+      <guid>http://shuod.github.io/tags/english/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>http://localhost:1313/tags/github/</link>
+      <link>http://shuod.github.io/tags/github/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/github/</guid>
+      <guid>http://shuod.github.io/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>http://localhost:1313/tags/golang/</link>
+      <link>http://shuod.github.io/tags/golang/</link>
       <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
       
-      <guid>http://localhost:1313/tags/golang/</guid>
+      <guid>http://shuod.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HPC</title>
-      <link>http://localhost:1313/tags/hpc/</link>
+      <link>http://shuod.github.io/tags/hpc/</link>
       <pubDate>Fri, 13 May 2016 13:32:24 -0500</pubDate>
       
-      <guid>http://localhost:1313/tags/hpc/</guid>
+      <guid>http://shuod.github.io/tags/hpc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/tags/hugo/</link>
+      <link>http://shuod.github.io/tags/hugo/</link>
       <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
       
-      <guid>http://localhost:1313/tags/hugo/</guid>
+      <guid>http://shuod.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>http://shuod.github.io/tags/linux/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://shuod.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modeling</title>
-      <link>http://localhost:1313/tags/modeling/</link>
+      <link>http://shuod.github.io/tags/modeling/</link>
       <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/modeling/</guid>
+      <guid>http://shuod.github.io/tags/modeling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My_script</title>
-      <link>http://localhost:1313/tags/my_script/</link>
+      <link>http://shuod.github.io/tags/my_script/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/my_script/</guid>
+      <guid>http://shuod.github.io/tags/my_script/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My_thoughts</title>
-      <link>http://localhost:1313/tags/my_thoughts/</link>
+      <link>http://shuod.github.io/tags/my_thoughts/</link>
       <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/my_thoughts/</guid>
+      <guid>http://shuod.github.io/tags/my_thoughts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pycharm</title>
-      <link>http://localhost:1313/tags/pycharm/</link>
+      <link>http://shuod.github.io/tags/pycharm/</link>
       <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/pycharm/</guid>
+      <guid>http://shuod.github.io/tags/pycharm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>http://shuod.github.io/tags/python/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>http://shuod.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Science</title>
-      <link>http://localhost:1313/tags/science/</link>
+      <link>http://shuod.github.io/tags/science/</link>
       <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/science/</guid>
+      <guid>http://shuod.github.io/tags/science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shell_powershell</title>
-      <link>http://localhost:1313/tags/shell_powershell/</link>
+      <link>http://shuod.github.io/tags/shell_powershell/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/shell_powershell/</guid>
+      <guid>http://shuod.github.io/tags/shell_powershell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VPN</title>
-      <link>http://localhost:1313/tags/vpn/</link>
+      <link>http://shuod.github.io/tags/vpn/</link>
       <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
       
-      <guid>http://localhost:1313/tags/vpn/</guid>
+      <guid>http://shuod.github.io/tags/vpn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VPS</title>
-      <link>http://localhost:1313/tags/vps/</link>
+      <link>http://shuod.github.io/tags/vps/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vps/</guid>
+      <guid>http://shuod.github.io/tags/vps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VScode</title>
-      <link>http://localhost:1313/tags/vscode/</link>
+      <link>http://shuod.github.io/tags/vscode/</link>
       <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vscode/</guid>
+      <guid>http://shuod.github.io/tags/vscode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
+      <link>http://shuod.github.io/tags/windows/</link>
       <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/windows/</guid>
+      <guid>http://shuod.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>http://localhost:1313/tags/writing/</link>
+      <link>http://shuod.github.io/tags/writing/</link>
       <pubDate>Mon, 12 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/writing/</guid>
+      <guid>http://shuod.github.io/tags/writing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>http://shuod.github.io/tags/linux/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://shuod.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>http://shuod.github.io/tags/python/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>http://shuod.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>useful script</title>
-      <link>http://localhost:1313/tags/useful-script/</link>
+      <link>http://shuod.github.io/tags/useful-script/</link>
       <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/useful-script/</guid>
+      <guid>http://shuod.github.io/tags/useful-script/</guid>
       <description></description>
     </item>
     

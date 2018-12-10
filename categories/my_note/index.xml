@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My_note on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/categories/my_note/</link>
-    <description>Recent content in My_note on Even - A super concise theme for Hugo</description>
+    <title>My_note on Modeling of Everything</title>
+    <link>http://shuod.github.io/categories/my_note/</link>
+    <description>Recent content in My_note on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 19 Jul 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/my_note/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/categories/my_note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Notes to Test driven development with Django using pycharm (chp 5 database!)</title>
-      <link>http://localhost:1313/post/tdd-django-pycharm-4-database-intro/</link>
+      <link>http://shuod.github.io/post/tdd-django-pycharm-4-database-intro/</link>
       <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/tdd-django-pycharm-4-database-intro/</guid>
+      <guid>http://shuod.github.io/post/tdd-django-pycharm-4-database-intro/</guid>
       <description>0 Checkpoints  ORM model in Django  1 The first unit test First, let&amp;rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:
  We input a value as the first row in the webpage. Does the database receives the same value as the input?</description>
     </item>
     
     <item>
       <title>Notes to Test driven development with Django using pycharm (chp 4-5)</title>
-      <link>http://localhost:1313/post/tdd-django-pycharm-3/</link>
+      <link>http://shuod.github.io/post/tdd-django-pycharm-3/</link>
       <pubDate>Sat, 09 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/tdd-django-pycharm-3/</guid>
+      <guid>http://shuod.github.io/post/tdd-django-pycharm-3/</guid>
       <description>0 Checkpoints  Don&amp;rsquo;t use unit test to test a constant. Unit test is about testing logic, flow control and configuration.
  Run unit tests from pycharm IDE : Tools\=\=&amp;gt;Run manage.py task &amp;hellip;
  Another development cycle, follow the pattern, i.e. if you choose MCV, then if you changed M then you should change C, and V correspondingly.
@@ -35,28 +35,28 @@
     
     <item>
       <title>Notes to Test driven development with Django using pycharm (chp 2-3)</title>
-      <link>http://localhost:1313/post/tdd-django-pycharm-2/</link>
+      <link>http://shuod.github.io/post/tdd-django-pycharm-2/</link>
       <pubDate>Fri, 08 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/tdd-django-pycharm-2/</guid>
+      <guid>http://shuod.github.io/post/tdd-django-pycharm-2/</guid>
       <description>0 Checkpoints  Blackbox Test=Functional Test=Acceptance Test= End-to-End Test ; These names are referring to the same thing. The purpose of this kind of test is to look at how the whole application functioned from outside/custom&amp;rsquo;s point of view. The term black box test is forged is because we just want to test the outcome of the whole code without knowing the details inside App = function; Structure the code into several apps/ functions (def function()).</description>
     </item>
     
     <item>
       <title>Notes to test driven development with Django using pycharm (chp 0)</title>
-      <link>http://localhost:1313/post/tdd-django-pycharm-0/</link>
+      <link>http://shuod.github.io/post/tdd-django-pycharm-0/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/tdd-django-pycharm-0/</guid>
+      <guid>http://shuod.github.io/post/tdd-django-pycharm-0/</guid>
       <description>0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &amp;ldquo;Shift+F6&amp;rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &amp;ldquo;test driven web development using python&amp;rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &amp;ldquo;test driven development (TDD)&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Notes to test driven development with Django using pycharm (chp 1)</title>
-      <link>http://localhost:1313/post/tdd-django-pycharm-1/</link>
+      <link>http://shuod.github.io/post/tdd-django-pycharm-1/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/tdd-django-pycharm-1/</guid>
+      <guid>http://shuod.github.io/post/tdd-django-pycharm-1/</guid>
       <description>0 Check points  Setting up a virtual environment and adding packages to the project Editing the command line parameters to the &amp;ldquo;run&amp;rdquo; button, which is equivalent to &amp;ldquo;python xxx.py xxx&amp;rdquo; Checking the output log space on the bottom of the screen. Functional test to retrieve the web page from a server  1 setup the virtual environment After downloading and installing the pycharm, the first time you start you would see the following:</description>
     </item>
     

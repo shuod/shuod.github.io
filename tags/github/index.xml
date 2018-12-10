@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/github/</link>
-    <description>Recent content in Github on Even - A super concise theme for Hugo</description>
+    <title>Github on Modeling of Everything</title>
+    <link>http://shuod.github.io/tags/github/</link>
+    <description>Recent content in Github on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basics of the github workflow for  a single user</title>
-      <link>http://localhost:1313/post/basics_of_git_workflow_for_single_user/</link>
+      <link>http://shuod.github.io/post/basics_of_git_workflow_for_single_user/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/basics_of_git_workflow_for_single_user/</guid>
+      <guid>http://shuod.github.io/post/basics_of_git_workflow_for_single_user/</guid>
       <description>In an earlier blog article, I wrote down some git workflow involved to in making this github page site (https://shuod.github.io/post/first/). And here, I will briefly write down a memo of github workflow for a single user. It is similar to git or gitlab workflow but more proper for the single user scenario. I assume you had setup an account on &amp;ldquo;github.com&amp;rdquo; and also a new project on github.
 ​ The streamline of github workflow is like this:</description>
     </item>

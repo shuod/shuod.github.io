@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shell_powershell on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/categories/shell_powershell/</link>
-    <description>Recent content in Shell_powershell on Even - A super concise theme for Hugo</description>
+    <title>Shell_powershell on Modeling of Everything</title>
+    <link>http://shuod.github.io/categories/shell_powershell/</link>
+    <description>Recent content in Shell_powershell on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/shell_powershell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/categories/shell_powershell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tmux</title>
-      <link>http://localhost:1313/post/tmux-and-tmuxomatic/</link>
+      <link>http://shuod.github.io/post/tmux-and-tmuxomatic/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/tmux-and-tmuxomatic/</guid>
+      <guid>http://shuod.github.io/post/tmux-and-tmuxomatic/</guid>
       <description>Tmux I sometimes need to compile software package in the High Performance Computer(HPC). The compiling process often takes very long because C++ never pays any attention to this (Thank google, we now have golang that has a significantly shorter compiling time). It will become a serious trouble for remote compiling, because network could go wrong at any moment therefore, the compiling process in the HPC will be interrupted. Unfortunately, remote access comprises majority of the working senario: we used a ssh client (say, putty or iTerm) to connect to the HPC and excute command remotely.</description>
     </item>
     

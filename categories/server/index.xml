@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Server on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/categories/server/</link>
-    <description>Recent content in Server on Even - A super concise theme for Hugo</description>
+    <title>Server on Modeling of Everything</title>
+    <link>http://shuod.github.io/categories/server/</link>
+    <description>Recent content in Server on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 12 Aug 2016 10:33:28 -0600</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/server/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/categories/server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup a Virtual Private Server(VPS) from Ramnode and benchmark it</title>
-      <link>http://localhost:1313/post/setup-a-vps-server/</link>
+      <link>http://shuod.github.io/post/setup-a-vps-server/</link>
       <pubDate>Fri, 12 Aug 2016 10:33:28 -0600</pubDate>
       
-      <guid>http://localhost:1313/post/setup-a-vps-server/</guid>
+      <guid>http://shuod.github.io/post/setup-a-vps-server/</guid>
       <description>&lt;p&gt;Virtual Private Server (VPS) is a new way to host a personal server. It hides the hardware detials from the user (which is safe) and delivers a flexible (sometime even real time adjustable) performance to the server. They usually have two types: KVM and OPENVZ. The difference of the two virtualization method is the the OPENVZ is container-like, which is also limited to linux only, but KVM use the main OS system to simulate the hardware for user-OS, which theoretically allows any type of the operation system. Because of the working principle of KVM, it could provide better isolation (Those guys doing virus analysis would like this). However, if you are looking for better performance of the Linux system, openvz maybe a better choice.&lt;/p&gt;
 
 &lt;p&gt;VPS from commercial providers is a perfect source to setup a personal server. This article will include:&lt;/p&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Using PBS commands in HPC</title>
-      <link>http://localhost:1313/post/using-pbs-commands-in-hpc/</link>
+      <link>http://shuod.github.io/post/using-pbs-commands-in-hpc/</link>
       <pubDate>Fri, 13 May 2016 13:32:24 -0500</pubDate>
       
-      <guid>http://localhost:1313/post/using-pbs-commands-in-hpc/</guid>
+      <guid>http://shuod.github.io/post/using-pbs-commands-in-hpc/</guid>
       <description>&lt;p&gt;PBS, or Portable Batch System is one of the popular job scheduler used in HPC (High Performance Computer) cluster system. It provides useful commands to help with job management. Here I just list some of them for note.&lt;/p&gt;
 
 &lt;p&gt;Some useful PBS commands:&lt;/p&gt;
