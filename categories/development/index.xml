@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/categories/development/</link>
+    <description>Recent content in Development on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basics of the github workflow for  a single user</title>
+      <link>http://localhost:1313/post/basics_of_git_workflow_for_single_user/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/basics_of_git_workflow_for_single_user/</guid>
+      <description>In an earlier blog article, I wrote down some git workflow involved to in making this github page site (https://shuod.github.io/post/first/). And here, I will briefly write down a memo of github workflow for a single user. It is similar to git or gitlab workflow but more proper for the single user scenario. I assume you had setup an account on &amp;ldquo;github.com&amp;rdquo; and also a new project on github.
+​ The streamline of github workflow is like this:</description>
+    </item>
+    
+    <item>
+      <title>VS code for building CC&#43;&#43; code using task.json 2.0.0</title>
+      <link>http://localhost:1313/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/</link>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/</guid>
+      <description>Vistual studio code is a modern UI using electron. It is like Vim/ Emacs that just focus on user interface. Then, if you want to use it as the IDE for certain programing language, like python, C, C++, javascript etc, you will need to configure it youself. And VS code become more popular after it has been the IDE coming with the Anaconde python package (Yes, it VS code looks better than spyder).</description>
+    </item>
+    
+    <item>
+      <title>Scandir in python35</title>
+      <link>http://localhost:1313/post/scandir-in-python35/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/scandir-in-python35/</guid>
+      <description>As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.
+1 find This is a Linux command and it is actually my first way to iterate folders to find files, since the operation system I work with in Supercomputer is Linux.</description>
+    </item>
+    
+    <item>
+      <title>scandir in python35</title>
+      <link>http://localhost:1313/post/test-of-scandir-in-python35/</link>
+      <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/test-of-scandir-in-python35/</guid>
+      <description>Test of scandir in python35 As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.</description>
+    </item>
+    
+    <item>
+      <title>Checking files in subfolders using power shell</title>
+      <link>http://localhost:1313/post/checking_files_in_subfolders_using_power_shell/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/checking_files_in_subfolders_using_power_shell/</guid>
+      <description>As daily work, sometime I need to check some log files from certain calculations &amp;ndash; a large number of calculations. Usually they contain some keyword or sentence, like &amp;ldquo;Normal termination&amp;rdquo; or &amp;ldquo;Calculation ended&amp;rdquo; or &amp;ldquo;succussefully conveged&amp;rdquo; for me to search.
+This is a typical job that can be done rountinely in linux using commands like &amp;ldquo;grep&amp;rdquo;, &amp;ldquo;awk&amp;rdquo;. However, after download those file to a windows PC, it would be more convinient to use windows shell to do, although there exists some &amp;ldquo;tranplanted&amp;rdquo; version of some of the linux shell commands that are complied with native win32 toolchains.</description>
+    </item>
+    
+    <item>
+      <title>Notes to Test driven development with Django using pycharm (chp 5 database!)</title>
+      <link>http://localhost:1313/post/tdd-django-pycharm-4-database-intro/</link>
+      <pubDate>Tue, 19 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/tdd-django-pycharm-4-database-intro/</guid>
+      <description>0 Checkpoints  ORM model in Django  1 The first unit test First, let&amp;rsquo;s write the unit test for database. What are we going to test then? Well, as we discussed in the last section, the unit test is about testing the logic, flow control. So what we are going to do here is to test:
+ We input a value as the first row in the webpage. Does the database receives the same value as the input?</description>
+    </item>
+    
+    <item>
+      <title>Notes to Test driven development with Django using pycharm (chp 4-5)</title>
+      <link>http://localhost:1313/post/tdd-django-pycharm-3/</link>
+      <pubDate>Sat, 09 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/tdd-django-pycharm-3/</guid>
+      <description>0 Checkpoints  Don&amp;rsquo;t use unit test to test a constant. Unit test is about testing logic, flow control and configuration.
+ Run unit tests from pycharm IDE : Tools\=\=&amp;gt;Run manage.py task &amp;hellip;
+ Another development cycle, follow the pattern, i.e. if you choose MCV, then if you changed M then you should change C, and V correspondingly.
+ Organize the code in unit test: create test, call function under the test and assertions</description>
+    </item>
+    
+    <item>
+      <title>Notes to Test driven development with Django using pycharm (chp 2-3)</title>
+      <link>http://localhost:1313/post/tdd-django-pycharm-2/</link>
+      <pubDate>Fri, 08 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/tdd-django-pycharm-2/</guid>
+      <description>0 Checkpoints  Blackbox Test=Functional Test=Acceptance Test= End-to-End Test ; These names are referring to the same thing. The purpose of this kind of test is to look at how the whole application functioned from outside/custom&amp;rsquo;s point of view. The term black box test is forged is because we just want to test the outcome of the whole code without knowing the details inside App = function; Structure the code into several apps/ functions (def function()).</description>
+    </item>
+    
+    <item>
+      <title>Notes to test driven development with Django using pycharm (chp 0)</title>
+      <link>http://localhost:1313/post/tdd-django-pycharm-0/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/tdd-django-pycharm-0/</guid>
+      <description>0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &amp;ldquo;Shift+F6&amp;rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &amp;ldquo;test driven web development using python&amp;rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &amp;ldquo;test driven development (TDD)&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Notes to test driven development with Django using pycharm (chp 1)</title>
+      <link>http://localhost:1313/post/tdd-django-pycharm-1/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/tdd-django-pycharm-1/</guid>
+      <description>0 Check points  Setting up a virtual environment and adding packages to the project Editing the command line parameters to the &amp;ldquo;run&amp;rdquo; button, which is equivalent to &amp;ldquo;python xxx.py xxx&amp;rdquo; Checking the output log space on the bottom of the screen. Functional test to retrieve the web page from a server  1 setup the virtual environment After downloading and installing the pycharm, the first time you start you would see the following:</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression with different Python libs: numpy, scipy</title>
+      <link>http://localhost:1313/post/linear-regression-with-python-lib/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/linear-regression-with-python-lib/</guid>
+      <description>&lt;p&gt;Linearing regression is one of the fundamental techqiques to use when analyze the data. If you were using Python, you would have several options to do this, including numpy, scipy and sklearn.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Adding a comment system to the hugo blog</title>
+      <link>http://localhost:1313/post/second/</link>
+      <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
+      
+      <guid>http://localhost:1313/post/second/</guid>
+      <description>&lt;p&gt;One of the shortcoming of static blog system is they usually don&amp;rsquo;t have a comment system. But good news is there are many 3rd party comment systems available, one of which is Disqus.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

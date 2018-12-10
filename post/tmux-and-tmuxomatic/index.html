@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tmux - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="Usage of tmux" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/tmux-and-tmuxomatic/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Tmux" />
+<meta property="og:description" content="Usage of tmux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/tmux-and-tmuxomatic/" /><meta property="article:published_time" content="2018-09-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-09-20T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Tmux">
+<meta itemprop="description" content="Usage of tmux">
+
+
+<meta itemprop="datePublished" content="2018-09-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-09-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="567">
+
+
+
+<meta itemprop="keywords" content="VPS,Linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tmux"/>
+<meta name="twitter:description" content="Usage of tmux"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Tmux</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-20 </span>
+        <div class="post-category">
+            
+              <a href="/categories/shell_powershell/"> Shell_powershell </a>
+            
+              <a href="/categories/linux/"> Linux </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#tmux">Tmux</a>
+<ul>
+<li><a href="#a-very-concise-command-list-of-tmux">A very concise command list of Tmux:</a></li>
+<li><a href="#tmux-window-pane">tmux window pane</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="tmux">Tmux</h2>
+
+<p>I sometimes need to compile software package in the High Performance Computer(HPC). The compiling process often takes very long because C++ never pays any attention to this (Thank google, we now have golang that has a significantly shorter compiling time). It will become a serious trouble for remote compiling, because network could go wrong at any moment therefore, the compiling process in the HPC will be interrupted. Unfortunately, remote access comprises majority of the working senario: we used a ssh client (say, putty or iTerm) to connect to the HPC and excute command remotely. So it will make people crazy if the network went wrong often.</p>
+
+<p>I used a GNU software called &ldquo;screen&rdquo; and it does the job well. The only problem to me, however, is &ldquo;screen&rdquo; is not easy to incorporate into a python script, and this sometime will hinder the scripting automation process. So, I switched to a new toy called &ldquo;Tmux&rdquo; (BSD liscense). There are also other improvements from Tmux that screen doesn&rsquo;t have. Check <a href="https://superuser.com/questions/236158/tmux-vs-screen/">here</a> for detail.</p>
+
+<h3 id="a-very-concise-command-list-of-tmux">A very concise command list of Tmux:</h3>
+
+<p>Very similar to screen.</p>
+
+<p>Once you login to the sever, run</p>
+
+<pre><code>tmux new -s session-name
+</code></pre>
+
+<p>and this will start a new session with the name given. Or, you can just run</p>
+
+<pre><code>tmux
+</code></pre>
+
+<p>and you will get a random name as the session name.</p>
+
+<p>Now you can run some linux command, say the compile command &ldquo;make&rdquo;. While the content displayed in the screen will start to roll, because of the verbose &ldquo;make&rdquo;, you now could safely &ldquo;detach&rdquo; from the current &ldquo;make&rdquo; session by using</p>
+
+<pre><code>ctrl+b then d
+</code></pre>
+
+<p>This is actually similar to the shortcut key in screen (ctrl+a then d). It will detach from the current session and return to the screen before. Now you can even close the ssh client putty and leave for home.</p>
+
+<p>To return to this tmux session (where make is running) the next morning, you could just do</p>
+
+<pre><code>tmux a -t session-name
+</code></pre>
+
+<p>and you will be in the &ldquo;make&rdquo; session. Or,</p>
+
+<pre><code>tmux a 
+</code></pre>
+
+<p>directly takes you back the last session you switch out from (&ldquo;a&rdquo; is short for &ldquo;attach&rdquo; and you can also use &ldquo;attach&rdquo; to replace &ldquo;a&rdquo; in the above command).</p>
+
+<p>Sometimes you will have more than one session running on the server, and you could use</p>
+
+<pre><code>tmux ls
+</code></pre>
+
+<p>to check out what are they. This provides a convient way to manage sessions.</p>
+
+<p>Some other manage commands that can come in handy sometime:</p>
+
+<pre><code>tmux kill-session -t session-name
+tmux kill-server
+</code></pre>
+
+<p>The first one will kill the session you appointed and the second one will terminate all running tmux sessions on the server.</p>
+
+<p>For a list of commands:</p>
+
+<pre><code>ctrl+b then ?
+</code></pre>
+
+<h3 id="tmux-window-pane">tmux window pane</h3>
+
+<p>Another powerful function of tmux is multi-window. Although &ldquo;screen&rdquo; also supports this, it takes either an extra patch (for &lt; 4.01, or just use Ubuntu) or upgrades to ver &gt; 4.01 to achieve vertical splitting[1]. Plus, since the mechanism behind the two software are different, when you shared sessions with another user, if you switch focus to another pane, &ldquo;screen&rdquo; will change the focus as well but tmux will stay unchanged. This is useful for pair-programing.</p>
+
+<p>A short list of commands[2]:</p>
+
+<pre><code>Ctrl+b &quot;      split screen horizontally.
+Ctrl+b %      split screen vertically.
+Ctrl+b n      move to the next pane.
+Ctrl+b p      move to the previous pane.
+
+</code></pre>
+
+<p>And, of course, you can save your setting in a file, check [2][3]</p>
+
+<p>[1]hhps://unix.stackexchange.com/questions/26685/how-to-split-window-vertically-in-gnu-screen</p>
+
+<p>[2] <a href="https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf">https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-09-20</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/vps/">VPS</a>
+          
+          <a href="/tags/linux/">Linux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/vs-code-for-building-cc&#43;&#43;-code-using-task.json-2.0.0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">VS code for building CC&#43;&#43; code using task.json 2.0.0</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/scandir-in-python35/">
+            <span class="next-text nav-default">Scandir in python35</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
