@@ -6,7 +6,7 @@
     <description>Recent content in Hugo on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Jan 2016 22:59:16 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 21 Apr 2016 22:59:16 -0600</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Adding a comment system to the hugo blog</title>
       <link>http://shuod.github.io/post/second/</link>
-      <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
+      <pubDate>Thu, 21 Apr 2016 22:59:16 -0600</pubDate>
       
       <guid>http://shuod.github.io/post/second/</guid>
       <description>&lt;p&gt;One of the shortcoming of static blog system is they usually don&amp;rsquo;t have a comment system. But good news is there are many 3rd party comment systems available, one of which is Disqus.&lt;/p&gt;</description>

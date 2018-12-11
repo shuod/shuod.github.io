@@ -49,22 +49,13 @@
     </item>
     
     <item>
-      <title>Scandir in python35</title>
+      <title>Scan a directory in python35</title>
       <link>http://shuod.github.io/post/scandir-in-python35/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>http://shuod.github.io/post/scandir-in-python35/</guid>
       <description>As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.
 1 find This is a Linux command and it is actually my first way to iterate folders to find files, since the operation system I work with in Supercomputer is Linux.</description>
-    </item>
-    
-    <item>
-      <title>scandir in python35</title>
-      <link>http://shuod.github.io/post/test-of-scandir-in-python35/</link>
-      <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuod.github.io/post/test-of-scandir-in-python35/</guid>
-      <description>Test of scandir in python35 As one of my daily works, checking files from simulation results is of course my practical need. Therefore, I am always interested in using different ways to do it. One of my previous post, &amp;ldquo;checking_files_in_subfolders_using_power_shell&amp;rdquo; was on how to use power shell in windows 10 to do this job. Here I am going to test other ways that I used even before powershell script.</description>
     </item>
     
     <item>
@@ -160,15 +151,6 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
     </item>
     
     <item>
-      <title>Notes to test driven development with Django using pycharm (chp 0)</title>
-      <link>http://shuod.github.io/post/tdd-django-pycharm-0/</link>
-      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuod.github.io/post/tdd-django-pycharm-0/</guid>
-      <description>0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &amp;ldquo;Shift+F6&amp;rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &amp;ldquo;test driven web development using python&amp;rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &amp;ldquo;test driven development (TDD)&amp;rdquo;.</description>
-    </item>
-    
-    <item>
       <title>Notes to test driven development with Django using pycharm (chp 1)</title>
       <link>http://shuod.github.io/post/tdd-django-pycharm-1/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
@@ -208,6 +190,15 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
     </item>
     
     <item>
+      <title>Adding a comment system to the hugo blog</title>
+      <link>http://shuod.github.io/post/second/</link>
+      <pubDate>Thu, 21 Apr 2016 22:59:16 -0600</pubDate>
+      
+      <guid>http://shuod.github.io/post/second/</guid>
+      <description>&lt;p&gt;One of the shortcoming of static blog system is they usually don&amp;rsquo;t have a comment system. But good news is there are many 3rd party comment systems available, one of which is Disqus.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>How to setup a static blog site using Hugo (hosted on github)</title>
       <link>http://shuod.github.io/post/first/</link>
       <pubDate>Sat, 02 Apr 2016 10:40:00 -0600</pubDate>
@@ -220,15 +211,6 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
 &lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
 &lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Adding a comment system to the hugo blog</title>
-      <link>http://shuod.github.io/post/second/</link>
-      <pubDate>Thu, 21 Jan 2016 22:59:16 -0600</pubDate>
-      
-      <guid>http://shuod.github.io/post/second/</guid>
-      <description>&lt;p&gt;One of the shortcoming of static blog system is they usually don&amp;rsquo;t have a comment system. But good news is there are many 3rd party comment systems available, one of which is Disqus.&lt;/p&gt;</description>
     </item>
     
   </channel>

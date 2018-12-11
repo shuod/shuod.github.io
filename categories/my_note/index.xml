@@ -43,15 +43,6 @@
     </item>
     
     <item>
-      <title>Notes to test driven development with Django using pycharm (chp 0)</title>
-      <link>http://shuod.github.io/post/tdd-django-pycharm-0/</link>
-      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuod.github.io/post/tdd-django-pycharm-0/</guid>
-      <description>0 Checkpoints  Tips for pycharm IDE (from Tip of the Day)  Rename the variable name / identifier : rename the variable at any place by pressing &amp;ldquo;Shift+F6&amp;rdquo; afterward then variable names at every place will be changed to the new name.   1 Book choice  Most of the content is my note to the &amp;ldquo;test driven web development using python&amp;rdquo; that is available at: http://www.obeythetestinggoat.com  The reason choosing this book is to learn what is called &amp;ldquo;test driven development (TDD)&amp;rdquo;.</description>
-    </item>
-    
-    <item>
       <title>Notes to test driven development with Django using pycharm (chp 1)</title>
       <link>http://shuod.github.io/post/tdd-django-pycharm-1/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
