@@ -6,10 +6,19 @@
     <description>Recent content in Development on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kick start docker for a deeplearning environment</title>
+      <link>http://shuod.github.io/post/kick_start_docker_for_a_deeplearning_environment/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/kick_start_docker_for_a_deeplearning_environment/</guid>
+      <description>1. what is docker The first virtualization machine I setup was back to VMWare era. At that time, by using VMWare, you can install linux on a windows machine, and it is very useful too. For me at that time, knowing nothing about linux, I have to google everything, &amp;ldquo;how to start X window&amp;rdquo;, &amp;ldquo;how to restart service&amp;rdquo;, &amp;ldquo;how to install software&amp;rdquo;. So running the linux in an application-like manner, I can convienetly switch back to browser to search online.</description>
+    </item>
     
     <item>
       <title>Basics of the github workflow for  a single user</title>

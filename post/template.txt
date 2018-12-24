@@ -1,17 +1,9 @@
 +++
 title = "Getting Started with Hugo"
 description = ""
-tags = [
-    "go",
-    "golang",
-    "hugo",
-    "development",
-]
+tags = ["Python", "Development", "MachineLearning"]
 date = "2014-04-02"
-categories = [
-    "Development",
-    "golang",
-]
+categories = [ "Development", "MachineLearning"]
 
 image = "image.jpg" # optional
 toc = true # optional, When set to TRUE this parameter, table of contents appears in only this article.
@@ -30,6 +22,9 @@ Tags:
 
     "Windows",
 
+    "MachineLearning"
+
+
 
 tags = ["VPS", "Linux","VPN"]
 tags = ["VPS", "Linux","Science"]
@@ -44,6 +39,7 @@ Categories:
 First letter capitalized, even with a "_", but the letter after "_", will not. No space, use "_".
 
 Python
+Golang
 My_script
 Development
 Shell_powershell
@@ -52,28 +48,9 @@ Writing
 
 My_script
 Linux
-
-
-
-Categories = ["", "Linux"]
-
-    "My_script",
-
-    "Development",
-
-    "Shell_powershell",
-
-
-
-Categories = ["Science", "Linux"]
-
-
-Categories = ["Python", "Data Science"]
-
-
-Categories = ["", "GoLang"]
-
-
+MachineLearning
+Science
+Data Science
 
 
 

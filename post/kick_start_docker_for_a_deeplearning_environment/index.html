@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Kick start docker for a deeplearning environment - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="1. what is docker The first virtualization machine I setup was back to VMWare era. At that time, by using VMWare, you can install linux on a windows machine, and it is very useful too. For me at that time, knowing nothing about linux, I have to google everything, &amp;ldquo;how to start X window&amp;rdquo;, &amp;ldquo;how to restart service&amp;rdquo;, &amp;ldquo;how to install software&amp;rdquo;. So running the linux in an application-like manner, I can convienetly switch back to browser to search online." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/kick_start_docker_for_a_deeplearning_environment/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Kick start docker for a deeplearning environment" />
+<meta property="og:description" content="1. what is docker The first virtualization machine I setup was back to VMWare era. At that time, by using VMWare, you can install linux on a windows machine, and it is very useful too. For me at that time, knowing nothing about linux, I have to google everything, &ldquo;how to start X window&rdquo;, &ldquo;how to restart service&rdquo;, &ldquo;how to install software&rdquo;. So running the linux in an application-like manner, I can convienetly switch back to browser to search online." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/kick_start_docker_for_a_deeplearning_environment/" /><meta property="article:published_time" content="2018-12-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-24T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Kick start docker for a deeplearning environment">
+<meta itemprop="description" content="1. what is docker The first virtualization machine I setup was back to VMWare era. At that time, by using VMWare, you can install linux on a windows machine, and it is very useful too. For me at that time, knowing nothing about linux, I have to google everything, &ldquo;how to start X window&rdquo;, &ldquo;how to restart service&rdquo;, &ldquo;how to install software&rdquo;. So running the linux in an application-like manner, I can convienetly switch back to browser to search online.">
+
+
+<meta itemprop="datePublished" content="2018-12-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1485">
+
+
+
+<meta itemprop="keywords" content="Python,Development,MachineLearning," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kick start docker for a deeplearning environment"/>
+<meta name="twitter:description" content="1. what is docker The first virtualization machine I setup was back to VMWare era. At that time, by using VMWare, you can install linux on a windows machine, and it is very useful too. For me at that time, knowing nothing about linux, I have to google everything, &ldquo;how to start X window&rdquo;, &ldquo;how to restart service&rdquo;, &ldquo;how to install software&rdquo;. So running the linux in an application-like manner, I can convienetly switch back to browser to search online."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Kick start docker for a deeplearning environment</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-24 </span>
+        <div class="post-category">
+            
+              <a href="/categories/development/"> Development </a>
+            
+              <a href="/categories/machinelearning/"> MachineLearning </a>
+            
+          </div>
+        <span class="more-meta"> 1485 words </span>
+        <span class="more-meta"> 7 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-what-is-docker">1. what is docker</a></li>
+<li><a href="#2-install-docker">2. install docker</a>
+<ul>
+<li><a href="#install-docker-in-windows">install docker in windows</a></li>
+<li><a href="#install-docker-in-linux-centos7">install docker in linux/Centos7</a></li>
+<li><a href="#install-docker-in-macos">install docker in MacOS</a></li>
+</ul></li>
+<li><a href="#3-install-a-sample-container-ubuntu">3. Install a sample container - ubuntu</a></li>
+<li><a href="#4-install-a-deep-learning-environment-deepo">4. Install a deep learning environment &ldquo;Deepo&rdquo;</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="1-what-is-docker">1. what is docker</h2>
+
+<p>The first virtualization machine I setup was back to VMWare era. At that time, by using VMWare, you can install linux on a windows machine, and it is very useful too. For me at that time, knowing nothing about linux, I have to google everything, &ldquo;how to start X window&rdquo;, &ldquo;how to restart service&rdquo;, &ldquo;how to install software&rdquo;. So running the linux in an application-like manner, I can convienetly switch back to browser to search online. Perhaps the only defect is the virtual machine runs slower than the host machine, and at that time video card can not be used by VMWare too.</p>
+
+<p>As we stepping into the cloud computing, with the performance of the computer greatly improved, the concept of virtualization have become more and more popular. Now we have virtualization at different levels, bestowing you even more flexibility. Docker, specifically speaking, is much more useful than others. Unlike VMWare that simulate the whole machine, docker only simulate at the application level, or you can consider it as a sandbox (container) that provide all library/OS-related files for your application to run. In the past, if you want to install a software, you have to download it, compile it in the local environment, and exam carefully at the version of &ldquo;gcc&rdquo;, &ldquo;libc&rdquo;, and other libraries, and sometime it is not easy. If you have tried to install numpy youself, you would understand why python bundle package is so popular (e.g. anaconda, python(x,y)). Besides, I won&rsquo;t get worried about if I could install another software who use a different version of library in the same machine. Now, everything is simple, you just start the docker service and the software containers and you won&rsquo;t worry about the conflict they may have because different containers run independently.</p>
+
+<p>Also, it provides additonal flexibility. For a web-server, imaging to setup many encapsulated micro-service in many docker containers instead of one single machine, then whenever one service encoutered problem, you can just restart that containers instead of the whole machine, so that rest of the service won&rsquo;t be affected. Upgrading is also simple, one script would upgrade all of the service without restart-delay.</p>
+
+<p>Last, since it simulate at a higher level, the performance is much better than low level simulation although still less than real machine. But think of the convience and flexibility it brings, docker is still a great tool!</p>
+
+<p>Probably I should mention, the &ldquo;windows subsystem for linux&rdquo; or WSL in windows10 is not the same concept. WSL is possible only because of the structrue of the windows NT system. So generally, the NT core can have many different &ldquo;front&rdquo;. Usually, we &ldquo;mount&rdquo; windows to the NT core, so it is a windows. Therefore, if you &ldquo;mount&rdquo; a linux &ldquo;front&rdquo;, it will become a linux machine. Or if you mount &ldquo;OS/2 warp&rdquo; front, it will become an IBM OS/2 machine. But the software you developed in one &ldquo;front&rdquo;, can not be excuted in another &ldquo;front&rdquo;. They are still complied within the &ldquo;front&rdquo;.</p>
+
+<h2 id="2-install-docker">2. install docker</h2>
+
+<p>Docker can be installed in windows or linux or mac, and once docker is installed, the same container can run inside docker in any OS/machine. The container can encapsule anything, from a linux system to software or just an environment. And combined with a git-like service provided by the docker-hub, any changes you made to the container can be committed and pushed back to your docker-hub account. Then if you want to switch to another machine, a simple &ldquo;docker pull&rdquo; (comparable to &ldquo;git pull&rdquo;) will replicate the in-situ working environment exactly at where you left.</p>
+
+<h3 id="install-docker-in-windows">install docker in windows</h3>
+
+<p>You have to have windows 10 Pro version to install docker-for-windows. The windows 10 Pro support the hyper-V which is essential to the docker. However, if you don&rsquo;t have such a version, say your windows is home/student edition, you can use other subsitions, like docker toolbox or minikube and the only difference is the performance.</p>
+
+<p>One thing to metion, is docker needs Type-1 hypervisor, which can not be turned on at the same time with Type-2 hypervisor that is used by some other virsual machine products (e.g. Oracle Virtual Box). One solution is you restart the machine every time after you switch to the other type. Tedious but works. Another solution would be: you first install a virtual machine, and then install the docker inside that virtual machine &ndash; problem solved. This the convienece of the virtualization. The only problem is the performance since it is a virtualization on top of anther virtualization. But in some cases, this solution is the only choice. In that case, try Minikube &ndash; an existing solution.</p>
+
+<ul>
+<li>Making sure you turn on the hyper-V:
+<code>
+bcdedit /set hypervisorlaunchtype auto
+</code></li>
+<li>Also turn on the hard ware virtulization at the BIOS (VT-x for intel or AMD-v for AMD). You can check by:</li>
+</ul>
+
+<pre><code>systeminfo
+</code></pre>
+
+<ul>
+<li><p>Restart the machine</p></li>
+
+<li><p>Download docker-for-windows at <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">https://hub.docker.com/editions/community/docker-ce-desktop-windows</a></p></li>
+
+<li><p>Restart the machine</p></li>
+
+<li><p>By typing</p>
+
+<pre><code>docker ps
+</code></pre>
+
+<p>You should find an empty list, since you have run any containers yet. But if there is an error &ldquo;error during connect &hellip;&rdquo;, it means the docker deamon is not running. Try start it mannually.</p></li>
+</ul>
+
+<h3 id="install-docker-in-linux-centos7">install docker in linux/Centos7</h3>
+
+<p>Use the package mangement yum is simple (or apt-get/ apt for other linux distributions):</p>
+
+<pre><code># Centos 
+yum install docker
+
+</code></pre>
+
+<p>Then we can use the following to set it to start itself</p>
+
+<pre><code># Centos 7
+systemctl socker.service
+enable docker.service
+</code></pre>
+
+<h3 id="install-docker-in-macos">install docker in MacOS</h3>
+
+<p>As in windows, there is some requirrement for Mac OS. You will need:
+- 2010 or newer, with Intel¡¯s hardware Memory Management Unit (MMU).
+- OS X 10.10.3 Yosemite or newer (or macOS).
+- At least 4 GB of RAM.
+- You must not have a VirtualBox installation earlier than version 4.3.30 on your system. If you do, you¡¯ll need to uninstall it. (This is again about hypervisor-1 and hypervisor-2)</p>
+
+<p>To install docker, use Homebrew</p>
+
+<pre><code>brew cask install docker
+</code></pre>
+
+<p>Or download the docker at <a href="https://hub.docker.com/editions/community/docker-ce-desktop-mac">https://hub.docker.com/editions/community/docker-ce-desktop-mac</a> , then drag dmg file to application folder.</p>
+
+<h2 id="3-install-a-sample-container-ubuntu">3. Install a sample container - ubuntu</h2>
+
+<p>We first define some concepts:</p>
+
+<p>Host: the real machine that run dockers;</p>
+
+<p>Image: the encapsulation of desired object;</p>
+
+<p>Container: The image under executation, or &ldquo;an instance of the image&rdquo;. Once an image is created, you can pull it to the local machine multiple times to create several containers;</p>
+
+<p>Repository: the same like in the github, the remote place to store image;</p>
+
+<ul>
+<li>Pull image from the repository to the local:
+<code>
+docker pull ${image_URL}:${image_tag}
+</code>
+The URL is where you store the image. By default, docker-hub is used as the remote repository.
+<code>
+docker pull ubuntu:16.04
+</code>
+Check local image:
+<code>
+docker image ls
+</code></li>
+</ul>
+
+<p>Once you have downloaded the image: you can start it, attach to it or stop it. Since we add &ldquo;-it&rdquo; parameter to the &ldquo;docker run&rdquo;, you will be attached to the container once it is running. You can see your prompt has changed.</p>
+
+<pre><code>docker run -it ${image_id}
+#or
+docker run -it ${Repository:Tag}
+
+#example:
+docker run -it Ubuntu:16.04
+</code></pre>
+
+<p>On the other hand, you can also start the container only and attach to it later:</p>
+
+<pre><code>#start it:
+docker run Ubuntu:16.04
+
+#attach to it:
+docker attach Ubuntu:16.04
+</code></pre>
+
+<p>Check whether it is running:</p>
+
+<pre><code>#The up-running container is shown as &quot;excited&quot;
+
+docker ps -a
+</code></pre>
+
+<p>If you have attached to the container, then when you &ldquo;quit&rdquo;, the container will stop. Or if you didn&rsquo;t attach to it, you can use following to stop it:</p>
+
+<pre><code>docker stop ${Repository:Tag}
+</code></pre>
+
+<h2 id="4-install-a-deep-learning-environment-deepo">4. Install a deep learning environment &ldquo;Deepo&rdquo;</h2>
+
+<p>Now, we are going to install a container that has everything done right for you&mdash; the image is called &ldquo;Deepo&rdquo;. In this case, you don&rsquo;t have to start from installing linux, python and deep learning frameworks, like PyTorch, theano, mxnet,etc. They all readily installed in this image, and all you have to do is to pull it from docker-hub. If you want to make changes, just remember to push your modified version to your account in docker-hub.</p>
+
+<p>Deepo (<a href="https://hub.docker.com/r/ufoym/deepo">https://hub.docker.com/r/ufoym/deepo</a>) actually has two verision, CPU-version and GPU version. You can refer to his docker webpage for details. Here we just install the CPU version. After initiate docker, we start by:</p>
+
+<pre><code>docker pull ufoym/deepo:cpu
+</code></pre>
+
+<p>You are all set. Remember how to run a container?</p>
+
+<pre><code>docker run -it ufoym/deepo:cpu bash
+</code></pre>
+
+<p>To share the data between the host machine (the machine runs docker) and the container is simple, just modify the initiate command to::</p>
+
+<pre><code>docker run -it -v /host/data:/data -v /host/config:/config ufoym/deepo:cpu bash
+</code></pre>
+
+<p>This will map the /host/data folder to the /data folder in the container.</p>
+
+<p>Now you can try to run it:</p>
+
+<pre><code>import caffe
+caffe --version
+</code></pre>
+
+<p>Of course, if you don&rsquo;t want all-in-one solution, you can choose which pieces you lkie and pull them together to form a image to run in the container. Refer to &ldquo;Build your own customized image with Lego-like modules&rdquo; section in their docker homepages.</p>
+
+<p>Last thing, but also important, this project is under MIT license, so free feel to modify and enjoy it!</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-12-24</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/kick_start_docker_for_a_deeplearning_environment/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/python/">Python</a>
+          
+          <a href="/tags/development/">Development</a>
+          
+          <a href="/tags/machinelearning/">MachineLearning</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/basics_of_git_workflow_for_single_user/">
+            <span class="next-text nav-default">Basics of the github workflow for  a single user</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
