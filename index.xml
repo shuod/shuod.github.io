@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Using random forest to predict bandgaps and HOMOs</title>
+      <link>http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/</guid>
+      <description>A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest.</description>
+    </item>
+    
+    <item>
       <title>Kick start docker for a deeplearning environment</title>
       <link>http://shuod.github.io/post/kick_start_docker_for_a_deeplearning_environment/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>

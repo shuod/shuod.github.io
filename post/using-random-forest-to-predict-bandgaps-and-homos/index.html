@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Using random forest to predict bandgaps and HOMOs - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Using random forest to predict bandgaps and HOMOs" />
+<meta property="og:description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/" /><meta property="article:published_time" content="2019-01-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-01-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Using random forest to predict bandgaps and HOMOs">
+<meta itemprop="description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest.">
+
+
+<meta itemprop="datePublished" content="2019-01-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-01-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1534">
+
+
+
+<meta itemprop="keywords" content="Python,Modeling,MachineLearning,Data," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using random forest to predict bandgaps and HOMOs"/>
+<meta name="twitter:description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Using random forest to predict bandgaps and HOMOs</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-01-02 </span>
+        <div class="post-category">
+            
+              <a href="/categories/science/"> Science </a>
+            
+              <a href="/categories/machinelearning/"> MachineLearning </a>
+            
+          </div>
+        <span class="more-meta"> 1534 words </span>
+        <span class="more-meta"> 8 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#molecular-fingerprint">Molecular fingerprint</a></li>
+<li><a href="#random-forest-rf">Random Forest (RF)</a></li>
+<li><a href="#benchmark-functionals-in-density-functional-theory-dft">Benchmark functionals in Density functional theory(DFT)</a></li>
+<li><a href="#comparisons-of-rf-and-benchmark-functional-results">Comparisons of RF and Benchmark functional results</a>
+<ul>
+<li><a href="#1-comparison-of-both-methods-dft-and-rf-for-homos-energies-is">1 Comparison of both methods (DFT and RF) for HOMOs energies  is:</a></li>
+<li><a href="#2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT)  that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest. The objective is to predict the bandgaps and HOMOs (highest occupied molecular orbitals) energies of organic semiconductors.</p>
+
+<h2 id="molecular-fingerprint">Molecular fingerprint</h2>
+
+<p>Molecular fingerprint is a method to digitize the features of a molecule into binary code. Depending on the specific scheme, there are several ways to do that. The one that used to be popular is MACCS that was developed by MDL as a drug screening tool to select molecules with a similar structure. The public version has 166 binary bits and each bit takes certain value if the molecule has a certain feature.</p>
+
+<p>However, the fingerprint scheme that we are going to use is Morgan fingerprint (circular fingerprint). Compared to other fingerprints, Morgan includes features like number of Pi electron, and other electronic related properties:</p>
+
+<ul>
+<li>Morgan describes the local environment and the connectivity of each atom within certain radius, e.g. Morgan2 means coding the environment and connectivity within r=2.</li>
+<li>Features defined in Morgan include: numbers of Pi electrons, electronic donor property or acceptor property.</li>
+</ul>
+
+<p>Since our goal is to predict the bandgap of organic molecules whose energy level are mostly decided by n electrons (n-&gt;Pi*: infrared band) or Pi electrons (Pi-&gt;Pi*: UV-Vis band ).  All those have something to do with electronic property, so I feel Morgan is appropriate to use. However, other fingerprints may also be choices, since features like topology also determined by the electronic property of the molecules, although not so directly.</p>
+
+<p>Using the python library RDkit and Jupyter notebook, we can visualize some of the features that Morgan encoded:</p>
+
+<p>( You can also run the following source code on google colab: <a href="https://colab.research.google.com/drive/1vaL9XrL0MVOlo4yBIKeZ8deavvO-51FF">https://colab.research.google.com/drive/1vaL9XrL0MVOlo4yBIKeZ8deavvO-51FF</a> )</p>
+
+<pre><code class="language-python">from rdkit import Chem
+from rdkit.Chem import rdMolDescriptors
+from rdkit.Chem import Draw
+from rdkit.Chem.Draw import IPythonConsole
+
+# First load the molecule
+mymol_M8f=Chem.MolFromSmiles('COC(=O)C1=CC2=C(C#CC3=CC=CC=C3)C(=C(OC)C(=C2[N]1C)C#CC4=CC=CC=C4)OC')
+mymol_M8f
+</code></pre>
+
+<p><img src="....staticimagesUsing_random_forest_to_predict_fig1_load_moleclue.png" alt="" /></p>
+
+<pre><code class="language-python"># Calculate Morgan Fingerprint and show features encoded:
+bi_M8f = {}
+Morgan_fp_M8f = rdMolDescriptors.GetMorganFingerprintAsBitVect(mymol_M8f, radius=2, bitInfo=bi_M8f)
+print(bi_M8f)
+{56: ((8, 2), (24, 2)), 102: ((10, 1), (26, 1)), 145: ((2, 1),), 189: ((9, 2), (25, 2)), 213: ((7, 1), (20, 1)), 236: ((7, 2),), 333: ((17, 1), (16, 1)), 342: ((6, 2),), 389: ((13, 2), (29, 2)), 430: ((8, 1), (9, 1), (24, 1), (25, 1)), 488: ((4, 1),), 564: ((22, 1),), 609: ((4, 2),), 650: ((3, 0),), 674: ((8, 0), (9, 0), (24, 0), (25, 0)), 695: ((1, 0), (18, 0), (32, 0)), 807: ((2, 0),), 835: ((2, 2),), 841: ((0, 1), (19, 1), (33, 1)), 875: ((5, 1),), 885: ((21, 2),), 906: ((1, 2),), 935: ((22, 0),), 1057: ((0, 0), (19, 0), (23, 0), (33, 0)), 1088: ((12, 1), (13, 1), (14, 1), (28, 1), (29, 1), (30, 1)), 1140: ((10, 2), (26, 2)), 1145: ((23, 1),), 1152: ((1, 1),), 1156: ((17, 2), (16, 2)), 1199: ((12, 2), (28, 2), (14, 2), (30, 2)), 1357: ((6, 1),), 1380: ((4, 0), (6, 0), (7, 0), (10, 0), (16, 0), (17, 0), (20, 0), (21, 0), (26, 0)), 1440: ((21, 1),), 1536: ((18, 1), (32, 1)), 1553: ((22, 2),), 1599: ((18, 2), (32, 2)), 1734: ((11, 2), (15, 2), (27, 2), (31, 2)), 1750: ((11, 1), (27, 1), (15, 1), (31, 1)), 1793: ((20, 2),), 1794: ((5, 2),), 1873: ((5, 0), (11, 0), (12, 0), (13, 0), (14, 0), (15, 0), (27, 0), (28, 0), (29, 0), (30, 0), (31, 0)), 1917: ((3, 1),)}
+
+</code></pre>
+
+<p>The output is a dictionary with bit IDs as keys and (atom ID, radius) as values. For example: 56:((8,2),(24,2)) means this feature (No.56 ) show up at atom8 at radius2 and atom24 at radius2.</p>
+
+<p>We can check what is this feature:</p>
+
+<pre><code class="language-python"># Draw feature 56
+Draw.DrawMorganBit(mymol_M8f,56,bi_M8f)
+</code></pre>
+
+<p><img src="....staticimagesUsing_random_forest_to_predict_fig2_feature56.png" alt="" /></p>
+
+<p>The blue dot show where is the coordinates origin. Yellow shows the feature. We can also visualize the top 10 features:</p>
+
+<pre><code># Draw the top 10 features
+tpls = [(mymol_M8f,x,bi_M8f) for x in Morgan_fp_M8f.GetOnBits()]
+Draw.DrawMorganBits(tpls[:10],molsPerRow=4,legends=[str(x) for x in Morgan_fp_M8f .GetOnBits()][:10])
+</code></pre>
+
+<p><img src="....staticimagesUsing_random_forest_to_predict_fig3_top10.png" alt="" /></p>
+
+<p>We can see that they all Pi electron conjugation structures. With the latest RDKit (release 2018.09), you can do more to visualize the features, check their blog post:
+<a href="http://rdkit.blogspot.com/2018/10/using-new-fingerprint-bit-rendering-code.html">http://rdkit.blogspot.com/2018/10/using-new-fingerprint-bit-rendering-code.html</a></p>
+
+<p>In this study, radius=2 and length of bit=1024:</p>
+
+<pre><code># Morgan: radius=2 and length of bit=1024:
+Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024))
+</code></pre>
+
+<p>The complete code see: <a href="https://github.com/shuod/scripts_for_MachineLearning_projects/tree/master/1_Using%20random%20forest%20to%20predict%20bandgaps%20and%20HOMOs">https://github.com/shuod/scripts_for_MachineLearning_projects/tree/master/1_Using%20random%20forest%20to%20predict%20bandgaps%20and%20HOMOs</a></p>
+
+<p>Another fingerprint I used is RDKit that mostly coded on bond topology.</p>
+
+<h2 id="random-forest-rf">Random Forest (RF)</h2>
+
+<p>When we make a decision, we often encounter a yes-no question: &ldquo;to be or not to be, that is a question&rdquo;. This is essentially a binary tree structure or in this case, it is called a decision tree that is a tree having just two branches(the &ldquo;yes&rdquo; branch and the &ldquo;no&rdquo; branch). Imaging you are asking your friends for an opinion, &ldquo;should I pursue her or not&rdquo;. One friend may tell you &ldquo;Yes&rdquo; after he makes a decision, and the other friend may say &ldquo;Yes&rdquo;, but the third friend may say &ldquo;No&rdquo;. Each of them can be abstracted as a decision tree that returns you a decision. Suppose you have a great many friends and each of your friends also have their friends, then your huge &ldquo;friend network&rdquo; is made up of a great many decision trees, or we call it the forest.</p>
+
+<p><img src="....staticimagesUsing_random_forest_to_predict_fig4_decision_tree.png" alt="" /></p>
+
+<p>Illustration of random forests and decision trees (<em>from &ldquo;Python Data Science Handbook, by Jake VanderPlas, O&rsquo;Reilly Media, 2016&rdquo;</em> )</p>
+
+<p>If you just look at the hierarchy structure above, it would remind you of the ensemble theory in statistical physics. Indeed, random forest belongs to what is called ensemble learning, because it is a ensemble of decision trees. Also, it looks like the percolation graph, which is a model of particles going through the porous media except now we just have one type of particles and the chance of splitting at each node is a fixed value of 50%.</p>
+
+<p>More often than not, there are three hyper-parameters to tune in order to achieve the best prediction accuracy:</p>
+
+<ul>
+<li><p>The number of trees or n_estimator (in scikit-learn);</p></li>
+
+<li><p>The maximum layers of the trees  or max_depth (in scikit-learn);</p></li>
+
+<li><p>The maximum number of features to be considered at each split or max_features (in scikit-learn);</p></li>
+</ul>
+
+<p>However, here I will just optimize the n_estimator(number of trees) since it is computationally affordable to run in my laptop.</p>
+
+<p>Also, there are several parameters to tune the speed:
+- n_jobs: how many CPU cores to use, &ldquo;-1&rdquo; means no restrictions;
+- random_state: reproduce the same results if given a fixed number;
+- oob_score: used the CV method in random forest which is faster than generalized CV;</p>
+
+<p>Random forest can do classification problems as shown in the figure above, and it also can do regression problems. Here we will use it to do regression to predict bandgap and HOMOs for organic semiconductor.</p>
+
+<p>In this study, I used GridSearchCV() to optimize the n_estimator only:</p>
+
+<pre><code class="language-python">RF_on_HOMO_Morgan = GridSearchCV(RandomForestRegressor(), cv=8, param_grid={&quot;n_estimators&quot;: np.linspace(50, 300, 25).astype('int')},scoring='neg_mean_absolute_error', n_jobs=-1)
+</code></pre>
+
+<p>The complete code see: <a href="https://github.com/shuod/scripts_for_MachineLearning_projects/tree/master/1_Using%20random%20forest%20to%20predict%20bandgaps%20and%20HOMOs">https://github.com/shuod/scripts_for_MachineLearning_projects/tree/master/1_Using%20random%20forest%20to%20predict%20bandgaps%20and%20HOMOs</a></p>
+
+<h2 id="benchmark-functionals-in-density-functional-theory-dft">Benchmark functionals in Density functional theory(DFT)</h2>
+
+<p>To calculate electronic structure and properties of atoms and molecules, one of the frequently used methods by many material discovery projects is Density functional theory (DFT). Using electron density as the variable to replace the wavefunction in Schrodinger equation,  the Kohn-Sham equation, one of the DFT formulism, provides a controllable way between the calculation speed and the accuracy once we chose the proper functional fit to the problem. Therefore, usually the first step in a project is to perform benchmark study among functionals to pick up the one we desired. It is not only about the accuracy but calculation speed, consistency and repeatability are also involved.</p>
+
+<p>Another practice in DFT community when trying to match the predictions to the experiment is to apply a linear fit between the two to get a linear scaling formula. Then any future calculation results would be modified by this scaling formula, in order to be better match the experimental results. So here we will provide two results: calculation results and results after applying the linear scaling formula.</p>
+
+<h2 id="comparisons-of-rf-and-benchmark-functional-results">Comparisons of RF and Benchmark functional results</h2>
+
+<h3 id="1-comparison-of-both-methods-dft-and-rf-for-homos-energies-is">1 Comparison of both methods (DFT and RF) for HOMOs energies  is:</h3>
+
+<p><img src="....staticimagesUsing_random_forest_to_predict_HOMO_MAE_comp.png" alt="" /></p>
+
+<p>We can see that</p>
+
+<ul>
+<li>After linear scaling, DFT predictions are improved, since MAEs (mean absolute error) are reduced.</li>
+<li>MAEs from RF is comparable with DFT methods. Morgan or RDKit produced almost the same MAE.</li>
+</ul>
+
+<h3 id="2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</h3>
+
+<p><img src="....staticimagesUsing_random_forest_to_predict_Bandgap_MAE_comp.png" alt="" /></p>
+
+<p>We can see that</p>
+
+<ul>
+<li>After linear scaling, TD-DFT predictions are improved, since MAEs (mean absolute error) are reduced.</li>
+<li>Unlike the HOMO predictions, predicted MAEs on bandgaps from RF are much larger than those from TD-DFT. I think this is because the fingerprint we used are based on ground state molecules. However, when molecules are excited, the excited state structure and electronic properties are much different than ground state. So using fingerprint based on ground state may produce results that are not so accurate.  I am not aware of fingerprint for excited state, so I guess that is something, RF model couldn&rsquo;t do well at the moment.</li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-01-02</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/python/">Python</a>
+          
+          <a href="/tags/modeling/">Modeling</a>
+          
+          <a href="/tags/machinelearning/">MachineLearning</a>
+          
+          <a href="/tags/data/">Data</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/kick_start_docker_for_a_deeplearning_environment/">
+            <span class="next-text nav-default">Kick start docker for a deeplearning environment</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
