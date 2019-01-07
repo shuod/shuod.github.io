@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Shuo" />
-  <meta name="description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest." />
+  <meta name="description" content="A new idea that we can bypass quantum chemistry calculation using the proper machine learning method is prevalent now. It will be exciting if we could have a second way to resolve objectives of material discovery quest rather than adopting Density functional theory (DFT) that is the principal method used now. Here I will primarily compare predictions from DFT and a popular machine learning method called the Random Forest (RF)." />
 
   <meta name="keywords" content="Modeling, Simulation, Coding" />
 
@@ -50,25 +50,25 @@
 
 
 <meta property="og:title" content="Using random forest to predict bandgaps and HOMOs" />
-<meta property="og:description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest." />
+<meta property="og:description" content="A new idea that we can bypass quantum chemistry calculation using the proper machine learning method is prevalent now. It will be exciting if we could have a second way to resolve objectives of material discovery quest rather than adopting Density functional theory (DFT) that is the principal method used now. Here I will primarily compare predictions from DFT and a popular machine learning method called the Random Forest (RF)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/" /><meta property="article:published_time" content="2019-01-02T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-01-02T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Using random forest to predict bandgaps and HOMOs">
-<meta itemprop="description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest.">
+<meta itemprop="description" content="A new idea that we can bypass quantum chemistry calculation using the proper machine learning method is prevalent now. It will be exciting if we could have a second way to resolve objectives of material discovery quest rather than adopting Density functional theory (DFT) that is the principal method used now. Here I will primarily compare predictions from DFT and a popular machine learning method called the Random Forest (RF).">
 
 
 <meta itemprop="datePublished" content="2019-01-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1534">
+<meta itemprop="wordCount" content="1770">
 
 
 
 <meta itemprop="keywords" content="Python,Modeling,MachineLearning,Data," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using random forest to predict bandgaps and HOMOs"/>
-<meta name="twitter:description" content="A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT) that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest."/>
+<meta name="twitter:description" content="A new idea that we can bypass quantum chemistry calculation using the proper machine learning method is prevalent now. It will be exciting if we could have a second way to resolve objectives of material discovery quest rather than adopting Density functional theory (DFT) that is the principal method used now. Here I will primarily compare predictions from DFT and a popular machine learning method called the Random Forest (RF)."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -146,8 +146,8 @@
               <a href="/categories/machinelearning/"> MachineLearning </a>
             
           </div>
-        <span class="more-meta"> 1534 words </span>
-        <span class="more-meta"> 8 mins read </span>
+        <span class="more-meta"> 1770 words </span>
+        <span class="more-meta"> 9 mins read </span>
         
       </div>
     </header>
@@ -165,10 +165,13 @@
 <li><a href="#molecular-fingerprint">Molecular fingerprint</a></li>
 <li><a href="#random-forest-rf">Random Forest (RF)</a></li>
 <li><a href="#benchmark-functionals-in-density-functional-theory-dft">Benchmark functionals in Density functional theory(DFT)</a></li>
-<li><a href="#comparisons-of-rf-and-benchmark-functional-results">Comparisons of RF and Benchmark functional results</a>
+<li><a href="#comparisons-of-rf-and-dft-td-dft-results">Comparisons of RF and DFT/TD-DFT results</a>
 <ul>
 <li><a href="#1-comparison-of-both-methods-dft-and-rf-for-homos-energies-is">1 Comparison of both methods (DFT and RF) for HOMOs energies  is:</a></li>
-<li><a href="#2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</a></li>
+<li><a href="#2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</a>
+<ul>
+<li><a href="#reference">Reference:</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -183,20 +186,20 @@
     <div class="post-content">
       
 
-<p>A new idea that whether we can bypass quantum chemistry calculation using proper machine learning method is very popular now. It will be very interesting if we could have a second way to resolve material discovery objective rather than using Density functional theory (DFT)  that is the major method in every material discovery projects. Here I will just primarily compare predictions from DFT and a popular machine learning method called random forest. The objective is to predict the bandgaps and HOMOs (highest occupied molecular orbitals) energies of organic semiconductors.</p>
+<p>A new idea that we can bypass quantum chemistry calculation using the proper machine learning method is prevalent now. It will be exciting if we could have a second way to resolve objectives of material discovery quest rather than adopting Density functional theory (DFT)  that is the principal method used now. Here I will primarily compare predictions from DFT and a popular machine learning method called the Random Forest (RF). The objective is to predict the bandgaps and HOMOs (highest occupied molecular orbitals) energies of organic semiconductors.</p>
 
 <h2 id="molecular-fingerprint">Molecular fingerprint</h2>
 
-<p>Molecular fingerprint is a method to digitize the features of a molecule into binary code. Depending on the specific scheme, there are several ways to do that. The one that used to be popular is MACCS that was developed by MDL as a drug screening tool to select molecules with a similar structure. The public version has 166 binary bits and each bit takes certain value if the molecule has a certain feature.</p>
+<p>The molecular fingerprint is a method to digitize the features of a molecule into a binary code. Depending on the specific scheme, there are several ways to do that. The one that used to be popular is MACCS that was developed by MDL as a drug screening tool to select molecules with a similar structure. The public version has 166 binary bits, and each bit takes specific value if the molecule has a particular feature.</p>
 
-<p>However, the fingerprint scheme that we are going to use is Morgan fingerprint (circular fingerprint). Compared to other fingerprints, Morgan includes features like number of Pi electron, and other electronic related properties:</p>
+<p>However, the fingerprint scheme that we are going to use is Morgan fingerprint (circular fingerprint). Compared to other fingerprints, Morgan includes features like the number of Pi electron and other electronic related properties:</p>
 
 <ul>
 <li>Morgan describes the local environment and the connectivity of each atom within certain radius, e.g. Morgan2 means coding the environment and connectivity within r=2.</li>
 <li>Features defined in Morgan include: numbers of Pi electrons, electronic donor property or acceptor property.</li>
 </ul>
 
-<p>Since our goal is to predict the bandgap of organic molecules whose energy level are mostly decided by n electrons (n-&gt;Pi*: infrared band) or Pi electrons (Pi-&gt;Pi*: UV-Vis band ).  All those have something to do with electronic property, so I feel Morgan is appropriate to use. However, other fingerprints may also be choices, since features like topology also determined by the electronic property of the molecules, although not so directly.</p>
+<p>Since our goal is to predict the bandgap of organic molecules whose energy level are mostly decided by n electrons (n-&gt;Pi<em>: infrared band) or Pi electrons (Pi-&gt;Pi</em>: UV-Vis band ), all of which have something to do with electronic property, so I feel Morgan is appropriate to use. However, other fingerprints may also be choices, since features like topology also determined by the electronic property of the molecules, although not so directly.</p>
 
 <p>Using the python library RDkit and Jupyter notebook, we can visualize some of the features that Morgan encoded:</p>
 
@@ -256,15 +259,15 @@ Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024
 
 <h2 id="random-forest-rf">Random Forest (RF)</h2>
 
-<p>When we make a decision, we often encounter a yes-no question: &ldquo;to be or not to be, that is a question&rdquo;. This is essentially a binary tree structure or in this case, it is called a decision tree that is a tree having just two branches(the &ldquo;yes&rdquo; branch and the &ldquo;no&rdquo; branch). Imaging you are asking your friends for an opinion, &ldquo;should I pursue her or not&rdquo;. One friend may tell you &ldquo;Yes&rdquo; after he makes a decision, and the other friend may say &ldquo;Yes&rdquo;, but the third friend may say &ldquo;No&rdquo;. Each of them can be abstracted as a decision tree that returns you a decision. Suppose you have a great many friends and each of your friends also have their friends, then your huge &ldquo;friend network&rdquo; is made up of a great many decision trees, or we call it the forest.</p>
+<p>When we make a decision, we often encounter a yes-no question: &ldquo;to be or not to be, that is a question.&rdquo;. A yes-no question correspond to essentially a binary tree structure, or in this case, it is called a decision tree that is a tree having just two branches(the &ldquo;yes&rdquo; branch and the &ldquo;no&rdquo; branch). Assuming you are asking your friends for an opinion, &ldquo;should I pursue her or not?&rdquo;. One friend may tell you &ldquo;Yes&rdquo; after he makes a decision, and the other friend may say &ldquo;Yes&rdquo; as well, but the third friend may say &ldquo;No&rdquo;. Each of them can be depicted as a decision tree that returns you a decision. Suppose you have a great many friends and each of your friends also has their friends, then your huge &ldquo;friend network&rdquo; is made up of a great many decision trees, or we call it the forest.</p>
 
-<p><img src="....staticimagesUsing_random_forest_to_predict_fig4_decision_tree.png" alt="" /></p>
+<p><img src="/images/Using_random_forest_to_predict_fig4_decision_tree.png" alt="" /></p>
 
 <p>Illustration of random forests and decision trees (<em>from &ldquo;Python Data Science Handbook, by Jake VanderPlas, O&rsquo;Reilly Media, 2016&rdquo;</em> )</p>
 
-<p>If you just look at the hierarchy structure above, it would remind you of the ensemble theory in statistical physics. Indeed, random forest belongs to what is called ensemble learning, because it is a ensemble of decision trees. Also, it looks like the percolation graph, which is a model of particles going through the porous media except now we just have one type of particles and the chance of splitting at each node is a fixed value of 50%.</p>
+<p>If you just look at the hierarchy structure above, it would remind you of the ensemble theory in statistical physics. Indeed, random forest belongs to what is called ensemble learning, because it is an ensemble of decision trees. Also, it looks like the percolation graph, which is a model of particles going through the porous media except now we have one type of particles and the chance of splitting at each node is a fixed value of 50%.</p>
 
-<p>More often than not, there are three hyper-parameters to tune in order to achieve the best prediction accuracy:</p>
+<p>More often than not, we can use three hyper-parameters to tune in order to achieve the best prediction accuracy:</p>
 
 <ul>
 <li><p>The number of trees or n_estimator (in scikit-learn);</p></li>
@@ -281,7 +284,7 @@ Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024
 - random_state: reproduce the same results if given a fixed number;
 - oob_score: used the CV method in random forest which is faster than generalized CV;</p>
 
-<p>Random forest can do classification problems as shown in the figure above, and it also can do regression problems. Here we will use it to do regression to predict bandgap and HOMOs for organic semiconductor.</p>
+<p>The Random forest can do classification problems as shown in the figure above, and it also can do regression problems. Here we will use it to do a regression to predict bandgap and HOMOs for organic semiconductor.</p>
 
 <p>In this study, I used GridSearchCV() to optimize the n_estimator only:</p>
 
@@ -292,15 +295,15 @@ Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024
 
 <h2 id="benchmark-functionals-in-density-functional-theory-dft">Benchmark functionals in Density functional theory(DFT)</h2>
 
-<p>To calculate electronic structure and properties of atoms and molecules, one of the frequently used methods by many material discovery projects is Density functional theory (DFT). Using electron density as the variable to replace the wavefunction in Schrodinger equation,  the Kohn-Sham equation, one of the DFT formulism, provides a controllable way between the calculation speed and the accuracy once we chose the proper functional fit to the problem. Therefore, usually the first step in a project is to perform benchmark study among functionals to pick up the one we desired. It is not only about the accuracy but calculation speed, consistency and repeatability are also involved.</p>
+<p>To calculate the electronic structure and properties of atoms and molecules, one of the frequently used methods by many material discovery projects is Density functional theory (DFT). Using electron density as the variable to replace the wavefunction in Schrodinger equation,  the Kohn-Sham equation, one of the DFT &rsquo;s multiple faces, provides a controllable way between the calculation speed and the accuracy once we chose the proper functional fit to the problem. Therefore, usually, the first step in a project is to perform a benchmark study among functionals to pick up the one we desired. It is not only about the accuracy but calculation speed, consistency, and repeatability are also involved. for the bandgap calculation, results were from time-dependent DFT (TD-DFT) with the same functional.</p>
 
-<p>Another practice in DFT community when trying to match the predictions to the experiment is to apply a linear fit between the two to get a linear scaling formula. Then any future calculation results would be modified by this scaling formula, in order to be better match the experimental results. So here we will provide two results: calculation results and results after applying the linear scaling formula.</p>
+<p>Another practice in the DFT community when trying to match the prediction to the experiment is to apply a linear fit between the two to get a linear scaling formula. Then any future calculation results would be modified by this scaling formula, in order to be better match the experimental results. So here we will provide two results: calculation results and results after applying the linear scaling formula.</p>
 
-<h2 id="comparisons-of-rf-and-benchmark-functional-results">Comparisons of RF and Benchmark functional results</h2>
+<h2 id="comparisons-of-rf-and-dft-td-dft-results">Comparisons of RF and DFT/TD-DFT results</h2>
 
 <h3 id="1-comparison-of-both-methods-dft-and-rf-for-homos-energies-is">1 Comparison of both methods (DFT and RF) for HOMOs energies  is:</h3>
 
-<p><img src="....staticimagesUsing_random_forest_to_predict_HOMO_MAE_comp.png" alt="" /></p>
+<p><img src="/images/Using_random_forest_to_predict_HOMO_MAE_comp.png" alt="" /></p>
 
 <p>We can see that</p>
 
@@ -311,14 +314,34 @@ Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024
 
 <h3 id="2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</h3>
 
-<p><img src="....staticimagesUsing_random_forest_to_predict_Bandgap_MAE_comp.png" alt="" /></p>
+<p><img src="/images/Using_random_forest_to_predict_Bandgap_MAE_comp.png" alt="" /></p>
 
 <p>We can see that</p>
 
 <ul>
 <li>After linear scaling, TD-DFT predictions are improved, since MAEs (mean absolute error) are reduced.</li>
-<li>Unlike the HOMO predictions, predicted MAEs on bandgaps from RF are much larger than those from TD-DFT. I think this is because the fingerprint we used are based on ground state molecules. However, when molecules are excited, the excited state structure and electronic properties are much different than ground state. So using fingerprint based on ground state may produce results that are not so accurate.  I am not aware of fingerprint for excited state, so I guess that is something, RF model couldn&rsquo;t do well at the moment.</li>
+<li>Unlike the HOMO predictions, predicted MAEs on bandgaps from RF are much larger than those from TD-DFT. I think this is because the fingerprint we used are based on ground state molecules. However, when molecules are excited, the excited state structure and electronic properties are much different from the ground state. So using fingerprint based on ground state may produce results that are not so accurate.  I am not aware of fingerprint for excited state, so I guess predictions on excited states properties are something RF model couldn&rsquo;t do well at the moment.</li>
 </ul>
+
+<p>The conclusion is that for ground state properties like HOMO energy, RF has more or less the same accuracy as the DFT method. Since RF much less than the DFT method, It probably worth considering to switch to RF (with further hyper-parameter tuning). The interpretation will involve the molecular properties that molecular fingerprints are constructed on. So there is some physics behind it.</p>
+
+<p>However, for the excited state related properties, like the bandgap, due to the lack of a proper molecular fingerprint scheme, RF produced larger MAEs than TD-DFT. Further parameter tuning (since I just tuned the number of trees, there are two other factors we can use.) may work or may not. But since the physics behind the Morgan fingerprint is all for the ground state, it may be difficult to explain the excited state property based on ground state Morgan fingerprint.</p>
+
+<h4 id="reference">Reference:</h4>
+
+<p>[1] Fingerprints in the RDKit, <a href="https://www.rdkit.org/UGM/2012/Landrum_RDKit_UGM.Fingerprints.Final.pptx.pdf">https://www.rdkit.org/UGM/2012/Landrum_RDKit_UGM.Fingerprints.Final.pptx.pdf</a></p>
+
+<p>[2] Using new fingerprints bit rendering system, <a href="http://rdkit.blogspot.com/2018/10/using-new-fingerprint-bit-rendering-code.html">http://rdkit.blogspot.com/2018/10/using-new-fingerprint-bit-rendering-code.html</a></p>
+
+<p>[3] Python Data Science Handbook, by Jake VanderPlas, O&rsquo;Reilly Media, 2016</p>
+
+<p>[4] Tuning the parameters of your Random Forest model, <a href="https://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/">https://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/</a></p>
+
+<p>[5] Hyperparameter tuning the random forest in python, <a href="https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74">https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74</a></p>
+
+<p>[5] sci-kit learn document on Random Forest Regressor, <a href="http://lijiancheng0614.github.io/scikit-learn/modules/generated/sklearn.ensemble.RandomForestRegressor.html">http://lijiancheng0614.github.io/scikit-learn/modules/generated/sklearn.ensemble.RandomForestRegressor.html</a></p>
+
+<p>[6] sci-kit learn document on GridSearchCV, <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV">https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV</a></p>
 
     </div>
 
