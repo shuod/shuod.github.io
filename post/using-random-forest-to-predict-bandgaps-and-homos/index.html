@@ -215,7 +215,7 @@ mymol_M8f=Chem.MolFromSmiles('COC(=O)C1=CC2=C(C#CC3=CC=CC=C3)C(=C(OC)C(=C2[N]1C)
 mymol_M8f
 </code></pre>
 
-<p><img src="....staticimagesUsing_random_forest_to_predict_fig1_load_moleclue.png" alt="" /></p>
+<p><img src="/images/Using_random_forest_to_predict_fig1_load_moleclue.png" alt="" /></p>
 
 <pre><code class="language-python"># Calculate Morgan Fingerprint and show features encoded:
 bi_M8f = {}
@@ -233,7 +233,7 @@ print(bi_M8f)
 Draw.DrawMorganBit(mymol_M8f,56,bi_M8f)
 </code></pre>
 
-<p><img src="....staticimagesUsing_random_forest_to_predict_fig2_feature56.png" alt="" /></p>
+<p><img src="/images/Using_random_forest_to_predict_fig2_feature56.png" alt="" /></p>
 
 <p>The blue dot show where is the coordinates origin. Yellow shows the feature. We can also visualize the top 10 features:</p>
 
@@ -242,7 +242,7 @@ tpls = [(mymol_M8f,x,bi_M8f) for x in Morgan_fp_M8f.GetOnBits()]
 Draw.DrawMorganBits(tpls[:10],molsPerRow=4,legends=[str(x) for x in Morgan_fp_M8f .GetOnBits()][:10])
 </code></pre>
 
-<p><img src="....staticimagesUsing_random_forest_to_predict_fig3_top10.png" alt="" /></p>
+<p><img src="/images/Using_random_forest_to_predict_fig3_top10.png" alt="" /></p>
 
 <p>We can see that they all Pi electron conjugation structures. With the latest RDKit (release 2018.09), you can do more to visualize the features, check their blog post:
 <a href="http://rdkit.blogspot.com/2018/10/using-new-fingerprint-bit-rendering-code.html">http://rdkit.blogspot.com/2018/10/using-new-fingerprint-bit-rendering-code.html</a></p>
@@ -361,7 +361,7 @@ Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024
     </p>
   <p class="copyright-item">
     <span class="item-title">License</span>
-    <span class="item-content">MIT</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
   </p>
 </div>
 
