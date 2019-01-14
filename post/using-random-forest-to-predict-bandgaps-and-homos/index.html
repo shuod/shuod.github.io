@@ -61,7 +61,7 @@
 
 <meta itemprop="datePublished" content="2019-01-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1770">
+<meta itemprop="wordCount" content="1254">
 
 
 
@@ -146,8 +146,8 @@
               <a href="/categories/machinelearning/"> MachineLearning </a>
             
           </div>
-        <span class="more-meta"> 1770 words </span>
-        <span class="more-meta"> 9 mins read </span>
+        <span class="more-meta"> 1254 words </span>
+        <span class="more-meta"> 6 mins read </span>
         
       </div>
     </header>
@@ -163,12 +163,9 @@
 <li>
 <ul>
 <li><a href="#molecular-fingerprint">Molecular fingerprint</a></li>
-<li><a href="#random-forest-rf">Random Forest (RF)</a></li>
-<li><a href="#benchmark-functionals-in-density-functional-theory-dft">Benchmark functionals in Density functional theory(DFT)</a></li>
-<li><a href="#comparisons-of-rf-and-dft-td-dft-results">Comparisons of RF and DFT/TD-DFT results</a>
+<li><a href="#random-forest-rf">Random Forest (RF)</a>
 <ul>
-<li><a href="#1-comparison-of-both-methods-dft-and-rf-for-homos-energies-is">1 Comparison of both methods (DFT and RF) for HOMOs energies  is:</a></li>
-<li><a href="#2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</a>
+<li>
 <ul>
 <li><a href="#reference">Reference:</a></li>
 </ul></li>
@@ -292,40 +289,6 @@ Morgan_fingerprint.append(AllChem.GetMorganFingerprintAsBitVect(mol,2,nBits=1024
 </code></pre>
 
 <p>The complete code see: <a href="https://github.com/shuod/scripts_for_MachineLearning_projects/tree/master/1_Using%20random%20forest%20to%20predict%20bandgaps%20and%20HOMOs">https://github.com/shuod/scripts_for_MachineLearning_projects/tree/master/1_Using%20random%20forest%20to%20predict%20bandgaps%20and%20HOMOs</a></p>
-
-<h2 id="benchmark-functionals-in-density-functional-theory-dft">Benchmark functionals in Density functional theory(DFT)</h2>
-
-<p>To calculate the electronic structure and properties of atoms and molecules, one of the frequently used methods by many material discovery projects is Density functional theory (DFT). Using electron density as the variable to replace the wavefunction in Schrodinger equation,  the Kohn-Sham equation, one of the DFT &rsquo;s multiple faces, provides a controllable way between the calculation speed and the accuracy once we chose the proper functional fit to the problem. Therefore, usually, the first step in a project is to perform a benchmark study among functionals to pick up the one we desired. It is not only about the accuracy but calculation speed, consistency, and repeatability are also involved. for the bandgap calculation, results were from time-dependent DFT (TD-DFT) with the same functional.</p>
-
-<p>Another practice in the DFT community when trying to match the prediction to the experiment is to apply a linear fit between the two to get a linear scaling formula. Then any future calculation results would be modified by this scaling formula, in order to be better match the experimental results. So here we will provide two results: calculation results and results after applying the linear scaling formula.</p>
-
-<h2 id="comparisons-of-rf-and-dft-td-dft-results">Comparisons of RF and DFT/TD-DFT results</h2>
-
-<h3 id="1-comparison-of-both-methods-dft-and-rf-for-homos-energies-is">1 Comparison of both methods (DFT and RF) for HOMOs energies  is:</h3>
-
-<p><img src="/images/Using_random_forest_to_predict_HOMO_MAE_comp.png" alt="" /></p>
-
-<p>We can see that</p>
-
-<ul>
-<li>After linear scaling, DFT predictions are improved, since MAEs (mean absolute error) are reduced.</li>
-<li>MAEs from RF is comparable with DFT methods. Morgan or RDKit produced almost the same MAE.</li>
-</ul>
-
-<h3 id="2-comparison-of-both-methods-dft-and-rf-for-bandgaps-energies-is">2 Comparison of both methods (DFT and RF) for bandgaps energies  is:</h3>
-
-<p><img src="/images/Using_random_forest_to_predict_Bandgap_MAE_comp.png" alt="" /></p>
-
-<p>We can see that</p>
-
-<ul>
-<li>After linear scaling, TD-DFT predictions are improved, since MAEs (mean absolute error) are reduced.</li>
-<li>Unlike the HOMO predictions, predicted MAEs on bandgaps from RF are much larger than those from TD-DFT. I think this is because the fingerprint we used are based on ground state molecules. However, when molecules are excited, the excited state structure and electronic properties are much different from the ground state. So using fingerprint based on ground state may produce results that are not so accurate.  I am not aware of fingerprint for excited state, so I guess predictions on excited states properties are something RF model couldn&rsquo;t do well at the moment.</li>
-</ul>
-
-<p>The conclusion is that for ground state properties like HOMO energy, RF has more or less the same accuracy as the DFT method. Since RF much less than the DFT method, It probably worth considering to switch to RF (with further hyper-parameter tuning). The interpretation will involve the molecular properties that molecular fingerprints are constructed on. So there is some physics behind it.</p>
-
-<p>However, for the excited state related properties, like the bandgap, due to the lack of a proper molecular fingerprint scheme, RF produced larger MAEs than TD-DFT. Further parameter tuning (since I just tuned the number of trees, there are two other factors we can use.) may work or may not. But since the physics behind the Morgan fingerprint is all for the ground state, it may be difficult to explain the excited state property based on ground state Morgan fingerprint.</p>
 
 <h4 id="reference">Reference:</h4>
 
