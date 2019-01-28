@@ -21,6 +21,17 @@
     </item>
     
     <item>
+      <title>Kaggle: Home credit default risk 1: background and EDA </title>
+      <link>http://shuod.github.io/post/home-credit-default-risk-eda_one/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/home-credit-default-risk-eda_one/</guid>
+      <description>There are some general steps in predictive modeling that should work for all kinds of problem. Aside from science like predicting molecular orbital energies, bandgaps or chemical reactivity, other fields, like risk management, economic growth, are also important and should share some general principles.
+Here I trying to learn how risk management was done in its field.
+Risk management is the process by which risks are identified, assessed, measured and managed.</description>
+    </item>
+    
+    <item>
       <title>Using random forest to predict bandgaps and HOMOs</title>
       <link>http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>

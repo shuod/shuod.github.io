@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Kaggle: Home credit default risk 1: background and EDA  - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="There are some general steps in predictive modeling that should work for all kinds of problem. Aside from science like predicting molecular orbital energies, bandgaps or chemical reactivity, other fields, like risk management, economic growth, are also important and should share some general principles.
+Here I trying to learn how risk management was done in its field.
+Risk management is the process by which risks are identified, assessed, measured and managed." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/home-credit-default-risk-eda_one/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Kaggle: Home credit default risk 1: background and EDA " />
+<meta property="og:description" content="There are some general steps in predictive modeling that should work for all kinds of problem. Aside from science like predicting molecular orbital energies, bandgaps or chemical reactivity, other fields, like risk management, economic growth, are also important and should share some general principles.
+Here I trying to learn how risk management was done in its field.
+Risk management is the process by which risks are identified, assessed, measured and managed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/home-credit-default-risk-eda_one/" /><meta property="article:published_time" content="2019-01-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-01-11T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Kaggle: Home credit default risk 1: background and EDA ">
+<meta itemprop="description" content="There are some general steps in predictive modeling that should work for all kinds of problem. Aside from science like predicting molecular orbital energies, bandgaps or chemical reactivity, other fields, like risk management, economic growth, are also important and should share some general principles.
+Here I trying to learn how risk management was done in its field.
+Risk management is the process by which risks are identified, assessed, measured and managed.">
+
+
+<meta itemprop="datePublished" content="2019-01-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-01-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1989">
+
+
+
+<meta itemprop="keywords" content="Python,Modeling,Data,MachineLearning," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kaggle: Home credit default risk 1: background and EDA "/>
+<meta name="twitter:description" content="There are some general steps in predictive modeling that should work for all kinds of problem. Aside from science like predicting molecular orbital energies, bandgaps or chemical reactivity, other fields, like risk management, economic growth, are also important and should share some general principles.
+Here I trying to learn how risk management was done in its field.
+Risk management is the process by which risks are identified, assessed, measured and managed."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Kaggle: Home credit default risk 1: background and EDA </h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-01-11 </span>
+        <div class="post-category">
+            
+              <a href="/categories/python/"> Python </a>
+            
+              <a href="/categories/machinelearning/"> MachineLearning </a>
+            
+              <a href="/categories/data-science/"> Data Science </a>
+            
+          </div>
+        <span class="more-meta"> 1989 words </span>
+        <span class="more-meta"> 10 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#data-provided">Data provided</a></li>
+<li><a href="#metrics">Metrics</a></li>
+<li><a href="#basic-data-properties">Basic data properties</a>
+<ul>
+<li><a href="#upload-the-data-to-google-colab">Upload the data to google colab</a></li>
+<li><a href="#data-cleaning">Data cleaning</a></li>
+<li><a href="#1-missing-values">1. missing values</a></li>
+</ul></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>There are some general steps in predictive modeling that should work for all kinds of problem. Aside from science like predicting molecular orbital energies, bandgaps or chemical reactivity, other fields, like risk management, economic growth, are also important and should share some general principles.</p>
+
+<p>Here I trying to learn how risk management was done in its field.</p>
+
+<p>Risk management is the process by which risks are identified, assessed, measured and managed. The goal of risk management is not to minimize it or avoid, since you cannot fully avoid risk; it is to take smart moves. As applied to financial field, investors assume risk only because they expect to be compensated for it in the form of higher economical return. Generally, financial risk can be divided into several categories: market risk, credit risk, operation risk, etc. Here we will look at a loan payback rate as an example in credit risk. It involves the possibility of nonpayment, either on a future obligation or during a transaction. They also named presettlement and settlement risk[1].</p>
+
+<p>Presettlement risk is the risk of loss due to the counterparty&rsquo;s failure to perform on an obligation during the life of the transaction. This includes default on a loan or bond or failure to make the required payment on a derivative transaction.  Presettlement risk exists over long periods, starting from the time it its contracted until settlement[1].</p>
+
+<p>Settlement risk is due to the exchange of cash flows and is of a much shorter-term nature. This is risk arises as soon as an institution makes the required payment and exists until the offsetting payment is received[1].</p>
+
+<h2 id="data-provided">Data provided</h2>
+
+<p>Data are from seven sources:</p>
+
+<ul>
+<li>application_train/ application_test.csv: Each row is a loan. If the client repay the loan, then the TARGET takes value of 0; if the client failed to repay the loan, then TARGET equals 1;</li>
+<li>bureau.csv: previous credits from other financial institutions. each row represents a previous credit score, and one loan could have scores from several bureau (several rows);</li>
+<li>bureau_balance.csv: Monthly balance of previous credits in Credit bureau. Each row is one month of a previous credit, and a single previous credit can have several rows, one for each month as long as the balance exist.</li>
+<li>previous_application.csv: Client&rsquo;s previous application at Home Credit. Each client can have several previous loans. Each previous loans has one row and is identified by the feature SK_ID_PREV</li>
+<li>POS_CASH_BALANCE.csv: monthly data about previous point of sale or cash loans clients have had with Home credit. Each row is one month of a previous point of sale or cash loan, and a single previous loan can have many rows.</li>
+<li>credit_card_balance: monthly data about previous credit cards clients have had with Home Credit. Each row is one month of  a credit card balance and a single credit card can have many rows.</li>
+<li>installments_payment: payment history for previous loans at Home credit. There is one row for every made payment and one row for every missed payment.</li>
+</ul>
+
+<h2 id="metrics">Metrics</h2>
+
+<p>The data we will deal with is highly imbalanced. It means the number of positive and negative are not comparable. Say you have 99 positive and 1 negative event in the sample. Then in order to achieve predicting positive event with 99% accuracy, you can simple predict all events are positive. But the model doesn&rsquo;t make sense. That&rsquo;s why in this problem, the metrics we used is ROC AUC (Receiver Operating Characteristic, Area Under the Curve). It is simply the area under the curve that represents the probability to be positive or negative.</p>
+
+<h2 id="basic-data-properties">Basic data properties</h2>
+
+<h3 id="upload-the-data-to-google-colab">Upload the data to google colab</h3>
+
+<p>We will use google colab to work out this problem. To upload the data:</p>
+
+<ul>
+<li>Manually download the data from Kaggle contest website:</li>
+</ul>
+
+<p><a href="https://www.kaggle.com/c/home-credit-default-risk/data">https://www.kaggle.com/c/home-credit-default-risk/data</a></p>
+
+<ul>
+<li>Then upload them to google colab:</li>
+</ul>
+
+<p><a href="https://colab.research.google.com/drive/1kFgNS4j1trgNuEfmlZ1XsGp_WWUrO2Xg">https://colab.research.google.com/drive/1kFgNS4j1trgNuEfmlZ1XsGp_WWUrO2Xg</a></p>
+
+<ul>
+<li>Run  the code until the following cell that will ask you to choose the file to upload:</li>
+</ul>
+
+<pre><code class="language-python">from google.colab import files
+
+uploaded = files.upload()
+
+for fn in uploaded.keys():
+  print('User uploaded file &quot;{name}&quot; with length {length} bytes'.format(name=fn, length=len(uploaded[fn])))
+</code></pre>
+
+<ul>
+<li><p>After choosing the file, there will be progress indicator and notification like:</p>
+
+<pre><code>application_train.csv(application/vnd.ms-excel) - 166133370 bytes, last modified: 6/26/2018 - 100% done
+Saving application_train.csv to application_train.csv
+User uploaded file &quot;application_train.csv&quot; with length 166133370 bytes
+</code></pre></li>
+
+<li><p>If the file had been successful uploaded, it will be in the same directory as the code, which we can verify by:</p></li>
+</ul>
+
+<pre><code class="language-python"># list the file in the current directory
+import os
+print(os.listdir(&quot;.&quot;))
+
+#result
+#['.config', 'application_train.csv', 'sample_data']
+</code></pre>
+
+<h3 id="data-cleaning">Data cleaning</h3>
+
+<pre><code class="language-python"># To maintain reproducibility, we install version 0.23.4 of pandas
+!pip install pandas==0.23.4
+import pandas as pd
+
+#open the file
+df_raw = pd.read_csv(&quot;application_train.csv&quot;)
+
+#give the dimension of the data
+df_raw.shape
+
+#give the number of value in each data type
+df_raw.dtypes.value_counts()
+
+#give the mean/std/min/max of the numerical data
+#give the counts of non-numerical data
+df_raw.describe()
+
+#number of columns, index and storage used
+df_raw.info()
+
+#list the first 10 rows
+df_raw.head(10)
+
+# take a sample of the data (10 rows) for a trial anaysis
+df_raw.sample(10)
+</code></pre>
+
+<p>With file uploaded, we can already show the &ldquo;imbalance&rdquo; of the data:</p>
+
+<pre><code># number of each value in TARGET column:
+df['TARGET'].value_counts()
+&gt;&gt;&gt;0    282686
+&gt;&gt;&gt;1     24825
+&gt;&gt;&gt;Name: TARGET, dtype: int64
+
+# plot them as a histogram
+df['TARGET'].astype(int).plot.hist()
+</code></pre>
+
+<p><img src="/img/home-credit_fig1_histogram.png" alt="" /></p>
+
+<p>From the figure, we can see the ratio of the two possible values are highly unbalanced, which we need special metrics like ROC AUC or F1-score to describe.</p>
+
+<h3 id="1-missing-values">1. missing values</h3>
+
+<p>In  the real world application, there will be some values that are missing in the table or not in the right type. We need to process those values before modeling step.</p>
+
+<p>Usually, variables can be of category or numerical type. For the category variables, we can create a new category &ldquo;unknown&rdquo; to replace the empty cell; for the latter, if it is a single cell, then we can use the average values to complete it or if it is an entire row, then we can simply delete that row.</p>
+
+<p>Some model only accepts numerical value, in that case, we also need to map the category values into numerical values, or encoding categorical variables.</p>
+
+<p>Now, we check some codes to do these two things.</p>
+
+<pre><code class="language-python"># vistualize cells with missing values in the table
+import missingno as msno
+msno.matrix(df_raw)
+</code></pre>
+
+<p><img src="/img/home-credit_fig2_missingvalues.png" alt="" /></p>
+
+<p>We can see many values are missing, which are indicated by white lines.</p>
+
+<ul>
+<li>We will deal with categorical variables first:</li>
+</ul>
+
+<pre><code class="language-python"># select columns with data type Object
+objectColumns = df_raw.select_dtypes(include=[&quot;object&quot;]).columns
+df_raw[objectColumns].isnull().sum().sort_values(ascending=False)
+
+# vistualize the object column with missing values
+msno.matrix(loans[objectColumns])
+</code></pre>
+
+<p><img src="/img/home-credit_fig3_missingcategory.png" alt="" /></p>
+
+<p>we can see, the occupation column missed many values, as well as house type etc. So we are going to label those as a new category value &ldquo;unkown&rdquo; and fill &ldquo;unkown&rdquo; into the empty cells. This would use a python function: fillna:</p>
+
+<pre><code class="language-python"># make a new copy of the original data to fill with new values
+df_filled = df_raw
+df_filled[objectColumns] = df_filled[objectColumns].fillna(&quot;Unknown&quot;) 
+
+# vistualize the new filled data
+msno.bar(df_filled[objectColumns])
+</code></pre>
+
+<p>We can see now, all of cells have their values.</p>
+
+<ul>
+<li>Now we will deal with numerical values</li>
+</ul>
+
+<pre><code class="language-python"># selecting numeric column
+# you can also use include=[numpy.number]
+numColumns = df_raw.select_dtypes(include=['int','float64']).columns
+
+# vistualize the missing values in numeric columns
+msno.matrix(df_raw[numColumns])
+</code></pre>
+
+<p>we then use the average values to fill in those empty cells</p>
+
+<pre><code class="language-python3">from sklearn.preprocessing import Imputer
+
+# strategy =&quot;mean&quot; means using average value, axis=0 means the column direction
+imr = Imputer(missing_values='NaN', strategy='mean', axis=0) 
+imr = imr.fit(df_filled[numColumns])
+df_filled[numColumns] = imr.transform(df_filled[numColumns])
+
+# vistualize the table to check values
+msno.matrix(df_filled[numColumns])
+</code></pre>
+
+<p>You can also try other strategy as in preprocessing lib.</p>
+
+<ul>
+<li><p>3 process other types of data</p>
+
+<ul>
+<li>The key is to first select the type of data you want, then visualize it to see if any values missing, then use different strategy to fill in the empty cell. Or something, if it is not important at the current step, you can also delete those values (not in the raw dataframe, but in the copied dataframe).</li>
+</ul>
+
+<p>To choose specific type of value in the dataframe, check &ldquo;pandas.DataFrame.select_dtypes&rdquo; document:
+<a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.select_dtypes.html">https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.select_dtypes.html</a></p>
+
+<ul>
+<li><p>&ldquo;pd.to_datetime()&rdquo; can convert days into year-month-day. Sometime it will be useful.</p></li>
+
+<li><p>For certain type of data, we  want observe it before taking the next step. For example, this data has a column called &ldquo;DAYS-BIRTH&rdquo;, we want to check whether the value makes sense:</p></li>
+</ul>
+
+<pre><code class="language-python"># convert the value into years for convinience:
+(df_filled['DAYS_EMPLOYED']/365).describe()
+count    307511.000000
+mean        174.835742
+std         387.056895
+min         -49.073973
+25%          -7.561644
+50%          -3.323288
+75%          -0.791781
+max        1000.665753
+Name: DAYS_EMPLOYED, dtype: float64
+</code></pre>
+
+<p>And some of the values look strange, say 1000 yr of employment? Those are called anomalies. Before we figuring out what is going on, we can first set those anomalies to NaN, and used an extra column to label those values:</p>
+
+<pre><code class="language-python"># Create an anomalous flag column
+df_filled['DAYS_EMPLOYED_ANOM'] = df_filledn[&quot;DAYS_EMPLOYED&quot;] == 365243
+    
+# Replace the anomalous values with nan
+df_filled['DAYS_EMPLOYED'].replace({365243: np.nan}, inplace = True)
+    
+df_filled['DAYS_EMPLOYED'].plot.hist(title = 'Days Employment Histogram');
+plt.xlabel('Days Employment');
+</code></pre></li>
+</ul>
+
+<p>### 2. Encoding categorical variables into numeric values</p>
+
+<p>Some modeling algorithm can take both numeric and categorical values (e.g. random forest), but other algorithm take only numeric values (e.g. logistic regression). So we need to convert categorical variables into numeric values, or encoding. There are two ways to do it: label encoder and hot encoder:</p>
+
+<ul>
+<li>label encoding:</li>
+</ul>
+
+<p>It is like the telegram, which you give everything a number.  For example:</p>
+
+<pre><code class="language-python">  convertible -&gt; 0
+  hardtop -&gt; 1
+  hatchback -&gt; 2
+  sedan -&gt; 3
+  wagon -&gt; 4
+</code></pre>
+
+<p>But as you can see, the values assignment is arbitrary and lack of consistency. Usually, if the categorical variable has only two values (e.g. Yes/No or Male/Female), we will use this label encoding ( 0/1 binary coding).  For other cases that has more than two values, hot encoding is the choice.</p>
+
+<ul>
+<li>There are several way to encode categorical variable to numeric variable, we first show example using pandas:</li>
+</ul>
+
+<pre><code class="language-python">  # change the column &quot;FLAG_OWN_REALTY&quot; to category type
+  df_filled[&quot;FLAG_OWN_REALTY&quot;] = df_filled[&quot;FLAG_OWN_REALTY&quot;].astype(&quot;category&quot;)
+  
+  # using cat.codes accessor:
+  df_filled[&quot;FLAG_OWN_REALTY_cat&quot;] = df_filled[&quot;FLAG_OWN_REALTY&quot;].cat.codes
+  df_filled[&quot;FLAG_OWN_REALTY_cat&quot;]
+  
+  &gt;&gt;&gt;0         1
+  &gt;&gt;&gt;1         0
+  &gt;&gt;&gt;2         1
+  &gt;&gt;&gt;3         1
+  &gt;&gt;&gt;4         1
+  ...
+</code></pre>
+
+<p>we can see the category values take 1 or 0 to denote &ldquo;Y&rdquo; or &ldquo;N&rdquo;.</p>
+
+<ul>
+<li>The second way, if we want to manually encode the categorical values, we can do:</li>
+</ul>
+
+<pre><code class="language-python">  # when it is &quot;Y&quot;, numeric variable takes 1, or if it is not &quot;Y&quot;, takes 0
+  df_filled[&quot;FLAG_OWN_CAR_cat&quot;] = np.where(df_filled[&quot;FLAG_OWN_CAR&quot;].str.contains(&quot;Y&quot;), 1, 0)
+</code></pre>
+
+<ul>
+<li><p>The third way is to use &ldquo;LabelEncoder&rdquo; or &ldquo;LabelBinarizer&rdquo; from sklearn</p></li>
+
+<li><p>other ways can refer to</p>
+
+<p><a href="http://www.willmcginnis.com/2015/11/29/beyond-one-hot-an-exploration-of-categorical-variables/">http://www.willmcginnis.com/2015/11/29/beyond-one-hot-an-exploration-of-categorical-variables/</a></p></li>
+
+<li><p>one hot encoding</p></li>
+</ul>
+
+<p>This is a general idea to deal with characters. All of the possible values of a categorical variable spans a virtual space, and any variable would be a vector in that space. So in stead of single scalar value, we used a vector to represent a character or words. This scheme is also used in Natural Language Processing, called word2vec method, which you used a 26 dimension vector to represent a letter, since there are 26 possible values in a alphabet.</p>
+
+<pre><code class="language-python">  # an example of weather
+  weather =['cold', 'cool', 'warm', 'hot']
+  # vector value of eahc word:
+  cold = [1,0,0,0]
+  cool = [0,1,0,0]
+  warm = [0,0,1,0]
+  hot = [0,0,0,1]
+  
+</code></pre>
+
+<p>This can be done either manually or using scikit library:</p>
+
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html</a></p>
+
+<p>Basically, in data preprocessing, you need to create the &ldquo;key vocabulary&rdquo; made of all possible key values so as to convert categorical variable into vectors.</p>
+
+<pre><code class="language-python">  # example of one hot encoder and label encoder
+  from numpy import array
+  from numpy import argmax
+  from sklearn.preprocessing import LabelEncoder
+  from sklearn.preprocessing import OneHotEncoder
+  # define example
+  data = ['cold', 'cold', 'warm', 'cold', 'hot', 'hot', 'warm', 'cold', 'warm', 'hot']
+  values = array(data)
+  print(values)
+  # integer encode
+  label_encoder = LabelEncoder()
+  integer_encoded = label_encoder.fit_transform(values)
+  print(integer_encoded)
+  # binary encode
+  onehot_encoder = OneHotEncoder(sparse=False)
+  integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
+  onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+  print(onehot_encoded)
+  # invert first example
+  inverted = label_encoder.inverse_transform([argmax(onehot_encoded[0, :])])
+  print(inverted)
+</code></pre>
+
+<h2 id="reference">Reference</h2>
+
+<p>[1] Philippe Jorion, GARP (Global Association of Risk Professionals) - Financial Risk Manager Handbook + Test Bank_ FRM Part I &amp; Part II (Wiley Finance)-Wiley (2010)</p>
+
+<p>[2] Python Exploratory Data Analysis Tutorial <a href="https://www.datacamp.com/community/tutorials/exploratory-data-analysis-python">https://www.datacamp.com/community/tutorials/exploratory-data-analysis-python</a></p>
+
+<p>[3] Hitchhiker&rsquo;s guide to Exploratory Data Analysis  <a href="https://towardsdatascience.com/hitchhikers-guide-to-exploratory-data-analysis-6e8d896d3f7e">https://towardsdatascience.com/hitchhikers-guide-to-exploratory-data-analysis-6e8d896d3f7e</a></p>
+
+<p>[4] Detailed exploratory data analysis with python <a href="https://www.kaggle.com/ekami66/detailed-exploratory-data-analysis-with-python">https://www.kaggle.com/ekami66/detailed-exploratory-data-analysis-with-python</a></p>
+
+<p>[5] Start Here: A Gentle Introduction <a href="https://www.kaggle.com/willkoehrsen/start-here-a-gentle-introduction">https://www.kaggle.com/willkoehrsen/start-here-a-gentle-introduction</a></p>
+
+<p>[3] Home Credit : Complete EDA + Feature Importance <a href="https://www.kaggle.com/codename007/home-credit-complete-eda-feature-importance">https://www.kaggle.com/codename007/home-credit-complete-eda-feature-importance</a></p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-01-11</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/home-credit-default-risk-eda_one/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/python/">Python</a>
+          
+          <a href="/tags/modeling/">Modeling</a>
+          
+          <a href="/tags/data/">Data</a>
+          
+          <a href="/tags/machinelearning/">MachineLearning</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/using-random-forest-to-predict-bandgaps-and-homos/">
+            <span class="next-text nav-default">Using random forest to predict bandgaps and HOMOs</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

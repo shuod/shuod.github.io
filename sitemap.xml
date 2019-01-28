@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/post/home-credit-default-risk-eda_one/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/post/using-random-forest-to-predict-bandgaps-and-homos/</loc>
     <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -165,7 +172,14 @@
   
   <url>
     <loc>http://shuod.github.io/tags/data/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/data-science/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -263,21 +277,21 @@
   
   <url>
     <loc>http://shuod.github.io/tags/machinelearning/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://shuod.github.io/categories/machinelearning/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://shuod.github.io/tags/modeling/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -319,7 +333,7 @@
   
   <url>
     <loc>http://shuod.github.io/post/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -333,7 +347,14 @@
   
   <url>
     <loc>http://shuod.github.io/tags/python/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/python/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
