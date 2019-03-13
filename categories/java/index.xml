@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JAVA on Modeling of Everything</title>
+    <link>http://shuod.github.io/categories/java/</link>
+    <description>Recent content in JAVA on Modeling of Everything</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Shuo</copyright>
+    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://shuod.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 8 fundamental (1)</title>
+      <link>http://shuod.github.io/post/java-fundamental-one/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/java-fundamental-one/</guid>
+      <description>1. Some difference with other language (C/C++/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&amp;ldquo;.&amp;rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows.</description>
+    </item>
+    
+  </channel>
+</rss>

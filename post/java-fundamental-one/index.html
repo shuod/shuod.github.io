@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Java 8 fundamental (1) - Modeling of Everything</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Shuo" />
+  <meta name="description" content="1. Some difference with other language (C/C&#43;&#43;/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&amp;ldquo;.&amp;rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows." />
+
+  <meta name="keywords" content="Modeling, Simulation, Coding" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="canonical" href="http://shuod.github.io/post/java-fundamental-one/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Java 8 fundamental (1)" />
+<meta property="og:description" content="1. Some difference with other language (C/C&#43;&#43;/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&ldquo;.&rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://shuod.github.io/post/java-fundamental-one/" /><meta property="article:published_time" content="2014-04-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-04-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Java 8 fundamental (1)">
+<meta itemprop="description" content="1. Some difference with other language (C/C&#43;&#43;/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&ldquo;.&rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows.">
+
+
+<meta itemprop="datePublished" content="2014-04-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-04-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1839">
+
+
+
+<meta itemprop="keywords" content="Java," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java 8 fundamental (1)"/>
+<meta name="twitter:description" content="1. Some difference with other language (C/C&#43;&#43;/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&ldquo;.&rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Modeling of Everything</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Modeling of Everything</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Java 8 fundamental (1)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-04-02 </span>
+        <div class="post-category">
+            
+              <a href="/categories/development/"> Development </a>
+            
+              <a href="/categories/java/"> JAVA </a>
+            
+          </div>
+        <span class="more-meta"> 1839 words </span>
+        <span class="more-meta"> 9 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-some-difference-with-other-language-c-c-fortran-python">1.  Some difference with other language (C/C++/Fortran/Python)</a></li>
+<li><a href="#2-how-to-compile-and-execute-java-in-command-line-in-windows">2. How to compile and execute Java in command line in windows.</a></li>
+<li><a href="#3-installation-of-eclipse-in-windows">3. Installation of Eclipse in windows</a></li>
+<li><a href="#4-for-features-different-from-c">4. For features different from C++</a></li>
+<li><a href="#4-java-se-jre-sdk-and-others">4. Java SE, JRE, SDK and others</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#chp1-breaking-the-surface">chp1 Breaking the surface</a>
+<ul>
+<li>
+<ul>
+<li><a href="#1-some-code-in-java-to-have-a-first-hand-impression">1.  Some code in java to have a first-hand impression:</a></li>
+<li><a href="#2-identifiers">2 Identifiers</a></li>
+<li><a href="#3-variable">3. Variable</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h4 id="1-some-difference-with-other-language-c-c-fortran-python">1.  Some difference with other language (C/C++/Fortran/Python)</h4>
+
+<ul>
+<li>Each source code file is a class, and the name of the class must be  the same as the file name.</li>
+<li>Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter.</li>
+<li>In windows, setup CLASSPATH to include the current folder (&ldquo;.&rdquo;), even if full path of the code is provided.</li>
+</ul>
+
+<h4 id="2-how-to-compile-and-execute-java-in-command-line-in-windows">2. How to compile and execute Java in command line in windows.</h4>
+
+<p>There is some tricky part in compiling and excuting Java in windows.</p>
+
+<p>There are mainly two categories in executing codes: the compilation way (C/C++, Fortran etc) or the interpretation way (Python, perl etc). Java, however, needs  both. The Java codes (*.java) is first compiled into the binary code (*.class) that only runs on Java virtual machine (Just-in-time compilation, or JIT) using a compiler, then you have to use a interpreter to execute the complied JIT codes. The first step is achieved using &ldquo;javac somecode.java&rdquo; and the second step uses &ldquo;java somecode&rdquo;(no extension name).</p>
+
+<p>In windows, the tricky part is you have to setup the environment variable &ldquo;CLASSPATH&rdquo; to include the output path where JIT codes are stored after compilation. Although, by default, the JIT code is output to the current folder, you have to put &ldquo;.&rdquo; (which represent &ldquo;current path&rdquo;) into the &ldquo;CLASSPATH&rdquo;. Without doing so, even if you put the complete path to the JIT code, the interpreter &ldquo;java&rdquo; will still claim that it couldn&rsquo;t find the class file (&ldquo;Error: Could not find or load main class somecoe.class&rdquo;).The reason is &ldquo;CLASSPATH&rdquo; only works when JVM executes the code, but it won&rsquo;t work during the compiling stage.</p>
+
+<p>There are other two environment variables to setup in the powershell (run with the administrator privilege, of course):</p>
+
+<pre><code class="language-powershell">//name: JAVA_HOME 
+//value: E:\Program Files\Java\jdk1.8.0_202 
+
+
+//There is a &quot;.&quot; at the very front
+//name: CLASSPATH
+//value: .;%JAVA_HOME%\lib
+
+
+//Path
+[Environment]::SetEnvironmentVariable(&quot;PATH&quot;, $Env:Path + &quot;;$($Env:JAVA_HOME)\bin&quot;, &quot;User&quot;)
+
+</code></pre>
+
+<h4 id="3-installation-of-eclipse-in-windows">3. Installation of Eclipse in windows</h4>
+
+<p>There is also some tricky part in using Eclipse in windows.</p>
+
+<ul>
+<li>First, download the 64-bit window version from:</li>
+</ul>
+
+<p><a href="https://www.eclipse.org/downloads/packages/release/neon/3">https://www.eclipse.org/downloads/packages/release/neon/3</a></p>
+
+<p>Versions for Java EE or Java developer are both alright.</p>
+
+<ul>
+<li><p>Second, extract the archive to the folder that its name doesn&rsquo;t have any special character.</p></li>
+
+<li><p>Third, modify the eclipse.ini to add</p></li>
+</ul>
+
+<pre><code>  -vm
+  E:\Program Files\Java\jdk1.8.0_202\bin\javaw.exe
+</code></pre>
+
+<p>For the current version, without step three, you will have the error: &ldquo;Java was Started but Returned Exit Code=13&rdquo;. Although there can be many reasons for this error, the fact that the official package lacks of the path to the Java virtual machine (appointed by &ldquo;-vm&rdquo; in the &ldquo;*.ini&rdquo;) can cause this error.</p>
+
+<p>For other possible reasons for this error, see:</p>
+
+<p><a href="https://ashout.com/fix-java-started-returned-exit-code13-eclipse/">https://ashout.com/fix-java-started-returned-exit-code13-eclipse/</a></p>
+
+<h4 id="4-for-features-different-from-c">4. For features different from C++</h4>
+
+<p>Clearly, C++ and Java are the two mainstream language that used the most in the production environment. Although they both language satisfying Object Oriented Principles (OOP), there are some subtle difference. Any OOP must satisfying:</p>
+
+<ul>
+<li>Encapsulation</li>
+<li>Abstraction</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+</ul>
+
+<p>C++ is partially OOP, because:</p>
+
+<ul>
+<li><p>According to OOP, no main() method/ should be exist without the object. In C++, main() can be independent and doesn&rsquo;t need any class;</p></li>
+
+<li><p>C++ provides &ldquo;Friends&rdquo; which violate &ldquo;Encapsulation&rdquo;;</p></li>
+
+<li><p>In C++, the built-in data types, such as int, float, are not object. But in Java, everything is object.</p></li>
+
+<li><p>According to OOP, one object should have only one hierarchical parent reference. But in C++, multiple inheritance can exist.</p></li>
+
+<li><p>In Java any function must be written inside the class, but in C++, function can exist outside or even a whole program can run without having a class.</p></li>
+</ul>
+
+<p>(<a href="https://www.waytoeasylearn.com/2016/04/java-language-basics.html">https://www.waytoeasylearn.com/2016/04/java-language-basics.html</a>)</p>
+
+<h4 id="4-java-se-jre-sdk-and-others">4. Java SE, JRE, SDK and others</h4>
+
+<p>Unlike other languages, Java seems to have particularly more encapsulate packages:</p>
+
+<p><a href="https://www.quora.com/What-is-the-difference-between-Java-SDK-JRE-JVM-Java-SE-Runtime-and-J2SE">https://www.quora.com/What-is-the-difference-between-Java-SDK-JRE-JVM-Java-SE-Runtime-and-J2SE</a></p>
+
+<p><a href="https://stackoverflow.com/questions/250517/java-se-6-vs-jre-1-6-vs-jdk-1-6-what-do-these-mean">https://stackoverflow.com/questions/250517/java-se-6-vs-jre-1-6-vs-jdk-1-6-what-do-these-mean</a></p>
+
+<p>For entry level learners, download the Java SE (standard edition)from the oracle website is enough:</p>
+
+<p><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+
+<p>This includes Java JVM, JRE and SDK.</p>
+
+<p>Other packages like JEE/J2EE are for enterprise edition. In Java11, this will not be free. J2ME is for &ldquo;Mobile edition&rdquo;.</p>
+
+<h2 id="chp1-breaking-the-surface">chp1 Breaking the surface</h2>
+
+<h4 id="1-some-code-in-java-to-have-a-first-hand-impression">1.  Some code in java to have a first-hand impression:</h4>
+
+<pre><code class="language-java">int size=27;
+
+String name = &quot;Fido&quot;;
+
+Dog myDog = new Dog(name, size);
+
+int[] numList={2,3,4,5}
+
+System.out.print(&quot;Hello&quot;);
+
+System.out.print(&quot;Dog:&quot; + name);
+
+try{
+
+    readTheFile(&quot;myFile.txt&quot;);
+
+}
+
+catch (FileNotFoundException ex){
+
+    System.out.print(&quot;File not found.&quot;);
+
+}
+
+</code></pre>
+
+<p><img src="/images/HFJ_chp1_1.png" alt="" /></p>
+
+<ul>
+<li><p>Organization of JAVA codes:</p>
+
+<ul>
+<li>A source file contains several class, each go within a pair of curly braces. A class has one or more method, each go within a pair of curly braces and must be declared inside a class;</li>
+
+<li><p>There is only one main method, &ldquo;public static void main(String args[])&ldquo;, the class outside this main method should have the same name as the source code file name;</p></li>
+
+<li><p>Statements can be put in a method, tell the computer how to do certain instructions. Each line in the program ends with &ldquo;;&rdquo;;</p></li>
+</ul></li>
+
+<li><p>Internal Architecture of JVM (JAVA virtual machine):</p></li>
+</ul>
+
+<p>unlike C/C++, where the complied binary codes are executed in real machine, JAVA complies source codes into Just-In-TIme (JIT) code and excutes them in JAVA virtual machine. This unique feature enable it cross-platform. Virtual machine has the following architecture:</p>
+
+<ul>
+<li>Classloader: A subsystem of JVM that is used to load class files;</li>
+<li>Memory Areas or Method Areas: stores per-class structures, such as the runtime constant pool, field and method data, the code for methods;</li>
+<li>Execution Engine
+
+<ul>
+<li>Class Areas</li>
+<li>Heap: it is the runtime data area in which objects are allocated;</li>
+<li>Stack: It stores frames. Frames are created each time a method is invoded, and destroyed when its method invocation completes. It holds local variables and partial results, and plays a part in method invocation.</li>
+<li>Program Counter Register: It contains the address of the Java virtual machine instruction currently being executed.</li>
+<li>Native Method Stack: It contains all the native methods used in the application</li>
+</ul></li>
+<li>Native Method Interface</li>
+
+<li><p>Java Native Libraries</p></li>
+
+<li><p>Comments: sinlge line uses &ldquo;//&rdquo; and multiple lines use &ldquo;/* &hellip; */&rdquo;</p></li>
+</ul>
+
+<p><img src="/images/HFJ_chp1_2.png" alt="" /></p>
+
+<h4 id="2-identifiers">2 Identifiers</h4>
+
+<ul>
+<li>Name of a constant is all Capitalized: GAME_COLOR = &ldquo;RED&rdquo;</li>
+<li>Name of a variable: starts with alphabet or _ or $, and cannot start with numbers; Case sensitive and no maximum length;  examples: user_name, _sys_var1, $_change;</li>
+<li>Name of a class: the first name is capitalized, and each of the word in the name is capitalized.</li>
+<li>Name of a method: the first name is small, and each of the word is capitalized.</li>
+<li>Name of the source code file: the name of the source code file must be the same as the class in it.</li>
+<li>The declaration of main is: &ldquo;public static void main(String []args)&rdquo;</li>
+</ul>
+
+<h4 id="3-variable">3. Variable</h4>
+
+<ul>
+<li><p>a piece of memory that can contain a data value:</p>
+
+<ul>
+<li>local variable: inside the method;</li>
+<li>instance variable: inside the class but outside the method;</li>
+<li>static variable: other than local;</li>
+</ul></li>
+
+<li><p>Data type:</p>
+
+<ul>
+<li><p>primitive/non-primitive/reference data types: JAVA built-in types</p></li>
+
+<li><p>8 primitive data types and default size:</p></li>
+</ul>
+
+<p><img src="/images/HFJ_chp1_3.png" alt="" /></p>
+
+<p>| Data Type                    | Default Value | Default Size     |
+  | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;- |
+  | Boolean(true, false)         | false         | 1 byte or 8 bits |
+  | Byte(-128~127, 2^7)          | 0             | 1 byte           |
+  | Char(\u0000~\uffff, 0~65535) | &lsquo;\u0000&rsquo;      | 2 byte           |
+  | Short(-32768~32767,2^15)     | 0             | 2 byte           |
+  | Int(-2147483648, 2^31)       | 0             | 4 byte           |
+  | Long(2^63)                   | 0L            | 8 byte           |
+  | Float                        | 0.0f          | 4 byte           |
+  | Double                       | 0.0d          | 8 byte           |</p></li>
+</ul>
+
+<pre><code class="language-java">public class PrimitiveTypeTest {  
+    public static void main(String[] args) {  
+        // byte  
+        System.out.println(&quot;Byte type：&quot; + Byte.SIZE);  
+        System.out.println(&quot;Byte.MIN_VALUE=&quot; + Byte.MIN_VALUE);  
+        System.out.println(&quot;Byte.MAX_VALUE=&quot; + Byte.MAX_VALUE);  
+        System.out.println();  
+        }
+    }
+      
+</code></pre>
+
+<ul>
+<li>- - non-primitive data types: derived from the primitive ones and store group of values
+
+<ul>
+<li>reference data types: Declaration of objects or array. Also, Integer, String etc are reference type. The default value of reference data is &ldquo;null&rdquo; for example:</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-java">  Class Student(){
+      some code;
+  }
+  Student John = new Student();
+</code></pre>
+
+<p>John is then a reference variable. In C/C++, there are pointer type variables. They are essentially the similar idea as the reference variable. They contain the starting address of the variable in the memory block.</p>
+
+<ul>
+<li>Instance Variables/Static Variables/Local Variables</li>
+</ul>
+
+<p>The &ldquo;{}&rdquo; is an important label. It divides the program into different sections or &ldquo;scope&rdquo;. Since a Java program is a class, within a class, there are some standard &ldquo;{}&rdquo; that must be there:</p>
+
+<pre><code class="language-java">  public class Student{
+  
+      int id;
+      String name;
+      String major;
+      
+      public StudentInfor(int id, String name, String major){
+          super();
+          this.id=id;
+          this.name=name;
+          this.major=major;
+      }
+      
+  }
+</code></pre>
+
+<p>there are two &ldquo;{}&rdquo; that separate the whole code into three scopes:</p>
+
+<ol>
+<li>inside StudentInfor()  or method area</li>
+<li>outside StudentInfor() but inside Student or instance area (includes the method area)</li>
+<li>outside Student or static area (doesn&rsquo;t include the method area), this also include other class, if the program contains more than one class
+
+<br /></li>
+</ol>
+
+<ul>
+<li><p>Local Variables: Local variables are defined inside the method part (the scope No.1 above ). Java designs this type of variable to have the following features:</p>
+
+<ul>
+<li>Local variables are created when methods are executed, destroyed after methods are executed;</li>
+<li>Decorators can not be used on local variables;</li>
+<li>Local variables are only accessed inside the scope of its method();</li>
+<li>Local variables are allocated in the stack (a special region in the memory);</li>
+<li>Local variables don&rsquo;t have default values, they must be manually initiated or error will be raised.</li>
+<li>Only &ldquo;final&rdquo; keyword can be used.</li>
+</ul></li>
+
+<li><p>Instance Variables: Instance variables are defined inside the class but outside the method part (the scope No.2 above). Their values can be varied from object to object. Java designs this type of variable to have the following features:</p>
+
+<ul>
+<li>The value of the variable are given after the creation of the object;</li>
+<li>For every object, a separate memory copy will be created, meaning if you change their values in one object, their values in another object won&rsquo;t be affected.</li>
+<li>Instance variable are created when an object is created, destroyed after the object is destroyed;</li>
+<li>Outside the class, the values of instance variable can be accessed through the function/statement in the method() part.</li>
+<li>Decorators can be used on this type of variable;</li>
+<li>Generally, they could be set to private and sub-class can access them through decorators;</li>
+<li>Instance variable has default values and we don&rsquo;t have to initialize them explicitly: numeric type is &ldquo;0&rdquo;, boolen is &ldquo;false&rdquo;, reference is &ldquo;null&rdquo;. Values can be given when defined them or in the constructor method;</li>
+<li>Instance variable are allocated in the heap as the part of the Object;</li>
+</ul></li>
+
+<li><p>Static Variables: Static variables are defined inside one class but outside its method part. The value of them are not changed from object to object, or they stay the same for another class. They are declared with the key word &ldquo;Static&rdquo;:</p>
+
+<ul>
+<li>Using &ldquo;Static&rdquo; key word to declare;</li>
+<li>Only one copy of the variable will be created, not matter how many objects will used it. This means, if you changed the value, every object will receive the &ldquo;update&rdquo;.</li>
+<li>They are created when the program starts, and destroyed when program ends.</li>
+<li>They have default values the same as the instance variables;</li>
+<li>They can be accessed by ClassName.VariableName;
+
+<br /></li>
+</ul></li>
+</ul>
+
+<p><a href="https://www.waytoeasylearn.com/2016/05/types-of-variables.html">https://www.waytoeasylearn.com/2016/05/types-of-variables.html</a></p>
+
+<p>Reference</p>
+
+<ol>
+<li>Head first Java, by Kathy Sierra &amp; Bert Bates, Oreilly, 2nd Edition, 2005</li>
+<li>Java Tutorials, Oracle website, <a href="https://docs.oracle.com/javase/tutorial/index.html">https://docs.oracle.com/javase/tutorial/index.html</a></li>
+<li>How to fix exit code 13 error, <a href="https://ashout.com/fix-java-started-returned-exit-code13-eclipse/">https://ashout.com/fix-java-started-returned-exit-code13-eclipse/</a></li>
+<li>Java basics, <a href="https://www.waytoeasylearn.com/2016/04/java-language-basics.html">https://www.waytoeasylearn.com/2016/04/java-language-basics.html</a></li>
+<li>Java video tutorial, <a href="https://www.youtube.com/watch?v=TBWX97e1E9g&amp;list=PLE7E8B7F4856C9B19">https://www.youtube.com/watch?v=TBWX97e1E9g&amp;list=PLE7E8B7F4856C9B19</a></li>
+<li>Identifiers and data types, <a href="https://www.waytoeasylearn.com/2016/04/java-language-fundamentals.html">https://www.waytoeasylearn.com/2016/04/java-language-fundamentals.html</a></li>
+<li>Types of variables, <a href="https://www.waytoeasylearn.com/2016/05/types-of-variables.html">https://www.waytoeasylearn.com/2016/05/types-of-variables.html</a></li>
+</ol>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Shuo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2014-04-02</span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">Markdown</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://shuod.github.io/post/java-fundamental-one/index.txt" target="_blank">The Markdown version »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/java/">Java</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/first/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">How to setup a static blog site using Hugo (hosted on github)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'modeling-of-everything';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/shuod" class="iconfont icon-github" title="github"></a>
+  <a href="http://shuod.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Shuo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-134178255-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

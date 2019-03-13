@@ -23,8 +23,8 @@ Tags:
     "Windows",
 
     "MachineLearning"
-
-
+    "JAVA"
+"Development"
 
 tags = ["VPS", "Linux","VPN"]
 tags = ["VPS", "Linux","Science"]
@@ -51,6 +51,7 @@ Linux
 MachineLearning
 Science
 Data Science
+JAVA
 
 
 

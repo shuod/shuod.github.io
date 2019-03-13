@@ -6,6 +6,7 @@
     <description>Recent content in Categories on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <copyright>Shuo</copyright>
     <lastBuildDate>Sun, 21 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
@@ -62,6 +63,15 @@
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://shuod.github.io/categories/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JAVA</title>
+      <link>http://shuod.github.io/categories/java/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/categories/java/</guid>
       <description></description>
     </item>
     
