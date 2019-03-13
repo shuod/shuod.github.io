@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Java 8 fundamental (1)</title>
+      <link>http://shuod.github.io/post/java-fundamental-one/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/java-fundamental-one/</guid>
+      <description>1. Some difference with other language (C/C++/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&amp;ldquo;.&amp;rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows.</description>
+    </item>
+    
+    <item>
       <title>Kaggle: Home credit default risk 1: background and EDA </title>
       <link>http://shuod.github.io/post/home-credit-default-risk-eda_one/</link>
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
@@ -241,15 +250,6 @@ I bought a VPS from ramnode last time (last blog), so I guess it is a good time 
 &lt;li&gt;Host the webpage source code on github.com&lt;/li&gt;
 &lt;li&gt;Host the hugo output(webpage to show) on github.com&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Java 8 fundamental (1)</title>
-      <link>http://shuod.github.io/post/java-fundamental-one/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuod.github.io/post/java-fundamental-one/</guid>
-      <description>1. Some difference with other language (C/C++/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&amp;ldquo;.&amp;rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows.</description>
     </item>
     
   </channel>

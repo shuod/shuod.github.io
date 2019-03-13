@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/post/java-fundamental-one/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/post/home-credit-default-risk-eda_one/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -150,21 +157,14 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/post/java-fundamental-one/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://shuod.github.io/categories/cc&#43;&#43;/</loc>
+    <loc>http://shuod.github.io/tags/cc&#43;&#43;/</loc>
     <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shuod.github.io/tags/cc&#43;&#43;/</loc>
+    <loc>http://shuod.github.io/categories/cc&#43;&#43;/</loc>
     <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -199,15 +199,15 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/development/</loc>
+    <loc>http://shuod.github.io/tags/development/</loc>
     <lastmod>2018-12-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shuod.github.io/tags/development/</loc>
-    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
+    <loc>http://shuod.github.io/categories/development/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -220,13 +220,6 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/english/</loc>
-    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://shuod.github.io/tags/english/</loc>
     <lastmod>2017-06-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -234,14 +227,21 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/github/</loc>
-    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <loc>http://shuod.github.io/categories/english/</loc>
+    <lastmod>2017-06-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://shuod.github.io/tags/github/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/github/</loc>
     <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -270,21 +270,14 @@
   
   <url>
     <loc>http://shuod.github.io/categories/java/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://shuod.github.io/tags/java/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shuod.github.io/categories/linux/</loc>
-    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -297,14 +290,21 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/machinelearning/</loc>
-    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <loc>http://shuod.github.io/categories/linux/</loc>
+    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://shuod.github.io/tags/machinelearning/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/categories/machinelearning/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -332,14 +332,14 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/my_script/</loc>
+    <loc>http://shuod.github.io/tags/my_script/</loc>
     <lastmod>2018-08-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shuod.github.io/tags/my_script/</loc>
+    <loc>http://shuod.github.io/categories/my_script/</loc>
     <lastmod>2018-08-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -354,7 +354,7 @@
   
   <url>
     <loc>http://shuod.github.io/post/</loc>
-    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -367,13 +367,6 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/python/</loc>
-    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://shuod.github.io/tags/python/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -381,8 +374,8 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/science/</loc>
-    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <loc>http://shuod.github.io/categories/python/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -395,6 +388,13 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/categories/science/</loc>
+    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/categories/server/</loc>
     <lastmod>2016-08-12T10:33:28-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -402,15 +402,15 @@
   </url>
   
   <url>
-    <loc>http://shuod.github.io/categories/shell_powershell/</loc>
-    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
+    <loc>http://shuod.github.io/tags/shell_powershell/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shuod.github.io/tags/shell_powershell/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <loc>http://shuod.github.io/categories/shell_powershell/</loc>
+    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
