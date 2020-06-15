@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Shuo</copyright>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Java 8 fundamental (1)</title>
-      <link>http://shuod.github.io/post/java-fundamental-one/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuod.github.io/post/java-fundamental-one/</guid>
-      <description>1. Some difference with other language (C/C++/Fortran/Python)  Each source code file is a class, and the name of the class must be the same as the file name. Two-step compilation-interpretation: Source cods are first complied into JIT binary code and then executed by an interpreter. In windows, setup CLASSPATH to include the current folder (&amp;ldquo;.&amp;rdquo;), even if full path of the code is provided.  2. How to compile and execute Java in command line in windows.</description>
-    </item>
     
     <item>
       <title>Kick start docker for a deeplearning environment</title>
