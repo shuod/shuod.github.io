@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Modeling of Everything</title>
-    <link>http://shuod.github.io/tags/windows/</link>
+    <link>http://shuod.github.io/categories/windows/</link>
     <description>Recent content in Windows on Modeling of Everything</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Shuo</copyright>
     <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://shuod.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shuod.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <guid>http://shuod.github.io/post/setup-wsl2-windows-subsystem-linux-2-in-windows-10/</guid>
       <description>Ever since Microsoft changed the CEO, it embrace open source world by annoucing new tools (VS code) as well as adding new functions to windows. Now windows 10 become more friendly for developers. The function we are going to test today is one of them.
 Background on WSL1/WSL2/Docker Thanks to the architecture of windows NT, it can actually &amp;ldquo;Simulate&amp;rdquo; any operation system (OS) in the system level. (check the figure below) So theoretically, windows is just a &amp;ldquo;Frontend&amp;rdquo;, it can be changed to any other systems.</description>
-    </item>
-    
-    <item>
-      <title>Checking files in subfolders using power shell</title>
-      <link>http://shuod.github.io/post/checking_files_in_subfolders_using_power_shell/</link>
-      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://shuod.github.io/post/checking_files_in_subfolders_using_power_shell/</guid>
-      <description>As daily work, sometime I need to check some log files from certain calculations &amp;ndash; a large number of calculations. Usually they contain some keyword or sentence, like &amp;ldquo;Normal termination&amp;rdquo; or &amp;ldquo;Calculation ended&amp;rdquo; or &amp;ldquo;succussefully conveged&amp;rdquo; for me to search.
-This is a typical job that can be done rountinely in linux using commands like &amp;ldquo;grep&amp;rdquo;, &amp;ldquo;awk&amp;rdquo;. However, after download those file to a windows PC, it would be more convinient to use windows shell to do, although there exists some &amp;ldquo;tranplanted&amp;rdquo; version of some of the linux shell commands that are complied with native win32 toolchains.</description>
     </item>
     
   </channel>

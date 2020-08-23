@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Shuo</copyright>
-    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup WSL2 (windows subsystem linux 2) in windows 10</title>
+      <link>http://shuod.github.io/post/setup-wsl2-windows-subsystem-linux-2-in-windows-10/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/setup-wsl2-windows-subsystem-linux-2-in-windows-10/</guid>
+      <description>Ever since Microsoft changed the CEO, it embrace open source world by annoucing new tools (VS code) as well as adding new functions to windows. Now windows 10 become more friendly for developers. The function we are going to test today is one of them.
+Background on WSL1/WSL2/Docker Thanks to the architecture of windows NT, it can actually &amp;ldquo;Simulate&amp;rdquo; any operation system (OS) in the system level. (check the figure below) So theoretically, windows is just a &amp;ldquo;Frontend&amp;rdquo;, it can be changed to any other systems.</description>
+    </item>
     
     <item>
       <title>Kick start docker for a deeplearning environment</title>

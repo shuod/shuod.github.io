@@ -69,7 +69,7 @@
     <item>
       <title>Linux</title>
       <link>http://shuod.github.io/categories/linux/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>http://shuod.github.io/categories/linux/</guid>
       <description></description>
@@ -135,6 +135,15 @@
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://shuod.github.io/categories/shell_powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://shuod.github.io/categories/windows/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/categories/windows/</guid>
       <description></description>
     </item>
     
