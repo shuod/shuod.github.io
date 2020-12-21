@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Shuo</copyright>
-    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://shuod.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Books I read in 2020</title>
+      <link>http://shuod.github.io/post/books-i-read-in-2020/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://shuod.github.io/post/books-i-read-in-2020/</guid>
+      <description>2020 will mark its place in modern history and thank everyone, it is coming to an end now. Look back 2020, I have learnt a lot in this special year. Here I just want to share some books that I found most helpful!
+Streaming systems: The what, where, when and how of larege-scale data processing (By Tyler Akidau, Slava Chernyak, Reuven Lax) This is a very good book from Google.</description>
+    </item>
     
     <item>
       <title>Setup WSL2 (windows subsystem linux 2) in windows 10</title>

@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/post/books-i-read-in-2020/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/post/setup-wsl2-windows-subsystem-linux-2-in-windows-10/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,6 +164,13 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/tags/books/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/tags/cc&#43;&#43;/</loc>
     <lastmod>2018-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,14 +214,14 @@
   
   <url>
     <loc>http://shuod.github.io/tags/development/</loc>
-    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://shuod.github.io/categories/development/</loc>
-    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -340,7 +354,7 @@
   
   <url>
     <loc>http://shuod.github.io/post/</loc>
-    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -362,6 +376,13 @@
   <url>
     <loc>http://shuod.github.io/categories/python/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://shuod.github.io/tags/read/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -402,8 +423,15 @@
   </url>
   
   <url>
+    <loc>http://shuod.github.io/categories/study/</loc>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://shuod.github.io/tags/</loc>
-    <lastmod>2018-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
